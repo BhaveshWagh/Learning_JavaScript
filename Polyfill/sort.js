@@ -1,3 +1,11 @@
+let a = 5
+let b = 2
+let ans = a / b
+// console.log(ans) 
+// let ans2 = Math.floor((a / b))
+// console.log(ans2)
+let floor = Math.floor(2.9)
+console.log(floor)
 // if (!Array.prototype.sort) {
 //   Array.prototype.sort = function (compareFunction) {
 //     for (let i = 0; i < this.length - 1; i++) {
@@ -17,8 +25,8 @@
 //     }
 //     return this;
 //   };
-// }
-var arr = [3, 2, 5,0, -1,4];
-// Array.prototype.sort
-arr.sort();
-console.log(arr);
+// // }
+// var arr = [3, 2, 5,0, -1,4];
+// // Array.prototype.sort
+// arr.sort();
+// console.log(arr);
