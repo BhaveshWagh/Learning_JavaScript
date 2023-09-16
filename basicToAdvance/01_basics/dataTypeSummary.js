@@ -40,5 +40,32 @@ let myObj = {
 const myFunction = function(){
     console.log("Namskar Maharashtra!")
 }
-console.log(typeof myFunction) // function
+// console.log(typeof myFunction) // function
 
+
+// Stack & Heap memory in javascript
+
+// stack ( primitive ) : You'll get copy for the variable.
+// heap ( Non-primitive ) : You'll get the reference for the variable.
+
+// only change in copy not in the original value
+
+let number = 10
+
+let newNumber = number
+
+newNumber = 20
+
+console.log(newNumber)  // 20
+
+// Original value also changed because in heap memory you'll get refernce of the original values.
+let userOne = {
+    userEmail:"user0123@gmail.com",
+    useUpi : "user123@paypl"
+}
+let userTwo = userOne
+
+userTwo.userEmail = "user2@gmail.com"
+
+console.log(userOne)
+console.log(userTwo)
