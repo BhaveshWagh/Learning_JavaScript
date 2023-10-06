@@ -10,7 +10,7 @@ xhr.onreadystatechange = function () {
     const data = JSON.parse(this.responseText);
     console.log(typeof data);
     console.log(data.followers);
-    // const userCard = document.getElementById("userCard");
+    const userCard = document.getElementById("userCard");
     const avatar = document.getElementById("avatar");
     const username = document.getElementById("username");
     const bio = document.getElementById("bio");
