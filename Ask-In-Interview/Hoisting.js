@@ -13,3 +13,12 @@
 "use strict";
 x = 23; // Gives an error since 'x' is not declared
 var x;
+
+function a() {
+  const x = 10;
+  function b() {
+    console.log(x);
+  }
+  b();
+}
+a();
