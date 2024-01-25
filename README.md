@@ -1,5 +1,136 @@
 # Learning_JavaScript
 
+### Season 02 Namaste Javascript Ep 03
+
+1. Promise can be created using a new Promise() constructor function.
+
+2. This constructor function takes a callback function as argument.
+
+3. The callback function has 2 arguments named 'resolve' and 'reject'. Resolve and reject are the keywords provided by JS.
+
+4. We can only resolve or reject a promise. Nothing else can be done.
+
+5. An error can also be created using new Error('error message').
+
+6. There is also .catch() which is used to attach a failure callback function that handles any error that pops up during the execution of promise chain.
+
+7. .catch only handles error of .then() that are present above it. If there is any .then() below it, catch will not handle any error for that, also that ,then will get executed no matter what.
+
+8. It can be useful in a way if we want to catch error for a particular portion of a chain.
+
+9. We can have multiple catch based on requirement and then a general catch at the end.
+
+10. Always remember to return a value in the promise chain for the next .then to use .
+
+11. If it returns a value => It will be used as an argument in next function. If it is a promise then the next .then in the promise chain is attached to the promise returned by the current callback function.
+
+Homework:
+
+```jsx
+const cart = ['shoes', 'pants', 'kurta'];
+
+createOrder(cart)
+  .then(function(orderId) {
+    console.log(orderId);
+    return orderId;
+  })
+  .then(function(orderID) {
+    return proceedToPayment(orderID)
+  })
+  .then(function({ message, amt }) {
+    console.log(message, 'of amount:', amt);
+    return showOrderSummary(message, amt);
+  })
+  .then(function({ message, amt }) {
+    console.log('Your wallet has beed debited by:', amt);
+  })
+  .catch(function(err) {
+    console.log(err.message);
+  })
+  .then(function() {
+    console.log('No matter what happens, I will get executed');
+  });
+
+
+
+function createOrder(cart) {
+  const pr = new Promise(function(resolve, reject) {
+    // create order
+    // Validate Cart
+    // orderId
+    if (!validateCart(cart)) {
+      const err = new Error('Cart is not valid!');
+      reject(err);
+    }
+    // logic for createOrder
+    const orderId = '12345';
+    if (orderId) {
+      setTimeout(function() {
+        resolve(orderId);
+      }, 5000)
+    }
+  });
+
+  return pr;
+}
+
+function proceedToPayment(orderID) {
+  // Logic for handling payment.
+  // This function returns a promise
+  return new Promise(function(resolve, reject) {
+    // logic
+    resolve({ message: `Payment Successful for order id: ${orderID}`, amt: 2500 });
+  })
+}
+
+function showOrderSummary(paymentInfo, amt) {
+  return new Promise(function(resolve, reject) {
+    // console.log(amt);
+    if (amt >= 2000) {
+      resolve({ message: 'You have ordered items that cost ${amt} RS', amt });
+    } else {
+      reject(new Error('Please buy more for discount'));
+    }
+  })
+}
+
+function validateCart(cart) {
+  // code to validate cart.
+  return true;
+  // return false;
+}
+```
+
+
+
+### Season 02 Namaste Javascript Ep 02
+
+# Promise
+
+## Importance of promise
+
+### Promises are important because they help us to avoid the problems we face with callbacks, namely inversion of control and callback hell. Also, promises, once resolved are immutable; thus building up immense trust. Promises are very beautiful.
+
+1. Before promise we used to depend on callback functions which would result in
+
+1. Callback Hell (Pyramid of doom) |
+1. Inversion of control
+1. Inversion of control is overcome by using promise.
+
+2.1 A promise is an object that represents eventual completion/failure of an asynchronous operation.
+
+2.2 A promise has 3 states: pending | fulfilled | rejected.
+
+2.3 As soon as promise is fulfilled/rejected => It updates the empty object which is assigned undefined in pending state.
+
+2.4 A promise resolves only once and it is immutable.
+
+2.5 Using .then() we can control when we call the cb(callback) function.
+
+1. To avoid callback hell (Pyramid of doom) => We use promise chaining. This way our code expands vertically instead of horizontally. Chaining is done using '.then()'
+
+1. A very common mistake that developers do is not returning a value during chaining of promises. Always remember to return a value. This returned value will be used by the next .then()
+
 # Execution context Diagram
 
 ![Alt text](image.png)
@@ -10,10 +141,10 @@
 
 Prepare for the types of questions you are likely to be asked when interviewing for a position where Asynchronous JavaScript will be used.
 
-
 ## Asynchronous JavaScript is a popular programming technique used to improve the performance of web applications. When applying for a position in web development, it is likely that employers will expect you to have a strong understanding and familiarity with asynchronous JavaScript. Understanding what asynchronous JavaScript questions you are most likely to encounter and how to properly answer them improves your chances of making a positive impression on the hiring manager. In this article, we discuss the most commonly asked asynchronous JavaScript questions and how you should respond.
 
 #### Asynchronous JavaScript Interview Questions and Answers
+
 #### Here are 20 commonly asked Asynchronous JavaScript interview questions and answers to prepare you for your interview:
 
 # 1. What do you understand by asynchronous programming?
@@ -95,3 +226,6 @@ The setImmediate() function is used to schedule a task to be executed as soon as
 # 20. Is there any other way to execute asynchronous code besides callbacks, promise, or async/wait in JavaScript?
 
 There are a few other ways to execute asynchronous code in JavaScript, but they are generally not considered as good practice. One way is to use setTimeout, which will execute a function after a certain amount of time has passed. Another way is to use event listeners, which will execute a function when a certain event occurs.
+
+Ref : https://climbtheladder.com/asynchronous-javascript-interview-questions/
+````
