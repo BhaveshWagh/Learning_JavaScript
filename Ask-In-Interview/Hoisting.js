@@ -10,15 +10,37 @@
 
 // Note - To avoid hoisting, you can run javascript in strict mode by using “use strict” on top of the code:
 
-"use strict";
-x = 23; // Gives an error since 'x' is not declared
-var x;
+// "use strict";
+// x = 23; // Gives an error since 'x' is not declared
+// var x;
 
 function a() {
-  const x = 10;
+  var x = 10;
   function b() {
-    console.log(x);
+    // console.log(x);
   }
-  b();
+  return b;
 }
-a();
+var z = a();
+// console.log(z);
+z();
+
+// Object creation
+
+const obj = new Object();
+obj.name = "Bhavesh";
+// console.log(obj) // { name: 'Bhavesh' }
+
+let school = {
+  name: "Mahajan High School",
+  location: "Dhule",
+  established: "1980",
+  displayInfo: function () {
+    console.log(
+      `${school.name} was established in ${school.established} at ${school.location}.`
+    );
+  },
+};
+
+school.displayInfo();
+
