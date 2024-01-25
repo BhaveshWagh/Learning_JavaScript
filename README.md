@@ -6,16 +6,15 @@
 
 ![Alt text](image-1.png)
 
-20 Asynchronous JavaScript Interview Questions and Answers
+# 20 Asynchronous JavaScript Interview Questions and Answers
+
 Prepare for the types of questions you are likely to be asked when interviewing for a position where Asynchronous JavaScript will be used.
 
 
-Interview Insights
-Published Aug 11, 2022
-Asynchronous JavaScript is a popular programming technique used to improve the performance of web applications. When applying for a position in web development, it is likely that employers will expect you to have a strong understanding and familiarity with asynchronous JavaScript. Understanding what asynchronous JavaScript questions you are most likely to encounter and how to properly answer them improves your chances of making a positive impression on the hiring manager. In this article, we discuss the most commonly asked asynchronous JavaScript questions and how you should respond.
+## Asynchronous JavaScript is a popular programming technique used to improve the performance of web applications. When applying for a position in web development, it is likely that employers will expect you to have a strong understanding and familiarity with asynchronous JavaScript. Understanding what asynchronous JavaScript questions you are most likely to encounter and how to properly answer them improves your chances of making a positive impression on the hiring manager. In this article, we discuss the most commonly asked asynchronous JavaScript questions and how you should respond.
 
-Asynchronous JavaScript Interview Questions and Answers
-Here are 20 commonly asked Asynchronous JavaScript interview questions and answers to prepare you for your interview:
+#### Asynchronous JavaScript Interview Questions and Answers
+#### Here are 20 commonly asked Asynchronous JavaScript interview questions and answers to prepare you for your interview:
 
 # 1. What do you understand by asynchronous programming?
 
