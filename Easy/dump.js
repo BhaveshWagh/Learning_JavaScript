@@ -1,12 +1,23 @@
-let sumOfEvenNo = 0;
-function sumOfEvenNumber(array) {
-  for (let i = 0; i < array.length; i++) {
-    if (array[i] % 2 === 0) {
-      sumOfEvenNo = array[i] + sumOfEvenNo;
-    }
-  }
-  return sumOfEvenNo;
+function main() {
+  first();
+  second();
+  third();
+  second();
+  console.log("Done with main.");
 }
-Array = [1, 2, 3, 4, 5, 6, 7, 8];
+function first() {
+  console.log("Inside first function.");
+}
+function second() {
+  console.log("Inside second function.");
+  third();
+  console.log("Done with second function.");
+}
+function third() {
+  console.log("Inside third fuction.");
+  first();
+  console.log("Called first function.");
+  console.log("Done with third function.");
+}
 
-console.log(sumOfEvenNumber(Array));
+main()
