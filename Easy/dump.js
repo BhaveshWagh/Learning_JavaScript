@@ -1,23 +1,8 @@
-function main() {
-  first();
-  second();
-  third();
-  second();
-  console.log("Done with main.");
-}
-function first() {
-  console.log("Inside first function.");
-}
-function second() {
-  console.log("Inside second function.");
-  third();
-  console.log("Done with second function.");
-}
-function third() {
-  console.log("Inside third fuction.");
-  first();
-  console.log("Called first function.");
-  console.log("Done with third function.");
-}
-
-main()
+let min  = 10
+let max = 17 - 16 / 4
+max += 6
+min = max - min 
+console.log(max * 2)
+console.log(max + min)
+console.log(max)
+console.log(min)
