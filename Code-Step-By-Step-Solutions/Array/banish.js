@@ -11,18 +11,24 @@ function banish(a1, a2) {
         if (!a2.includes(a1[i])) {
             // Shift the element to the left and update the currentIndex
             a1[currentIndex] = a1[i];
+            console.log(a1[currentIndex])
             currentIndex++;
+            console.log("curr",currentIndex)
+            
         }
     }
 
     // Fill the remaining elements with 0
+    console.log("outer curr",currentIndex)
+    console.log("lenght a1",a1.length)
     for (let i = currentIndex; i < a1.length; i++) {
         a1[i] = 0;
+        console.log(a1)
     }
 }
 
 // Example usage:
-let a1 = [42, 3, 9, 42, 42, 0, 42, 9, 42, 42, 17, 8, 2222, 4, 9, 0, 1];
+let a1 = [1, 42, 2222, 9, 5, 1];
 let a2 = [42, 2222, 9];
 banish(a1, a2);
 
