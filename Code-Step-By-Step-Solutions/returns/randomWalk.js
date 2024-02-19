@@ -21,6 +21,7 @@ function randomeWalk(num) {
     let steps = 0;
     let maxPosition = 0;
     while (Math.abs(position) < num) {
+    
       const randomStep = Math.random() < 0.5 ? 1 : -1;
       position += randomStep;
       maxPosition = Math.max(maxPosition, Math.abs(position));
@@ -29,6 +30,7 @@ function randomeWalk(num) {
     }
     console.log(`Finished after ${steps} step(s)`);
     console.log(`Max position = ${maxPosition}`);
+   
   }
   randomeWalk(5);
   
