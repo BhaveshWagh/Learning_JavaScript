@@ -26,15 +26,13 @@ let xc = {
 // console.log(y) // ['a', 'b']
 // console.log(y.length) // 2
 
-   
-// let x = '{ "b": 1, "c": 2 }'; 
+// let x = '{ "b": 1, "c": 2 }';
 // let y = JSON.parse(x); // { "b": 1, "c": 2 }
 // console.log(y)
 // console.log(typeof y); // object
 
-
 // let x = 0.1 + 0.2;
-// console.log(x) // 0.30000000000000004 floating point arithmatic : In js numbers are represeneted using the IEEE 754 standards for floating-point arithmatic, This means that not all decimal numbers are not exactly represented as binary Floating-Point numberd. 
+// console.log(x) // 0.30000000000000004 floating point arithmatic : In js numbers are represeneted using the IEEE 754 standards for floating-point arithmatic, This means that not all decimal numbers are not exactly represented as binary Floating-Point numberd.
 
 // let y = 0.3;
 // console.log(y)
@@ -44,34 +42,51 @@ let xc = {
 // let x = 1 > 2 > 3; implicitly convert 1 > 2 ==> false ==> 0 > 3 // false
 // console.log(x);  // false
 
-   
-// let x = false; 
-// let y = "0"; 
-// let z = 0; 
+// let x = false;
+// let y = "0";
+// let z = 0;
 
 // console.log(x == y); // true
 // console.log(x) // false
 // console.log(typeof y) // string
 // console.log(x == z); // true
 
-const a = 5
-const b = "2"
-let sum =  a + Number(b)
+// const a = 5;
+// const b = "2";
+// let sum = a + Number(b);
 // console.log(sum) // 52
-
 
 // console.log(Number("0x11")) // 17
 
-let x = []; 
+let x = [];
 // console.log(x) // []
-// console.log(Boolean(x)); // true 
+// console.log(Boolean(x)); // true
 
-
-let xa = Infinity; 
+let xa = Infinity;
 // console.log(typeof xa);  // number
 
-let xb = "5"; 
-let y = 2; 
+let xb = "5";
+let y = 2;
 
-// console.log(x + y); // 52 
+// console.log(x + y); // 52
 // console.log(x - y); // 3
+
+let ab = () => {
+  console.log(this);
+};
+
+// ab();
+
+function modifyArray(arr, callback) {
+    console.log("")
+    // do something to arr here
+    arr.push(100);
+    // then execute the callback function that was passed
+    callback();
+  }
+  
+  var arr = [1, 2, 3, 4, 5];
+  
+  modifyArray(arr, function() {
+    console.log("array has been modified", arr);
+  });
