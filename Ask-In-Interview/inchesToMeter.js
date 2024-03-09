@@ -1,3 +1,5 @@
+// ref for round up decimal numbers => https://www.altcademy.com/blog/how-to-round-numbers-in-javascript/#:~:text=The%20most%20common%20method%20to,it%20rounds%20the%20number%20down.
+
 // Write a program to convert inches to meters. one inch is 0.0254 meters. Answer should have 3 decimal places.
 
 function inchesToMeter(inch) {
