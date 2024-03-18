@@ -6,7 +6,7 @@ function SumofDigits(n) {
   while (n > 0) {
     let digit = n % 10;
     sum += digit;
-    n = Math.floor(n / 10);
+    n = parseInt(n / 10);
   }
   return sum;
 }
