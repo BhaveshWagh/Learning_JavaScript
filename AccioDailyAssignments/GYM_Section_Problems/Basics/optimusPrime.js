@@ -7,11 +7,11 @@ const rl = readline.createInterface({
 
 rl.on('line', (n) => {
   function isPrime(num) {
-    if (num <= 1) {
-      return false;
-    }
-    for (let i = 2; i <=  Math.sqrt(num); i++) {
-      if (num % i === 0) {
+    // if (num <= 1) {
+    //   return false;
+    // }
+    for (let i = 2; i < num; i++) {
+      if (num % i == 0) {
         //   console.log( Math.sqrt(num))
         return false;
       }
@@ -19,8 +19,8 @@ rl.on('line', (n) => {
     return true;
   }
 
-  function printPrimeNumbers(limit) {
-    for (let num = 2; num <= limit; num++) {
+  function printPrimeNumbers(n) {
+    for (let num = 2; num <= n; num++) {
       if (isPrime(num)) {
         console.log(num);
       }
