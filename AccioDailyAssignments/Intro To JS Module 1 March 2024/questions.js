@@ -1,76 +1,11 @@
-// Welcome To JavaScript
-// Link: https://course.acciojob.com/idle?question=c931523a-97aa-428c-a285-6fce277688a4
-console.log("Hello, World.");
-console.log("Hello, JavaScript.");
-
-// Variable Practice Question 1
-// Link: https://course.acciojob.com/idle?question=2180cf80-db05-4bb0-894d-d46967d5f251
-console.log("My num is 10");
-console.log("My num is", 10);
-let a = 10;
-console.log("My num is", a);
-
-// Variable Practice Question 2
-// Link: https://course.acciojob.com/idle?question=d7f01721-b073-4270-b4e3-d0629d5550d1
-// let a = 10.45;
-a = 20.55;
-console.log(a);
-
 // Circle Area-Perimeter
 // Link: https://course.acciojob.com/idle?question=f6f6fc43-493d-4c2e-8cfd-e07f3acad1e8
 rl.on("line", (radius) => {
-  //Write your code here
+  // Write your code here
   const PI = 3;
-  const area = PI * radius * radius;
-  const peri = 2 * PI * radius;
-  console.log(area);
-  console.log(peri);
+  console.log(PI * radius * radius);
+  console.log(2 * PI * radius);
 });
-
-// Celsius to Fahrenheit 2
-// Link: https://course.acciojob.com/idle?question=ea7be5f0-3781-49f5-a435-2183f1a0212a
-readline.question("", (C) => {
-  readline.close();
-  // Your code here
-  const F = C * 1.8 + 32;
-  console.log(F.toFixed(6));
-});
-
-// Mathematical Operations
-// Link: https://course.acciojob.com/idle?question=db7c833b-1a2d-451f-8357-c67567270e1d
-readline.question("", (input) => {
-  const [a, b] = input.split(" ").map(Number);
-  //Write code here and print output
-  console.log(a + b);
-  console.log(a - b);
-  console.log(a * b);
-  console.log(parseInt(a / b)); // only integral part required
-  console.log(a % b);
-  readline.close();
-});
-
-// Variable Practice Question 8
-// Link: https://course.acciojob.com/idle?question=ee04dfd0-ee0b-4512-ac07-46ba464cce2b
-const num = 8;
-let i = 1;
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-console.log(`${num} x ${i} = ${num * i++}`);
-
-// Variable Practice Question 5
-// Link: https://course.acciojob.com/idle?question=d2ab1301-e24c-47e3-abed-3421163ba5a8
-const v1 = 10.5;
-const v2 = 12.5;
-const v3 = 12.15;
-const avg = (v1 + v2 + v3) / 3;
-console.log(parseInt(avg));
 
 // Conditional Problem 1
 // Link: https://course.acciojob.com/idle?question=208cee53-a998-404f-a455-5307d71abacd
@@ -81,7 +16,6 @@ readline.question("", (n) => {
   } else {
     console.log("i am not young");
   }
-
   readline.close();
 });
 
@@ -94,45 +28,23 @@ rl.on("line", (input) => {
   } else {
     console.log("more important");
   }
+
   rl.close();
 });
 
-// Conditional Problem 3
-// Link: https://course.acciojob.com/idle?question=fa2265ac-6e4a-480f-b428-5056768d05f0
-readline.question("", (n) => {
-  // write code here
-  if (n > 1) {
-    console.log("You entered more");
-  } else {
-    console.log("You entered less");
-  }
-  readline.close();
-});
-
-// Conditional Problem 5
-// Link: https://course.acciojob.com/idle?question=38436ae2-5f85-4b5c-82ad-f5bd437c5e73
-rl.on("line", (n) => {
-  // Your code here
-  if (n % 6 == 0) {
-    console.log("Divisible");
-  } else {
-    console.log("Not divisible");
-  }
-});
-
 // Verify Cube
-// Link: https://course.acciojob.com/idle?question=ad87c003-dc8d-4ea3-b416-de0ed0c6788e
+// https://course.acciojob.com/idle?question=ad87c003-dc8d-4ea3-b416-de0ed0c6788e
 readline.question("", (n) => {
   let [a, b] = n.split(" ");
   a = Number(a);
   b = Number(b);
-  //Write your code here
-
+  // Write your code here
   const LHS = (a + b) ** 3;
   const RHS = a ** 3 + b ** 3 + 3 * a * a * b + 3 * a * b ** 2;
 
   console.log(LHS);
   console.log(RHS);
+
   if (LHS == RHS) {
     console.log("VERIFIED");
   } else {
@@ -142,26 +54,19 @@ readline.question("", (n) => {
   readline.close();
 });
 
-// Variable Practice Question 4
-// Link: https://course.acciojob.com/idle?question=68211524-103e-4140-af84-17773aa301d9
-// const a = 1042;
-const b = 7;
-const quo = parseInt(a / b);
-const rem = a % b;
-console.log(quo, rem);
-
 // Leap Year
 // Link: https://course.acciojob.com/idle?question=2c8693a8-885f-4c9b-9191-8faaf9ff9913
 readline.question("", (year) => {
   //Write your code here and print the required output
+
   const A = year % 400 == 0;
   const C = year % 4 == 0;
   const D = year % 100 != 0;
 
   if (A || (C && D)) {
-    console.log(1); // leap year
+    console.log(1);
   } else {
-    console.log(0); // not a leap year
+    console.log(0);
   }
 
   readline.close();
@@ -183,7 +88,7 @@ readline.question("", (ch) => {
   readline.close();
 });
 
-// Easy way
+// you use the characters directly instead of ASCII Values
 readline.question("", (ch) => {
   // Your code here
   if ("A" <= ch && ch <= "Z") {
@@ -204,64 +109,15 @@ rl.on("line", (input) => {
   // Write your code here
   if (h1 == h2) {
     console.log(true);
-  } else if (h1 < h2 && v1 <= v2) {
-    console.log(false);
-  } else if (h2 < h1 && v2 <= v1) {
+  } else if ((h1 < h2 && v1 <= v2) || (h2 < h1 && v2 <= v1)) {
     console.log(false);
   } else {
-    // we know overtake happens but not sure about same position
     if ((h2 - h1) % (v1 - v2) == 0) {
       console.log(true);
     } else {
       console.log(false);
     }
   }
-});
-
-// Quadrants
-// Link: https://course.acciojob.com/idle?question=c878e8a7-f476-4303-a251-5e878a60a736
-rl.on("line", (x) => {
-  rl.on("line", (y) => {
-    //write code here
-    // blue -> +ve and red -> -ve
-    // blue, blue -> chamber 1
-    // red, blue -> chamber 2
-    // red, red -> chamber 3
-    // blue, red -> chamber 4
-    if (x > 0 && y > 0) {
-      console.log(1);
-    } else if (x < 0 && y > 0) {
-      console.log(2);
-    } else if (x < 0 && y < 0) {
-      console.log(3);
-    } else {
-      console.log(4);
-    }
-
-    rl.close();
-  });
-});
-
-// Number of Days
-// Link: https://course.acciojob.com/idle?question=00d33e88-7041-4dae-afe7-08671b57034a
-readline.question("", (month) => {
-  //Write your code here
-  if (
-    month == 1 ||
-    month == 3 ||
-    month == 5 ||
-    month == 7 ||
-    month == 8 ||
-    month == 10 ||
-    month == 12
-  ) {
-    console.log(31);
-  } else if (month == 2) {
-    console.log(28);
-  } else {
-    console.log(30);
-  }
-  readline.close();
 });
 
 // Sum of Natural Numbers
@@ -271,15 +127,15 @@ rl.on("line", (N) => {
   N = Number(N);
   let sum = 0;
   for (let num = 1; num <= N; num++) {
-    sum += num; // sum = sum + num;
+    // sum = sum + num;
+    sum += num;
   }
-
   console.log(sum);
 
   rl.close();
 });
 
-// efficient way
+// Efficient way using formula
 rl.on("line", (N) => {
   // write your code here
   N = Number(N);
@@ -295,6 +151,7 @@ readline.question("", (n) => {
   n = parseInt(n);
   // Write your code here
   let sum = 0;
+
   for (let num = 2; num <= n; num += 2) {
     sum += num;
   }
@@ -304,16 +161,59 @@ readline.question("", (n) => {
   readline.close();
 });
 
-// Efficient
+// Efficient way using formula
 readline.question("", (n) => {
   n = parseInt(n);
   // Write your code here
+
+  // when n is odd, make it even
   if (n % 2 == 1) {
     n = n - 1;
   }
-
   const sum = (n * (n + 2)) / 4;
+
   console.log(sum);
+
+  readline.close();
+});
+
+// Check Prime
+// Link: https://course.acciojob.com/idle?question=03d33e77-b47d-43ee-a075-e46ff509b0a6
+readline.question("", (n) => {
+  // your code here
+  n = Number(n);
+
+  // I did not find any number which divides n
+  let isFound = false;
+  for (let num = 2; num <= n - 1; num++) {
+    if (n % num == 0) {
+      // I found a number which divides n
+      isFound = true;
+      break;
+    }
+  }
+
+  if (isFound == true) {
+    console.log(`${n} is not a prime number`);
+  } else {
+    console.log(`${n} is a prime number`);
+  }
+
+  readline.close();
+});
+
+// Please do not make this mistake
+readline.question("", (n) => {
+  // your code here
+  n = Number(n);
+
+  for (let num = 2; num <= n - 1; num++) {
+    if (n % num == 0) {
+      console.log(`${n} is not a prime number`);
+    } else {
+      console.log(`${n} is a prime number`);
+    }
+  }
 
   readline.close();
 });
@@ -327,91 +227,97 @@ rl.on("line", (sides) => {
   c = parseInt(c);
 
   // Write your code here
-  const largest = Math.max(a, b, c);
-  const X = 2 * largest ** 2;
-  const Y = a ** 2 + b ** 2 + c ** 2;
+  /*
+  let largest;
+  if (a >= b && a >= c) {
+    largest = a;
+  }
+  if (b >= a && b >= c) {
+    largest = b;
+  }
+  if (c >= a && c >= b) {
+    largest = c;
+  }
+  */
 
-  if (X < Y) {
-    console.log(1);
-  } else if (X == Y) {
-    console.log(2);
+  const largest = Math.max(a, b, c);
+  const sum = a ** 2 + b ** 2 + c ** 2;
+  const twice = 2 * largest ** 2;
+  if (twice < sum) {
+    console.log(1); // acute
+  } else if (twice > sum) {
+    console.log(3); // obtuse
   } else {
-    console.log(3);
+    console.log(2); // right-angle
   }
 
   rl.close();
 });
 
-// Check Prime
-// Link: https://course.acciojob.com/idle?question=03d33e77-b47d-43ee-a075-e46ff509b0a6
-readline.question("", (N) => {
-  N = Number(N);
-
-  let isFound = false;
-  for (let num = 2; num <= N - 1; num++) {
-    if (N % num == 0) {
-      isFound = true;
-      break;
-    }
-  }
-
-  // Take the decision after the entire process using flag variable
-  if (isFound == true) {
-    console.log(`${N} is not a prime number`);
-  } else {
-    console.log(`${N} is a prime number`);
-  }
-
-  readline.close();
-});
-
 // Sum of digits
 // Link: https://course.acciojob.com/idle?question=16ae2277-0d38-4eba-9a84-d4326ea2da2e
-function SumofDigits(num) {
+function SumofDigits(n) {
   let sum = 0;
-  while (num != 0) {
-    // 1. extract last digit
-    const lastDigit = num % 10;
-    // 2. remove last digit
-    num = parseInt(num / 10);
 
-    // 3. calculate sum
-    sum += lastDigit;
+  while (n > 0) {
+    // 1. extract last digit
+    const digit = n % 10;
+
+    // 2. add the digit to sum
+    sum = sum + digit;
+
+    // 3. remove last digit
+    n = parseInt(n / 10);
   }
 
-  return sum; // console.log(sum);
+  return sum; // understand it as console.log(sum)
 }
 
 // Reverse digits of a Number
 // Link: https://course.acciojob.com/idle?question=817d51d8-e009-4322-8e51-257b76455a4c
-readline.question("", (num) => {
-  //Write your code here
+readline.question("", (n) => {
+  // Write your code here
+  n = Number(n);
   let rev = 0;
-  num = Number(num);
-  while (num != 0) {
+  while (n > 0) {
     // 1. extract last digit
-    const lastDigit = num % 10;
-    // 2. remove last digit
-    num = parseInt(num / 10);
+    const digit = n % 10;
 
-    // 3. calculate rev
-    rev = rev * 10 + lastDigit;
+    // 2. Apply the reverse formula
+    rev = rev * 10 + digit;
+
+    // 3. remove last digit
+    n = parseInt(n / 10);
   }
 
   console.log(rev);
-
   readline.close();
+});
+
+// HCF of two Numbers
+// Link: https://course.acciojob.com/idle?question=81da7d29-0653-423e-a44a-f96fc14eb8fc
+rl.on("line", (input) => {
+  const [a, b] = input.split(" ").map(Number);
+  // your code here
+
+  for (let num = Math.min(a, b); num > 0; num--) {
+    if (a % num == 0 && b % num == 0) {
+      console.log(num);
+      break;
+    }
+  }
 });
 
 // N Stars
 // Link: https://course.acciojob.com/idle?question=24eb1955-7e70-45d9-8ce8-f9d9a8268aca
 readline.question("", (n) => {
   // Write your code here
-  n = Number(n);
   for (let i = 0; i < n; i++) {
     process.stdout.write("* ");
   }
+
   console.log();
+
   for (let i = 0; i < n; i++) {
     console.log("*");
   }
@@ -419,17 +325,29 @@ readline.question("", (n) => {
   readline.close();
 });
 
+// Variable practice 8
+// Link: https://course.acciojob.com/idle?question=ee04dfd0-ee0b-4512-ac07-46ba464cce2b
+for (let i = 1; i <= 10; i++) {
+  console.log(`8 x ${i} = ${8 * i}`);
+}
+
+let i = 1;
+while (i <= 10) {
+  console.log(`8 x ${i} = ${8 * i}`);
+  i++;
+}
+
 // Right Angle Triangle Stars
 // Link: https://course.acciojob.com/idle?question=a148f7c8-e47f-45a9-bd72-8808f823ead1
 readline.question("", (n) => {
   //Write your code here
-  n = Number(n);
   for (let r = 0; r < n; r++) {
     for (let c = 0; c < r + 1; c++) {
       process.stdout.write("*");
     }
     console.log();
   }
+
   readline.close();
 });
 
@@ -440,12 +358,10 @@ readline.question("", (n) => {
   //write code here
 
   for (let r = 0; r < n; r++) {
-    const hashes = r + 1;
-    const spaces = n - hashes;
-    for (let sp = 0; sp < spaces; sp++) {
+    for (let sp = 0; sp < n - r - 1; sp++) {
       process.stdout.write(" ");
     }
-    for (let ha = 0; ha < hashes; ha++) {
+    for (let ha = 0; ha < r + 1; ha++) {
       process.stdout.write("#");
     }
     console.log();
@@ -461,12 +377,10 @@ readline.question("", (n) => {
   //write code here
 
   for (let r = 0; r < n; r++) {
-    const starSpaces = r + 1;
-    const spaces = n - starSpaces;
-    for (let sp = 0; sp < spaces; sp++) {
+    for (let sp = 0; sp < n - r - 1; sp++) {
       process.stdout.write(" ");
     }
-    for (let starsp = 0; starsp < starSpaces; starsp++) {
+    for (let starsp = 0; starsp < r + 1; starsp++) {
       process.stdout.write("* ");
     }
     console.log();
@@ -476,14 +390,14 @@ readline.question("", (n) => {
 });
 
 // Print Number Pattern 2
-// Link: https://course.acciojob.com/idle?question=8e5ac095-1d55-41cc-aaa7-75f2c24f953a
+// https://course.acciojob.com/idle?question=8e5ac095-1d55-41cc-aaa7-75f2c24f953a
 rl.on("line", (n) => {
   // your code here
   for (let r = 0; r < n; r++) {
-    let num = r + 1;
+    let startNum = r + 1;
     for (let c = 0; c < r + 1; c++) {
-      process.stdout.write(String(num));
-      num--;
+      process.stdout.write(String(startNum));
+      startNum--;
     }
     console.log();
   }
@@ -502,6 +416,22 @@ readline.question("", (n) => {
     }
     console.log();
   }
+
+  readline.close();
+});
+
+// using global variable
+readline.question("", (n) => {
+  // Write your code here
+  let ascii = 65;
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < r + 1; c++) {
+      process.stdout.write(String.fromCharCode(ascii));
+    }
+    ascii++;
+    console.log();
+  }
+
   readline.close();
 });
 
@@ -510,26 +440,34 @@ readline.question("", (n) => {
 readline.question("", (line) => {
   let [m, n] = line.split(" ").map(Number);
 
+  // Not required because m <= n as per given constraints
+  // But Just to understand we have written this
+  if (m > n) {
+    let temp = m;
+    m = n;
+    n = temp;
+  }
+
   // Write the code here
   for (let num = m; num <= n; num++) {
-    // 1. Find no.of digits
-    let cnt = 0;
+    // 1. count no.of digits
     let temp = num;
-    while (temp != 0) {
+    let cnt = 0;
+    while (temp > 0) {
       temp = parseInt(temp / 10);
       cnt++;
     }
 
-    // 2. Find sum of (digit) ^ numDigits
+    // 2. sum of digit to the power no.of.digits
+    temp = num; // reinitialize temp because it became 0
     let sum = 0;
-    temp = num;
-    while (temp != 0) {
-      const lastDigit = temp % 10;
+    while (temp > 0) {
+      const digit = temp % 10;
+      sum += digit ** cnt;
       temp = parseInt(temp / 10);
-      sum += lastDigit ** cnt;
     }
 
-    // 3. check armstrong
+    // 3. check for armstrong
     if (sum == num) {
       console.log(num);
     }
@@ -537,45 +475,6 @@ readline.question("", (line) => {
 
   readline.close();
 });
-
-// HCF of two Numbers
-// Link: https://course.acciojob.com/idle?question=81da7d29-0653-423e-a44a-f96fc14eb8fc
-rl.on("line", (input) => {
-  const [a, b] = input.split(" ").map(Number);
-  // your code here
-  for (let num = Math.min(a, b); num > 0; num--) {
-    if (a % num == 0 && b % num == 0) {
-      console.log(num);
-      break;
-    }
-  }
-});
-
-// Function Problem 1
-// Link: https://course.acciojob.com/idle?question=922be2a0-a552-456c-9f9e-5c41b514d200
-function fun() {
-  // write code here
-  console.log("I am another function");
-}
-
-fun();
-
-// Function Problem 2
-// Link: https://course.acciojob.com/idle?question=b27b4039-2b8b-4834-9a6b-f8622057be7a
-function fun(n, m) {
-  // write code here
-  console.log(n + m);
-}
-
-// Function Problem 3
-// Link: https://course.acciojob.com/idle?question=922be2a0-a552-456c-9f9e-5c41b514d200
-function fun(n) {
-  // write code here
-  for (let i = 0; i < 5; i++) {
-    n++;
-  }
-  return n;
-}
 
 // Calculate nCr
 // Link: https://course.acciojob.com/idle?question=869a6e7b-e104-45df-b2b0-28a803fecc43
@@ -589,12 +488,12 @@ function factorial(num) {
 
 function calculate_nCr(n, r) {
   // write code here
-  const nFact = factorial(n);
-  let rFact = factorial(r);
-  let nrFact = factorial(n - r);
+  const n_fact = factorial(n);
+  const r_fact = factorial(r);
+  const n_r_fact = factorial(n - r);
 
-  const nCr = nFact / (rFact * nrFact);
-  return nCr;
+  const ans = n_fact / (r_fact * n_r_fact);
+  return ans;
 }
 
 // Frequency of digit
@@ -602,12 +501,12 @@ function calculate_nCr(n, r) {
 function frequencyOfDigit(n, d) {
   // Write your code here
   let cnt = 0;
-  while (n != 0) {
-    const lastDigit = n % 10;
-    n = parseInt(n / 10);
-    if (lastDigit == d) {
+  while (n > 0) {
+    const digit = n % 10;
+    if (digit == d) {
       cnt++;
     }
+    n = parseInt(n / 10);
   }
 
   return cnt;
@@ -618,86 +517,71 @@ function frequencyOfDigit(n, d) {
 function determineSecondLastDigit(n) {
   // write code here
   n = parseInt(n / 10);
-  const secondLast = n % 10;
-  return secondLast == 0;
-}
+  const digit = n % 10;
 
-// Binary To Decimal
-// Link: https://course.acciojob.com/idle?question=f89c75c7-084a-4472-b293-43736a2f34ab
-function binToDec(s) {
-  //Write code here
-  return parseInt(s, 2);
+  /*
+  if (digit == 0) {
+    return true;
+  }
+  return false;
+  */
+
+  return digit == 0;
 }
 
 // Diamond Pattern
 // Link: https://course.acciojob.com/idle?question=ba892dad-d841-4f88-9d20-8f7c633f8b6b
-function pyramid(rows) {
-  for (let r = 0; r < rows - 1; r++) {
-    const spaces = rows - r - 1;
-    const stars = 2 * r + 1;
+function printDiamond(n) {
+  // print upper star pyramid
+  const upperRows = parseInt(n / 2) + 1;
+  for (let r = 0; r < upperRows; r++) {
+    const spaces = 2 * (upperRows - r - 1);
     for (let sp = 0; sp < spaces; sp++) {
-      process.stdout.write("  ");
+      process.stdout.write(" ");
     }
-    for (let st = 0; st < stars; st++) {
+    for (let starsp = 0; starsp < 2 * r + 1; starsp++) {
       process.stdout.write("* ");
     }
+
+    console.log();
+  }
+
+  // print lower star pyramid
+  const lowerRows = n - upperRows;
+  for (let r = 0; r < lowerRows; r++) {
+    for (let sp = 0; sp < 2 * (r + 1); sp++) {
+      process.stdout.write(" ");
+    }
+    const starSpaces = 2 * (lowerRows - r) - 1;
+    for (let starsp = 0; starsp < starSpaces; starsp++) {
+      process.stdout.write("* ");
+    }
+
     console.log();
   }
 }
 
-function invPyramid(rows) {
-  for (let r = rows - 1; r >= 0; r--) {
-    const spaces = rows - r - 1;
-    const stars = 2 * r + 1;
-    for (let sp = 0; sp < spaces; sp++) {
-      process.stdout.write("  ");
+// Optimus Prime
+// Link: https://course.acciojob.com/idle?question=c77a4030-9552-4f23-b348-f2fdc22c330a
+function isPrime(num) {
+  let isFound = false;
+  for (let i = 2; i < num; i++) {
+    if (num % i == 0) {
+      isFound = true;
+      break;
     }
-    for (let st = 0; st < stars; st++) {
-      process.stdout.write("* ");
-    }
-    console.log();
   }
+
+  return !isFound;
 }
 
-rl.on("line", (line) => {
-  input.push(line);
-}).on("close", () => {
-  let t = Number(input[0]);
-  let index = 1;
-
-  while (t > 0) {
-    let n = Number(input[index]);
-    // Write your code here
-    pyramid(parseInt(n / 2) + 1);
-    invPyramid(parseInt(n / 2) + 1);
-
-    t--;
-    index++;
+rl.on("line", (n) => {
+  // Your code here
+  for (let i = 2; i <= n; i++) {
+    if (isPrime(i)) {
+      console.log(i);
+    }
   }
-});
-
-// Palindrome Checker
-// Link: https://course.acciojob.com/idle?question=340d0f67-3062-487f-ac95-adcb744c410c
-function reverse(num) {
-  let rev = 0;
-  while (num != 0) {
-    const lastDigit = num % 10;
-    num = parseInt(num / 10);
-    rev = rev * 10 + lastDigit;
-  }
-
-  return rev;
-}
-
-readline.question("", (n) => {
-  //Write your code here and print the required output
-  if (reverse(n) == n) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
-
-  readline.close();
 });
 
 // Print Continuous Character Pattern
@@ -705,15 +589,979 @@ readline.question("", (n) => {
 readline.question("", (n) => {
   readline.close();
   // write code here
-  for (let r = 0; r < n; r++) {
-    let ascii = 65 + r;
-    for (let c = 0; c < r + 1; c++) {
+
+  for (let row = 0; row < n; row++) {
+    let ascii = 65 + (row % 26);
+    for (let col = 0; col < row + 1; col++) {
+      if (ascii == 91) {
+        ascii = 65;
+      }
       process.stdout.write(String.fromCharCode(ascii));
       ascii++;
-      if (ascii == 91) {
-        ascii = 65; // reset back to A
-      }
     }
     console.log();
   }
 });
+
+// Binary To Decimal
+// Link: https://course.acciojob.com/idle?question=f89c75c7-084a-4472-b293-43736a2f34ab
+// This fails if the length of string is > 16
+// because max value of number is aprrox 10^15 or 10^16
+function binToDec(s) {
+  //Write code here
+  num = Number(s);
+  let sum = 0;
+  let power = 1;
+  while (num > 0) {
+    const digit = num % 10;
+    sum += digit * power;
+    num = parseInt(num / 10);
+    power = power * 2;
+  }
+
+  return sum;
+}
+
+// we can use inbuilt JS functions
+// or you can iterate on strings (this is for later topics)
+function binToDec(s) {
+  //Write code here
+  return parseInt(s, 2);
+}
+
+// Array Problem 1
+// Link: https://course.acciojob.com/idle?question=203c6532-1438-4d70-8854-94f35fe1b0ba
+function ArrayProblem1(n, arr) {
+  // Write code here
+  let maxEle = -Infinity;
+  let maxIdx = -1;
+  for (let i = 0; i < n; i++) {
+    // curr element > the max value you have seen until now
+    if (arr[i] > maxEle) {
+      maxEle = arr[i];
+      maxIdx = i;
+    }
+  }
+
+  return maxIdx;
+}
+
+// Array Operations
+// Link: https://course.acciojob.com/idle?question=c2985a2b-5ee0-4569-a77b-7459b1efd8d7
+function arrayOperations(arr, n) {
+  // Write your code here
+  let maxEle = -Infinity;
+  let sum = 0;
+  for (let i = 0; i < n; i++) {
+    maxEle = Math.max(maxEle, arr[i]);
+    /*
+    if (arr[i] > maxEle) {
+      maxEle = arr[i];
+    }
+    */
+
+    sum += arr[i];
+  }
+
+  const average = Math.floor(sum / n);
+  console.log(sum, average, maxEle);
+}
+
+// Array Problem 5
+// Link: https://course.acciojob.com/idle?question=f98feeb1-40eb-4b6f-a600-067714166864
+function ArrayProblem(arr, k) {
+  // Write code here
+  const n = arr.length;
+  let cnt = 0;
+  for (let i = 0; i < n - 1; i++) {
+    const sum = arr[i] + arr[i + 1];
+    if (sum == k) {
+      cnt++;
+    }
+  }
+
+  return cnt;
+}
+
+// Maximum difference between two elements in an Array
+// Link: https://course.acciojob.com/idle?question=b5a0f4ca-7b5e-4fee-9487-3ca52a582741
+function ArrayProblem(arr) {
+  // Write your code here
+  let maxDiff = -Infinity;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      const diff = Math.abs(arr[i] - arr[j]);
+      maxDiff = Math.max(maxDiff, diff);
+      /*
+      if (diff > maxDiff) {
+        maxDiff = diff;
+      }
+      */
+    }
+  }
+
+  console.log(maxDiff);
+}
+
+// Efficient way
+function ArrayProblem(arr) {
+  // Write your code here
+  let maxEle = -Infinity;
+  let minEle = Infinity;
+  for (let i = 0; i < n; i++) {
+    maxEle = Math.max(arr[i], maxEle);
+    minEle = Math.min(arr[i], minEle);
+  }
+
+  console.log(maxEle - minEle);
+}
+
+// 2nd Largest from array
+// Link: https://course.acciojob.com/idle?question=d5b5b101-0636-4654-bd4d-bfecce8e5d00
+
+function SecondLargest(arr, n) {
+  // Write code here
+  let firstMax = -Infinity;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] > firstMax) {
+      firstMax = arr[i];
+    }
+  }
+
+  let secondMax = -Infinity;
+  for (let i = 0; i < n; i++) {
+    /*
+    // You can also write like this instead of continue
+    if (arr[i] != firstMax && arr[i] > secondMax) {
+      secondMax = arr[i];
+    }
+    */
+
+    if (arr[i] == firstMax) {
+      continue;
+    }
+
+    // you will come here only when arr[i] != firstMax due to continue
+    if (arr[i] > secondMax) {
+      secondMax = arr[i];
+    }
+  }
+
+  console.log(secondMax);
+}
+
+// Reverse an array
+// Link: https://course.acciojob.com/idle?question=944dba4b-f895-44af-8ec1-7445343e5713
+function reverseArray(arr, start, end) {
+  //Write code here
+  while (start <= end) {
+    let temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+
+    start++;
+    end--;
+  }
+}
+
+// Sum of Array Except Self
+// Link: https://course.acciojob.com/idle?question=3cf411ff-c59c-4202-ae5c-6b0292d31764
+function sumArrayExceptSelf(nums, n) {
+  // Write your code here
+  let total = 0;
+  for (let i = 0; i < n; i++) {
+    total += nums[i];
+  }
+
+  const ans = [];
+  for (let i = 0; i < n; i++) {
+    ans.push(total - nums[i]);
+  }
+
+  return ans;
+}
+
+// Array Problem 6
+// Link: https://course.acciojob.com/idle?question=02fe1fa2-2fba-4a5f-aca0-baac93f166a3
+function ArrayProblem6(n, arr) {
+  // Write code here
+  let minDist = Infinity;
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      if (arr[i] > 0 && arr[j] > 0 && arr[i] % 2 == 0 && arr[j] % 2 == 0) {
+        const dist = Math.abs(i - j);
+        minDist = Math.min(minDist, dist);
+      }
+    }
+  }
+
+  if (minDist == Infinity) {
+    // This will happen only when there are 0 or 1 even number
+    return -1;
+  }
+  return minDist;
+}
+
+// Efficient way - HW
+
+// Array Adding
+// Link: https://course.acciojob.com/idle?question=a426a64f-8962-4a98-9433-3200d900ad67
+function calSum(a, b, n, m) {
+  // Write your code here
+  let i = n - 1;
+  let j = m - 1;
+  let carry = 0;
+  const res = [];
+
+  while (i >= 0 || j >= 0) {
+    let sum = 0;
+    if (i >= 0) sum += a[i];
+    if (j >= 0) sum += b[j];
+    sum += carry;
+    res.push(sum % 10);
+    carry = parseInt(sum / 10);
+    i--;
+    j--;
+  }
+
+  /*
+  while (i >= 0 && j >= 0) {
+    const sum = a[i] + b[j] + carry;
+    res.push(sum % 10);
+    carry = parseInt(sum / 10);
+    i--;
+    j--;
+  }
+
+  while (i >= 0) {
+    const sum = a[i] + carry;
+    res.push(sum % 10);
+    carry = parseInt(sum / 10);
+    i--;
+  }
+
+  while (j >= 0) {
+    const sum = b[j] + carry;
+    res.push(sum % 10);
+    carry = parseInt(sum / 10);
+    j--;
+  }
+  */
+
+  // carry cannot be greater than 1
+  // because max possible sum = 9 + 9 + 1 = 19
+  if (carry == 1) {
+    res.push(1);
+  }
+
+  res.reverse();
+  return res;
+}
+
+// Buildings
+// Link: https://course.acciojob.com/idle?question=a7bdae50-cbdd-4048-a3c3-be52504b9580
+function countVisibleRoofs(heights) {
+  // Write your code here
+  const n = heights.length;
+  let cnt = 0;
+
+  for (let i = 0; i < n; i++) {
+    let leftMax = -Infinity;
+    for (let j = 0; j < i; j++) {
+      leftMax = Math.max(leftMax, heights[j]);
+    }
+
+    if (heights[i] >= leftMax) {
+      cnt++;
+    }
+  }
+
+  return cnt;
+}
+
+// Efficient way
+function countVisibleRoofs(heights) {
+  // Write your code here
+  const n = heights.length;
+  let cnt = 0;
+  let runningMax = -Infinity;
+  for (let i = 0; i < n; i++) {
+    if (heights[i] >= runningMax) {
+      cnt++;
+    }
+    runningMax = Math.max(heights[i], runningMax);
+  }
+
+  return cnt;
+}
+
+// Rotate array
+// Link: https://course.acciojob.com/idle?question=444d4b46-efef-467a-8833-e3fede7d22f0
+function rotateArray(arr, n, k) {
+  // Write code here
+  for (let time = 0; time < k; time++) {
+    const firstEle = arr[0];
+    for (let i = 0; i < n - 1; i++) {
+      arr[i] = arr[i + 1];
+    }
+    arr[n - 1] = firstEle;
+  }
+
+  for (let i = 0; i < n; i++) {
+    process.stdout.write(arr[i] + " ");
+  }
+}
+
+function reverseArr(arr, start, end) {
+  while (start <= end) {
+    const temp = arr[start];
+    arr[start] = arr[end];
+    arr[end] = temp;
+    start++;
+    end--;
+  }
+}
+
+function rotateArray(arr, n, k) {
+  // Write code here
+  k = k % n;
+  reverseArr(arr, 0, n - 1);
+  reverseArr(arr, 0, n - k - 1);
+  reverseArr(arr, n - k, n - 1);
+
+  for (let i = 0; i < n; i++) {
+    process.stdout.write(arr[i] + " ");
+  }
+}
+
+// Subarray Sum Zero
+// Link: https://course.acciojob.com/idle?question=7f096e64-5c0d-4333-b324-02e6ac91a3d7
+function zeroSubarray(arr) {
+  //Write your code here
+  const n = arr.length;
+  let isFound = false;
+  for (let start = 0; start < n; start++) {
+    let sum = 0;
+    for (let end = start; end < n; end++) {
+      sum += arr[end];
+      if (sum == 0) {
+        console.log(`Subarray found from Index ${start} to ${end}`);
+        isFound = true;
+      }
+    }
+  }
+
+  if (isFound == false) {
+    console.log(-1);
+  }
+}
+
+// Subarray sum divisible by k
+// Link: https://course.acciojob.com/idle?question=fd54a321-f9b7-4772-9d78-69ffe5a0ccb8
+function subarrayDivisbleByK(arr, n, k) {
+  // your code here
+  const n = arr.length;
+  let cnt = 0;
+  for (let start = 0; start < n; start++) {
+    let sum = 0;
+    for (let end = start; end < n; end++) {
+      sum += arr[end];
+      if (sum % k == 0) {
+        cnt++;
+      }
+    }
+  }
+
+  return cnt;
+}
+
+// Find Split Point
+// Link: https://course.acciojob.com/idle?question=c0af5738-5a1c-4a05-a68c-789f38a620d1
+function findSplit(arr, N) {
+  let total = 0;
+  for (let i = 0; i < N; i++) {
+    total += arr[i];
+  }
+
+  let lsum = 0;
+  for (let split = 0; split < N - 1; split++) {
+    lsum += arr[split];
+    const rsum = total - lsum;
+    if (lsum == rsum) {
+      return split;
+    }
+  }
+
+  // you will reach here only when no split possible
+  return -1;
+}
+
+function splitArray(N, arr) {
+  // Write your code here
+  const split = findSplit(arr, N);
+  if (split == -1) {
+    console.log("Not Possible");
+  } else {
+    for (let i = 0; i <= split; i++) {
+      process.stdout.write(arr[i] + " ");
+    }
+    console.log();
+    for (let i = split + 1; i < N; i++) {
+      process.stdout.write(arr[i] + " ");
+    }
+  }
+}
+
+// Find Geometric Triplets
+// Link: https://course.acciojob.com/idle?question=cefcef33-7a3f-46ea-99f4-694dd5297224
+function findGeometricTriplets(arr, n) {
+  // Write code here
+  for (let i = 0; i < n; i++) {
+    for (let j = i + 1; j < n; j++) {
+      for (let k = j + 1; k < n; k++) {
+        // b^2 = ac
+        if (arr[j] ** 2 == arr[i] * arr[k]) {
+          console.log(arr[i], arr[j], arr[k]);
+        }
+      }
+    }
+  }
+}
+
+// Array Subtracting
+// Link: https://course.acciojob.com/idle?question=4ed416d3-76b0-41a6-a956-3201e2fb6079
+function shouldIConvert(a, n, b, m) {
+  if (n < m) {
+    return true;
+  }
+  if (n > m) {
+    return false;
+  }
+
+  // equal length case
+  for (let i = 0; i < n; i++) {
+    // first non equal element
+    if (a[i] != b[i]) {
+      if (a[i] < b[i]) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  }
+
+  return false;
+}
+
+function findSubtraction(a, n, b, m) {
+  //Write your code here
+  const conversion = shouldIConvert(a, n, b, m);
+  if (conversion == true) {
+    let temp = a;
+    a = b;
+    b = temp;
+    temp = n;
+    n = m;
+    m = temp;
+  }
+
+  let i = n - 1;
+  let j = m - 1;
+  let carry = 0;
+  let res = [];
+  while (i >= 0 || j >= 0) {
+    let diff = a[i] + carry;
+    if (j >= 0) diff -= b[j];
+
+    if (diff < 0) {
+      carry = -1;
+      diff += 10;
+    } else {
+      carry = 0;
+    }
+
+    res.push(diff);
+    i--;
+    j--;
+  }
+
+  res.reverse();
+  if (conversion == true) {
+    res[0] *= -1;
+  }
+
+  return res;
+}
+
+// Print 2D Array
+// Link: https://course.acciojob.com/idle?question=9ea8dbd6-3b71-45c9-a8c3-1bfb7608ad13
+function printElements(arr, n, m) {
+  //Write your code here
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < m; c++) {
+      process.stdout.write(arr[r][c] + " ");
+    }
+    console.log();
+  }
+}
+
+// Print Matrix Column Wise
+// Link: https://course.acciojob.com/idle?question=31900452-fb2e-45cd-93b0-fb4d6afbfac0
+function printMatrixColumnwise(mat, n, m) {
+  // Write code here and print output
+  for (let c = 0; c < m; c++) {
+    for (let r = 0; r < n; r++) {
+      process.stdout.write(mat[r][c] + " ");
+    }
+  }
+}
+
+// Alternate Manner Matrix Traversal
+// Link: https://course.acciojob.com/idle?question=191ba184-3c72-468a-83fe-5100d558f7eb
+function printElementsAlternately(mat, m, n) {
+  //Write code here and print output
+  for (let r = 0; r < m; r++) {
+    if (r % 2 == 0) {
+      for (let c = 0; c < n; c++) {
+        process.stdout.write(mat[r][c] + " ");
+      }
+    } else {
+      for (let c = n - 1; c >= 0; c--) {
+        process.stdout.write(mat[r][c] + " ");
+      }
+    }
+  }
+}
+
+// Transpose of Matrix
+// Link: https://course.acciojob.com/idle?question=57e7562d-b233-42ca-89f6-c10ad5cdf579
+function matrixTranspose(mat, n) {
+  //Write your code here
+  for (let r = 1; r < n; r++) {
+    for (let c = 0; c < r; c++) {
+      const temp = mat[r][c];
+      mat[r][c] = mat[c][r];
+      mat[c][r] = temp;
+    }
+  }
+
+  return mat;
+}
+
+// Find sum of all the elements of 2-D array
+// Link: https://course.acciojob.com/idle?question=6f64e510-b7fd-44b7-9d5f-923a0995bde9
+function findSum(arr, n, m) {
+  //Write your code here
+  let sum = 0;
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < m; c++) {
+      sum += arr[r][c];
+    }
+  }
+  return sum;
+}
+
+// Largest Number At Least Twice of Others
+// Link: https://course.acciojob.com/idle?question=cb7fb253-f3f5-47ad-a261-53b8d4fdd033
+function LargestElement(nums, n) {
+  // First calculate max ele and max idx
+  let maxVal = -Infinity;
+  let maxIdx = -1;
+  for (let i = 0; i < n; i++) {
+    if (nums[i] > maxVal) {
+      maxVal = nums[i];
+      maxIdx = i;
+    }
+  }
+
+  // check whehter max element is atleast twice of all other elements
+  for (let i = 0; i < n; i++) {
+    if (maxIdx != i && 2 * nums[i] > maxVal) {
+      return -1;
+    }
+  }
+
+  return maxIdx;
+}
+
+// Matrix Multiplication
+// Link: https://course.acciojob.com/idle?question=da3dfaa3-541f-4b9b-a202-30b4fb01a835
+function printMultiplication(a, b, n) {
+  // Write your code here
+  const rows1 = n;
+  const cols1 = n;
+  const rows2 = n;
+  const cols2 = n;
+
+  // 1. create a empty resultant matrix
+  // rows1 x cols2
+  const res = [];
+  for (let r = 0; r < rows1; r++) {
+    const smallArr = [];
+    for (let c = 0; c < cols2; c++) {
+      smallArr.push(0);
+    }
+    res.push(smallArr);
+  }
+
+  // 2. multiply the matrices
+  // res[r][c] = Sum (a[r][k] * b[k][c]), k = 0 to cols1 - 1
+  for (let r = 0; r < rows1; r++) {
+    for (let c = 0; c < cols2; c++) {
+      for (let k = 0; k < cols1; k++) {
+        res[r][c] += a[r][k] * b[k][c];
+      }
+    }
+  }
+
+  for (let r = 0; r < rows1; r++) {
+    for (let c = 0; c < cols2; c++) {
+      process.stdout.write(res[r][c] + " ");
+    }
+    console.log();
+  }
+}
+
+// Alt Matrix Sum
+// Link: https://course.acciojob.com/idle?question=04a591ba-305a-4bd7-a4b2-9a06ac187837
+function alternateMatrixSum(mat, n) {
+  // Write your code here
+  let bsum = 0;
+  let wsum = 0;
+  for (let r = 0; r < n; r++) {
+    for (let c = 0; c < n; c++) {
+      if ((r + c) % 2 == 0) {
+        bsum += mat[r][c];
+      } else {
+        wsum += mat[r][c];
+      }
+    }
+  }
+
+  console.log(bsum);
+  console.log(wsum);
+}
+
+// Diagonal Difference!
+// Link: https://course.acciojob.com/idle?question=8a6cbf35-d128-459b-a7ba-9e269d2af40a
+function diagonalDifference(mat, n) {
+  // Write your code here
+  let i = 0;
+  let j = 0;
+  let diag = 0;
+  while (i < n && j < n) {
+    diag += mat[i][j];
+    i++;
+    j++;
+  }
+
+  i = 0;
+  j = n - 1;
+  let adiag = 0;
+  while (i < n && j >= 0) {
+    adiag += mat[i][j];
+    i++;
+    j--;
+  }
+
+  console.log(Math.abs(adiag - diag));
+}
+
+function diagonalDifference(mat, n) {
+  let diag = 0;
+  let adiag = 0;
+
+  for (let r = 0; r < n; r++) {
+    diag += mat[r][r];
+    adiag += mat[r][n - r - 1];
+  }
+
+  console.log(Math.abs(adiag - diag));
+}
+
+// Spirally traversing a matrix
+// Link: https://course.acciojob.com/idle?question=5f714d43-3f91-4c47-b41b-203207e63522
+function spirallyTraverse(mat) {
+  // Write your code here
+  const rows = mat.length;
+  const cols = mat[0].length;
+  const total = rows * cols;
+
+  let minR = 0; // top wall
+  let maxR = rows - 1; // bottom wall
+  let minC = 0; // left wall
+  let maxC = cols - 1; // right wall
+  let cnt = 0;
+
+  while (cnt < total) {
+    // 1. Top wall (minR, minC to maxC)
+    for (let c = minC; c <= maxC && cnt < total; c++) {
+      process.stdout.write(mat[minR][c] + " ");
+      cnt++;
+    }
+    minR++;
+
+    // 2. right wall (maxC, minR to maxR)
+    for (let r = minR; r <= maxR && cnt < total; r++) {
+      process.stdout.write(mat[r][maxC] + " ");
+      cnt++;
+    }
+    maxC--;
+
+    // 3. bottom wall (maxR, maxC to minC)
+    for (let c = maxC; c >= minC && cnt < total; c--) {
+      process.stdout.write(mat[maxR][c] + " ");
+      cnt++;
+    }
+    maxR--;
+
+    // 4. left wall (minC, maxR to minR)
+    for (let r = maxR; r >= minR && cnt < total; r--) {
+      process.stdout.write(mat[r][minC] + " ");
+      cnt++;
+    }
+    minC++;
+  }
+}
+
+// A Contest
+// Link: https://course.acciojob.com/idle?question=0363c617-a2d0-41a5-a2a3-f5736d1c36f7
+function printFindParticipants(arr, n, k) {
+  // Write your code here
+  const kthPartScore = arr[k - 1];
+  let cnt = 0;
+  for (let i = 0; i < n; i++) {
+    if (arr[i] >= kthPartScore && arr[i] > 0) {
+      cnt++;
+    }
+  }
+
+  console.log(cnt);
+}
+
+// Subarray Problem 3
+// Link: https://course.acciojob.com/idle?question=0298655b-b264-421a-906d-32443ebe3e55
+function largestAltitude(gain) {
+  //Write your code here
+  let sum = 0;
+  let maxAlt = 0;
+  const n = gain.length;
+  for (let i = 0; i < n; i++) {
+    sum += gain[i];
+    maxAlt = Math.max(sum, maxAlt);
+  }
+
+  return maxAlt;
+}
+
+// Find The Way
+// Link: https://course.acciojob.com/idle?question=60d37a31-7584-48eb-baad-ee073ffc7acf
+function findTheWay(matrix) {
+  //Write code here
+  const rows = matrix.length;
+  const cols = matrix[0].length;
+
+  let i = 0;
+  let j = 0;
+  let facing = 0;
+
+  while (true) {
+    // 1. turning right should happen only on 1
+    if (matrix[i][j] == 1) {
+      matrix[i][j] = 0;
+      facing = (facing + 1) % 4;
+    }
+
+    // 2. move forward should happen in both 0, 1
+    if (facing == 0) {
+      j++;
+    } else if (facing == 1) {
+      i++;
+    } else if (facing == 2) {
+      j--;
+    } else {
+      i--;
+    }
+
+    // 3. Check whether you are outside, and return lastbox
+    if (i == -1) {
+      return [0, j];
+    } else if (j == cols) {
+      return [i, cols - 1];
+    } else if (i == rows) {
+      return [rows - 1, j];
+    } else if (j == -1) {
+      return [i, 0];
+    }
+  }
+}
+
+// Maxima Minima
+// Link: https://course.acciojob.com/idle?question=834a5e9e-9b0c-45db-b0e1-375bafb999ea
+function findMinRow(mat, row) {
+  const cols = mat[0].length;
+  let minEle = Infinity;
+  for (let c = 0; c < cols; c++) {
+    minEle = Math.min(mat[row][c], minEle);
+  }
+
+  return minEle;
+}
+
+function findMaxCol(mat, col) {
+  const rows = mat.length;
+  let maxEle = -Infinity;
+  for (let r = 0; r < rows; r++) {
+    maxEle = Math.max(maxEle, mat[r][col]);
+  }
+
+  return maxEle;
+}
+
+// O(N^3)
+function maximaMinima(mat) {
+  //Write code here
+  const rows = mat.length;
+  const cols = mat[0].length;
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const minR = findMinRow(mat, r);
+      const maxC = findMaxCol(mat, c);
+      if (minR == mat[r][c] && maxC == mat[r][c]) {
+        return mat[r][c];
+      }
+    }
+  }
+
+  return -1;
+}
+
+// Optimal => O(N^2)
+function maximaMinima(mat) {
+  //Write code here
+  const rows = mat.length;
+  const cols = mat[0].length;
+
+  const minRow = [];
+  const maxCol = [];
+
+  for (let r = 0; r < rows; r++) {
+    const minEle = findMinRow(mat, r);
+    minRow.push(minEle);
+  }
+
+  for (let c = 0; c < cols; c++) {
+    const maxEle = findMaxCol(mat, c);
+    maxCol.push(maxEle);
+  }
+
+  for (let r = 0; r < rows; r++) {
+    for (let c = 0; c < cols; c++) {
+      const minR = minRow[r];
+      const maxC = maxCol[c];
+      if (minR == mat[r][c] && maxC == mat[r][c]) {
+        return mat[r][c];
+      }
+    }
+  }
+
+  return -1;
+}
+
+// Diagonal Traversal of a Matrix
+// Link: https://course.acciojob.com/idle?question=c6c26827-a9b9-478e-bafb-77ab8d37bc88
+function diagonalTraversal(mat, n) {
+  // your code here
+  const res = [];
+  for (let c = n - 1; c >= 1; c--) {
+    let i = 0;
+    let j = c;
+    while (i < n && j < n) {
+      res.push(mat[i][j]);
+      i++;
+      j++;
+    }
+  }
+
+  for (let r = 0; r < n; r++) {
+    let i = r;
+    let j = 0;
+    while (i < n && j < n) {
+      res.push(mat[i][j]);
+      i++;
+      j++;
+    }
+  }
+
+  return res;
+}
+
+// Toeplitz Matrix
+// Link: https://course.acciojob.com/idle?question=fa4a91e3-218d-473b-8d33-65fb2af3e145
+function isToeplitzMatrix(matrix, m, n) {
+  for (let i = 0; i < m - 1; i++) {
+    for (let j = 0; j < n - 1; j++) {
+      // Check the respective diagonal element is equal / not
+      if (matrix[i][j] != matrix[i + 1][j + 1]) {
+        return false;
+      }
+    }
+  }
+
+  return true;
+}
+
+// Subarray Problem 1
+// Link: https://course.acciojob.com/idle?question=aaa5a80f-db4e-4cca-a438-ff25b1aadebf
+function solve(arr, n, s) {
+  // Write your code here
+  let found = false;
+  for (let start = 0; start < 10; start++) {
+    let sum = 0;
+    for (let end = start; end < 10; end++) {
+      sum += arr[end];
+      if (sum == s && end - start + 1 == n) {
+        console.log("YES");
+        found = true;
+        break;
+      }
+    }
+  }
+
+  if (!found) {
+    console.log("NO");
+  }
+}
+
+// Boundary Traversal of matrix
+// Link: https://course.acciojob.com/idle?question=20df8834-ee3c-4414-9d44-16e3e22d266e
+function boundaryTraversal(m, n, matrix) {
+  // Write your code here
+  let total = 2 * (m + n - 2);
+  // edge cases where our total formula fails
+  if (m == 1) total = n;
+  if (n == 1) total = m;
+
+  let cnt = 0;
+
+  for (let c = 0; c < n && cnt < total; c++) {
+    console.log(matrix[0][c]);
+    cnt++;
+  }
+
+  for (let r = 1; r < m && cnt < total; r++) {
+    console.log(matrix[r][n - 1]);
+    cnt++;
+  }
+
+  for (let c = n - 2; c >= 0 && cnt < total; c--) {
+    console.log(matrix[m - 1][c]);
+    cnt++;
+  }
+
+  for (let r = m - 2; r >= 1 && cnt < total; r--) {
+    console.log(matrix[r][0]);
+    cnt++;
+  }
+}
