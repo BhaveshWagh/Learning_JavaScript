@@ -50,7 +50,7 @@ function findSubtraction(arr1, n1, arr2, n2) {
 
         let digit1 = arr1[i] || 0;
         let digit2 = j >= 0 ? arr2[j] : 0;
-        console.log("line 53 dig1 & dig2", digit1,digit2)
+        console.log("line 51 dig1 & dig2", digit1,digit2)
         // Apply borrow if necessary
         digit1 -= borrow;
         console.log("line 54 digit1",digit1)
@@ -64,7 +64,7 @@ function findSubtraction(arr1, n1, arr2, n2) {
         // Handle borrowing
         if (diff < 0) {
             diff += 10;
-            console.log("line 67 diff+10",diff)
+            console.log("line67 diff+10",diff)
             borrow = 1;
         console.log("line 69 borrow",borrow)
 
@@ -73,8 +73,6 @@ function findSubtraction(arr1, n1, arr2, n2) {
         // Add difference to result array
         diffArray.unshift(diff);
         console.log("line 75 unshift diff",diff)
-        console.log("line 76 DiffArr",diffArray)
-
 
         // Move to the next digit
         i--;
@@ -94,7 +92,7 @@ function findSubtraction(arr1, n1, arr2, n2) {
         console.log("line 92 isNeg",  diffArray[0])
     }
 
-    console.log("DiffArr", diffArray)
+    console.log(diffArray)
     return diffArray;
 }
 
