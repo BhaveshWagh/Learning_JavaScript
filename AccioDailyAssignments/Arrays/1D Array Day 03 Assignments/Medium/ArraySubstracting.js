@@ -1,6 +1,52 @@
 // Array Subtracting
 // https://course.acciojob.com/idle?question=4ed416d3-76b0-41a6-a956-3201e2fb6079
 
+function findSubtraction(a, n, b, m) {
+    //Write your code here
+    const swap = compare(a, n, b, m);
+    if (swap == true) {
+      // swap arrays
+      let temp = a;
+      a = b;
+      b = temp;
+      // swap their lengths
+      temp = n;
+      n = m;
+      m = temp;
+    }
+  
+    const res = [];
+    let carry = 0;
+    let i = n - 1;
+    let j = m - 1;
+  
+    while (i >= 0 || j >= 0) {
+      // let diff = (arr[i] + carry) - arr[j];
+      let diff = a[i] + carry;
+      if (j >= 0) diff -= b[j];
+  
+      if (diff < 0) {
+        carry = -1;
+        diff += 10;
+      } else {
+        carry = 0;
+      }
+  
+      res.push(diff);
+      i--;
+      j--;
+    }
+  
+    res.reverse();
+  
+    if (swap == true) {
+      res[0] *= -1;
+    }
+  
+    return res;
+  }
+
+// Another way  
 var readline = require("readline").createInterface(process.stdin);
 
 let inputArr = [];
