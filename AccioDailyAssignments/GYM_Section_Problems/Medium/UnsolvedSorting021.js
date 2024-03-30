@@ -1,4 +1,4 @@
-// The solution is not optimal.
+// The solution is not optimal. it takes long time to complete
 function swapPos(arr, cntSplit) {
     let start = cntSplit;
     let end = arr.length - 1;
