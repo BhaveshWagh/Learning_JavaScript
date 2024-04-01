@@ -1,16 +1,16 @@
 // template helps to solve Subarr 1 to 3 problems in subarray section
-function solve(arr, n) {
-  // Write your code here
-  for (let i = 0; i <= arr.length - n; i++) {
-    for (let j = i; j < i + n; j++) {
-      process.stdout.write(arr[j] + " ");
-    }
-    console.log();
-  }
-}
-const n = 4;
-const arr = [8, 6, 3, 4, 5, 9, 12, 7, 20, 22, 31, 38];
-solve(arr, n);
+// function solve(arr, n) {
+//   // Write your code here
+//   for (let i = 0; i <= arr.length - n; i++) {
+//     for (let j = i; j < i + n; j++) {
+//       process.stdout.write(arr[j] + " ");
+//     }
+//     console.log();
+//   }
+// }
+// const n = 4;
+// let arr = [8, 6, 3, 4, 5, 9, 12, 7, 20, 22, 31, 38];
+// solve(arr, n);
 
 // How to generate SubArray
 // array = [1,2,3,4]
@@ -51,15 +51,15 @@ solve(arr, n);
 // arr
 
 // how to get subarray
-function getSubArr(arr) {
-  let subStr = "";
-  // console.log("outer",subStr)
-  for (let i = 0; i < arr.length; i++) {
-    subStr = subStr + arr[i] + " ";
-    console.log(i, arr[i], subStr);
-  }
-}
-arr = [10, 20, 30, 40];
+// function getSubArr(arr) {
+//   let subStr = "";
+//   // console.log("outer",subStr)
+//   for (let i = 0; i < arr.length; i++) {
+//     subStr = subStr + arr[i] + " ";
+//     console.log(i, arr[i], subStr);
+//   }
+// }
+// arr = [10, 20, 30, 40];
 // getSubArr(arr)
 // Its tideous task to do every time
 // the efficient way is
@@ -91,16 +91,23 @@ arr = [10, 20, 30, 40];
 // arr = [10,1,2,3,4]
 // findSplitPoint(arr,n)
 
-function getSubArray(arr, n) {
-  for (let start = 0; start < n; start++) {
-    let sum = 0;
-    for (let end = start; end < n - 1; end++) {
-      sum += arr[end];
-      console.log(sum, arr[end]);
-    }
-    // console.log()
-  }
-}
-n = 5;
-arr = [1, 2, 3, 4];
-getSubArray(arr, n);
+// function getSubArray(arr, n) {
+//   let maxSum = 0;
+//   for (let start = 0; start < n; start++) {
+//     let sum = 0;
+//     let subStr = "";
+//     for (let end = start; end < n - 1; end++) {
+//       sum += arr[end];
+//       subStr += arr[end];
+
+//       maxSum = Math.max(sum, maxSum);
+//     }
+//   }
+//   // console.log(maxSum);
+//   return maxSum
+// }
+// // n = 5;
+// // arr = [1, 2, -1, 4];
+// let n = 5;
+// let arr = [2, 3, 1, -1, 0];
+// getSubArray(arr, n);
