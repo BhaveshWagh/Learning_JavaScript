@@ -63,4 +63,5 @@ function spirallyTraverse(mat) {
       }
       minC++;
     }
+    
   }

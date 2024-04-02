@@ -32,6 +32,12 @@ function SecondLargest(arr, n) {
             secondMax = arr[i]
         }
     }
+    // let thirdMax = -Infinity;
+    // for(let i = 0; i < n; i++){
+    //     if(arr[i] > thirdMax && arr[i] !== firstMax && arr[i] !== secondMax){
+    //       thirdMax = arr[i]
+    //     }
+    // }
     console.log(secondMax)
     
 }

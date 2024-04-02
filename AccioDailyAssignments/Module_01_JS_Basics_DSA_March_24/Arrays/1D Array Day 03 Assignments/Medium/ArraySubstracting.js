@@ -46,7 +46,7 @@ function findSubtraction(a, n, b, m) {
     return res;
   }
 
-// Another way  
+// Another way to do 
 var readline = require("readline").createInterface(process.stdin);
 
 let inputArr = [];
