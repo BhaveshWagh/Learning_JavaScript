@@ -18,8 +18,31 @@ rl.on('line', (N) => {
 
 function sorting5(n, nums) {
   // Write your code here
-  nums.sort((a,b) => a - b)
-  let maxDiff = nums[n - 1] * nums[n - 2] - nums[0] * nums[1] 
+  let max1 = -Infinity; // Initialize maximum and second maximum values
+  let max2 = -Infinity;
+  let min1 = Infinity; // Initialize minimum and second minimum values
+  let min2 = Infinity;
 
- return maxDiff;
+  for (let num of nums) {
+	  if (num > max1) { // Update maximum and second maximum
+		  max2 = max1;
+		  max1 = num;
+	  } else if (num > max2) {
+		  max2 = num;
+	  }
+
+	  if (num < min1) { // Update minimum and second minimum
+		  min2 = min1;
+		  min1 = num;
+	  } else if (num < min2) {
+		  min2 = num;
+	  }
+  }
+
+  return (max1 * max2) - (min1 * min2); 
+//   Another way using sort built in function
+//   nums.sort((a,b) => a - b)
+//   let maxDiff = nums[n - 1] * nums[n - 2] - nums[0] * nums[1] 
+
+//  return maxDiff;
 }
