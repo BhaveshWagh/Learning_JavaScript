@@ -1,3 +1,21 @@
+// running sum of subArr
+function getSubArr(arr, n) {
+    let str = ""
+  for (let i = 0; i <= arr.length - n; i++) {
+    for (let j = i; j < n + i; j++) {
+    //   process.stdout.write(arr[j] + " ");
+      str += arr[j] + " "
+       console.log(str)
+    }
+    console.log();
+  }
+}
+
+const n = 5;
+const arr = [10, 20, 30, 40, 50];
+getSubArr(arr, n);
+
+
 // template helps to solve Subarr 1 to 3 problems in subarray section
 // function solve(arr, n) {
 //   // Write your code here
