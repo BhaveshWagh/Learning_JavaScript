@@ -1,5 +1,6 @@
 // Matrix Multiplication
 // Link: https://course.acciojob.com/idle?question=da3dfaa3-541f-4b9b-a202-30b4fb01a835
+
 function printMultiplication(matrix1, matrix2, n) {
     // Write your code here
     const A = matrix1;
