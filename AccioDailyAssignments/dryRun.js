@@ -1,20 +1,12 @@
-function diagonalTraversal(mat, n) {
-  // your code here
-  for (let r = 0; r < n; r++) {
-    for (let c = 0; c < r + 1; c++) {
-        let temp = mat[r][c]
-        mat[r][c] = mat[c][r]
-        mat[c][r] = temp
+function luckySeven(arr) {
+  let flag = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] + arr[i + 1] + arr[i + 2] == 7) {
+      flag = true;
     }
   }
-  console.log(mat)
+  return flag;
 }
 
-diagonalTraversal(
-  [
-    [1, 2, 3],
-    [1, 2, 3],
-    [1, 2, 3],
-  ],
-  3
-);
+arr = [2, 1, 5, 1, 0];
+console.log(luckySeven(arr));
