@@ -1,18 +1,18 @@
-const readline = require('readline');
+const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 let t;
 
-rl.on('line', (line) => {
+rl.on("line", (line) => {
   if (!t) {
     t = parseInt(line);
     return;
   }
-  const res = camelCase(line)
+  const res = camelCase(line);
   console.log(res);
   t--;
   if (t === 0) {
@@ -22,20 +22,19 @@ rl.on('line', (line) => {
 
 function camelCase(s) {
   // your code here
-    let newStr = ""
-let isUnderScore = false 
-for(let char of s){
-  if(char === "_"){
-    isUnderScore = true;
-    continue
+  let newStr = "";
+  let isUnderScore = false;
+  for (let char of s) {
+    if (char === "_") {
+      isUnderScore = true;
+      continue;
+    }
+    if (isUnderScore) {
+      newStr += char.toUpperCase();
+    } else {
+      newStr += char;
+    }
+    isUnderScore = false;
   }
-  if(isUnderScore){
-    newStr += char.toUpperCase()
-  }
-  else{
-    newStr += char 
-  }
-  isUnderScore = false
-}
-return newStr
+  return newStr;
 }
