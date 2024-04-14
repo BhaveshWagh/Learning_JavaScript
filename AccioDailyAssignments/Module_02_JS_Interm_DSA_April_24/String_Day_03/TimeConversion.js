@@ -24,9 +24,7 @@ const readline = require('readline').createInterface({
   }
   let remaining = str.substring(2, 8);
   res = res + remaining;
-  console.log(res);
-  
-      
+  console.log(res);   
   }
   
   readline.question('', s => {
