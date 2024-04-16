@@ -10,17 +10,27 @@ const rl = readline.createInterface({
 
 function SubString(str) {
   // Write code here
-  let newStr = str.split("");
-  let subStr = "";
-  for (let k = 0; k < newStr.length; k++) {
-    for (let start = k; start < newStr.length; start++) {
-      for (let end = start; end <= start; end++) {
-        subStr += newStr[end];
-      }
-      console.log(subStr);
+  // Simple Approach
+  let n = str.length;
+  for (let i = 0; i < n; i++) {
+    let subs = "";
+    for (let j = i; j < n; j++) {
+      subs += str[j];
+      console.log(subs);
     }
-    subStr = ""
   }
+  // Another
+  // let newStr = str.split("");
+  // let subStr = "";
+  // for (let k = 0; k < newStr.length; k++) {
+  //   for (let start = k; start < newStr.length; start++) {
+  //     for (let end = start; end <= start; end++) {
+  //       subStr += newStr[end];
+  //     }
+  //     console.log(subStr);
+  //   }
+  //   subStr = ""
+  // }
 }
 rl.on('line', (str) => {
   SubString(str);
