@@ -10,7 +10,7 @@ const readline = require('readline').createInterface({
       // Not submitted yet
        if(n === 0){
       return 1
-    }console.log("called")
+    }
     return x * xPowerN(x,n-1)
   }
   
