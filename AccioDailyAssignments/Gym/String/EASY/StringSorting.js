@@ -2,7 +2,7 @@
 // https://course.acciojob.com/idle?question=15d9cd6d-67e8-4f89-a034-316e40b68406
 function sortString(strArray) {
     // return the sorted array
-      
+
    for(let i = 0; i < strArray.length; i++){
        for(let j = i + 1; j < strArray.length;j++){
            if(strArray[i] > strArray[j]){
