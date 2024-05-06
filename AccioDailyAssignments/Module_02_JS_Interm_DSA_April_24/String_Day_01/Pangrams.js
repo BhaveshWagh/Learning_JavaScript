@@ -28,6 +28,7 @@ function isPangram(sentence) {
   sentence = sentence.toLowerCase();
 
   const bucket = new Array(26).fill(false);
+  console.log(bucket)
 
   for (let i = 0; i < sentence.length; i++) {
     const ch = sentence[i];
@@ -37,7 +38,6 @@ function isPangram(sentence) {
       bucket[index] = true;
     }
   }
-  //   console.log(bucket)
 
   let isPangram = true;
   for (let i = 0; i < bucket.length; i++) {
@@ -48,3 +48,4 @@ function isPangram(sentence) {
   }
   return !isPangram ? "not pangram" : "pangram" 
 }
+isPangram("Is Panagaram str or not")

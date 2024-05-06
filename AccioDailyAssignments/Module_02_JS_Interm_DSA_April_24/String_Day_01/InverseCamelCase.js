@@ -19,7 +19,6 @@ function solution(str) {
     if (str[i] === str[i].toUpperCase()) {
       if (currentWord.length > 0) {
         words.push(currentWord);
-
         currentWord = ""; // Reset currentWord
       }
     }
@@ -38,5 +37,5 @@ function solution(str) {
   }
 }
 
-// const res = solution("IAmAJavaProgrammer");
-// console.log(res);
+const res = solution("IAmAJavaProgrammer");
+console.log(res);

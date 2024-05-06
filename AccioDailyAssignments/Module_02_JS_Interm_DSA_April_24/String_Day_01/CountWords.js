@@ -28,6 +28,7 @@ function countWords(s) {
 
   for (let i = 0; i < s.length; i++) {
     if (s[i] === " ") {
+      console.log("s of i",s[i])
       if (inWord) {
         wordCount++;
         inWord = false; // Reset inWord flag

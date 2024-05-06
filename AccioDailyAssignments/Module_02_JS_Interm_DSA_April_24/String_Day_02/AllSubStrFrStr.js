@@ -1,11 +1,11 @@
 // Medium Score : 40
 // All substrings of a string
 // https://course.acciojob.com/idle?question=94779a98-b326-4d58-a107-b50cc370b894
-const readline = require('readline');
+const readline = require("readline");
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 function SubString(str) {
@@ -32,7 +32,7 @@ function SubString(str) {
   //   subStr = ""
   // }
 }
-rl.on('line', (str) => {
+rl.on("line", (str) => {
   SubString(str);
   rl.close();
 });

@@ -10,7 +10,7 @@ readline.on("line", readInputs);
 function readInputs(line) {
   inputArr.push(line);
   lineNumber++;
-  
+
   if (lineNumber == 1) {
     logic("s");
     readline.close();
@@ -18,43 +18,31 @@ function readInputs(line) {
 }
 
 function logic(input) {
- 
+  let Arr = inputArr[1].split(" ").map((x) => parseInt(x));
 
-    let Arr = inputArr[1].split(" ").map((x) => parseInt(x));
-
-    console.log(smallestGreaterElements(Arr).join(' '));
-  }
+  console.log(smallestGreaterElements(Arr).join(" "));
+}
 
 function smallestGreaterElements(arr) {
-    // function smallestGreaterElements(arr) {
   const n = arr.length;
-        let ans = []
+  let ans = [];
   for (let i = 0; i < n; i++) {
-  let minDiff = Infinity;
-  let minPos = -1;
+    let minDiff = Infinity;
+    let minPos = -1;
     for (let j = 0; j < n; j++) {
-
-      // console.log(currDiff, arr[j], arr[i]);
-
       if (arr[i] < arr[j]) {
-          
-      const currDiff = arr[j] - arr[i];
-          if(currDiff < minDiff){
-              
-        minDiff = currDiff;
-        minPos = j;
-          }
+        const currDiff = arr[j] - arr[i];
+        if (currDiff < minDiff) {
+          minDiff = currDiff;
+          minPos = j;
+        }
       }
     }
-    if(minPos !== -1 ){
-        ans.push(arr[minPos])
+    if (minPos !== -1) {
+      ans.push(arr[minPos]);
+    } else {
+      ans.push(-10000000);
     }
-      else{
-          ans.push(-10000000)
-      }
   }
-    return ans
+  return ans;
 }
-// }
-
-

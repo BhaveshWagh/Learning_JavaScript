@@ -8,8 +8,7 @@ const rl = readline.createInterface({
 });
 
 function countEncodings(str, i = 0, ans = "") {
-  // Write your code here
-
+ 
   // Write your code here
   if (i >= str.length) {
     // console.log(ans)
