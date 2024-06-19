@@ -32,8 +32,8 @@ function shortcut(s1, s2) {
     }
 
     // Extract initial letters and convert to uppercase
-    let initial1 = s1[0].toUpperCase();
-    let initial2 = s2[0].toUpperCase();
+    let initial1 = s1[0];
+    let initial2 = s2[0];
 
     // Return the concatenated initial letters
     return initial1 + initial2;
