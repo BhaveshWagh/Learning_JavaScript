@@ -1,39 +1,19 @@
-// your code here
-const readline = require('readline');
-
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
-
-let strings = [];
-
-rl.question('', (n) => {
+function indexOfIgnoreCase(str, subStr) {
+    const strLower = str.toLowerCase();
+    const subStrLower = subStr.toLowerCase();
     
-    let count = 0;
-
-    rl.on('line', (input) => {
-        strings.push(input.trim());
-        count++;
-
-        if (count === n) {
-            rl.close();
-            printMinLengthString(strings);
-        }
-    });
-});
-
-function printMinLengthString(strings) {
-    let minLength = Infinity;
-    let minString = '';
-
-    for (let str of strings) {
-        if (str.length < minLength) {
-            minLength = str.length;
-            minString = str;
+    if (subStrLower === "") {
+        return 0; // Empty substring is always found at index 0
+    }
+    
+    for (let i = 0; i <= str.length - subStr.length; i++) {
+        if (strLower.substring(i, i + subStr.length) === subStrLower) {
+            return i;
         }
     }
-
-    console.log(minString);
+    
+    return -1; // substring not found
 }
-
+console.log(indexOfIgnoreCase("Hello World", "world")); // Output: 6
+console.log(indexOfIgnoreCase("apple", "Ple")); // Output: 2
+console.log(indexOfIgnoreCase("test", "aaa")); // Output: -1
