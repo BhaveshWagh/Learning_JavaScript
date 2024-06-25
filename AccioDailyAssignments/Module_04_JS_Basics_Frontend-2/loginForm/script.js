@@ -1,16 +1,18 @@
-// script.js
-
-function getFormvalue(e) {
-    // Prevent the form from submitting
-    e.preventDefault();
-
+function getFormvalue() {
     // Get the form element
-    var form = document.getElementById('form1');
+    var form = document.getElementById("form1");
 
-    // Get the values of the input fields
-    var firstName = form.elements['fname'].value;
-    var lastName = form.elements['lname'].value;
+    // Get the values of first name and last name from the form
+    var firstName = form.fname.value;
+    var lastName = form.lname.value;
 
-    // Display the values using an alert
-    alert(firstName + ' ' + lastName);
+    // Combine first name and last name
+    var fullName = firstName + " " + lastName;
+
+    // Display the full name using an alert
+    alert(fullName);
+    
+    // Prevent the form from submitting and refreshing the page
+    // return false;
 }
+
