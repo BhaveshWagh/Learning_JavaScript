@@ -1,0 +1,27 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.jira{
+    display: flex;
+    justify-content: space-around;
+    margin-left: 5px;
+}
+
+.column{
+    width: 30%;
+    border: 2px solid grey;
+    margin-right: 5px;
+    min-height: 400px;
+    text-align: center;
+}
+
+.card{
+    background-color: black;
+    color: tomato;
+    border: 1px solid greenyellow;
+    margin: 5px;
+    padding: 5px;
+}
