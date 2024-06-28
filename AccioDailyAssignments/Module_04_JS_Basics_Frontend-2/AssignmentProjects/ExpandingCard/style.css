@@ -1,0 +1,48 @@
+/*  your css code here. If applicable */
+/* styles.css */
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+}
+
+.container {
+    display: flex;
+    width: 90vw;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.panel {
+    flex: 1;
+    margin: 10px;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    position: relative;
+    transition: flex 0.5s ease-in;
+    cursor: pointer;
+}
+
+.panel h3 {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    margin: 0;
+    color: white;
+    font-size: 24px;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.panel.active {
+    flex: 7;
+}
+
+.panel:not(.active) {
+    flex: 0.5;
+}

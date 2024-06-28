@@ -1,8 +1,10 @@
 let taskBtn = document.getElementById("addTask");
 let toDoContainer = document.getElementById("todo");
+let count = 1;
 
 taskBtn.addEventListener("click", () => {
   // console.log("clicked!")
+
   let cardContainer = document.createElement("div");
   cardContainer.style.cssText = `
       background-color: black;
@@ -13,7 +15,11 @@ taskBtn.addEventListener("click", () => {
   let card = document.createElement("div");
   // class added to the card element
   card.setAttribute("class", "card");
+  card.setAttribute("id", `card-${count++}`);
   card.setAttribute("contenteditable", true);
+
+  // lets make the card draggable
+  card.setAttribute("draggable", true);
 
   card.innerHTML = "Default Task";
   // console.log(cardContainer)
@@ -41,22 +47,23 @@ taskBtn.addEventListener("click", () => {
   });
 
   // drop down:
-  let dropDown = document.createElement("select");
+  // let dropDown = document.createElement("select");
 
-  dropDown.innerHTML = `
-  <option value="todo">TODO</option>
-  <option value="progress">PROGESS</option>
-  <option value="done">DONE</option>`;
+  // dropDown.innerHTML = `
+  // <option value="todo">TODO</option>
+  // <option value="progress">PROGESS</option>
+  // <option value="done">DONE</option>`;
 
-  //   card.append(dropDown)
-  cardContainer.append(dropDown);
+  // //   card.append(dropDown)
+  // cardContainer.append(dropDown);
 
-  dropDown.addEventListener("change", (e) => {
-    // console.log(e.target.value)
-    let selectedValue = e.target.value; // progress
-    let columnToBeMoved = document.getElementById(selectedValue);
-    columnToBeMoved.append(cardContainer); // closures
-  });
+  // dropDown.addEventListener("change", (e) => {
+  //   // console.log(e.target.value)
+  //   let selectedValue = e.target.value; // progress
+  //   let columnToBeMoved = document.getElementById(selectedValue);
+  //   columnToBeMoved.append(cardContainer); // closures
+  // });
+
   // dynamic way
   // let options = ["TODO", "PROGRESS","DONE"]
   // for(let item of options) {
@@ -72,6 +79,63 @@ taskBtn.addEventListener("click", () => {
   //     // console.log(item)
   // }
   // card.append(dropDown)
+
+  // lets add drag and drop feature
+
+  // step 1 : events to be added on the card
+
+  // dragstart
+  // dragend
+
+  card.addEventListener("dragstart", (e) => {
+    // console.log("dragstart")
+    let selectedCardId = e.target.id;
+    e.dataTransfer.setData("text", selectedCardId);
+    card.style.opacity = 0.2;
+  });
+
+  card.addEventListener("dragend", () => {
+    console.log("drag ended");
+    card.style.opacity = 1;
+  });
+
+  // step 2: events on columns - area on which card will be dragged
+  // dragover dragenter drop
+
+  // todo, progress, done
+
+  // toDo.addEventListener("dragover", (event)=>{
+  //       event.preventDefault();
+  //       // console.log("drag over")
+  //   })
+
+  //   toDo.addEventListener("dragenter", (event)=>{
+  //       event.preventDefault();
+  //       // console.log("drag enter")
+  //   })
+
+  //   toDo.addEventListener("drop", (event)=>{
+  //       // console.log("drop")
+  //       toDo.append(card);
+  //   })
+
+  let dragEvents = ['dragover', 'dragenter', 'drop']
+
+  dragEvents.forEach((value) => {
+    let cols = document.getElementsByClassName('column')
+
+    for(let t of cols){
+      // t = todo , progress , done
+      t.addEventListener(value, (e) => {
+        e.preventDefault()
+        if(value === "drop"){
+          let selectedCardId = e.dataTransfer.getData('text')
+          let selectedCard = document.getElementById(selectedCardId)
+          t.append(selectedCard);
+        }
+      })
+    }
+  })
 
   toDoContainer.append(cardContainer);
 });
