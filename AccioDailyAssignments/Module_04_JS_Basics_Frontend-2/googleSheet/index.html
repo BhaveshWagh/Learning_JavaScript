@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css" />
+    <title>Google Sheet Clone</title>
+  </head>
+  <body>
+    <div id="top-bar">
+      <button id="boldbtn">Bold</button>
+      <!-- font awesome -->
+      <!-- text color -->
+      <input type="color" id="text-color" value="#000000" />
+      <!-- back ground color -->
+      <input type="color" id="bg-color" value="#ffffff" />
+      <!-- font size -->
+      <input
+        type="number"
+        id="fontsizeinput"
+        value="16"
+        placeholder="Enter font size"
+      />
+
+      <!-- textAlign: center, left and right -->
+      <button id="left">◀</button>
+      <button id="center">↔</button>
+      <button id="right">▶</button>
+
+      <!-- select own fonts -->
+      <label for="fonts-select">Choose fonts :</label>
+
+      <select name="fonts" id="select-font-family">
+        <option value="">--please select font--</option>
+        <option value="serif">Serif</option>
+        <option value="sans-serif">Sans-serif</option>
+        <option value="monospace">Monospace</option>
+        <option value="cursive">Cursive</option>
+        <option value="fantasy">Fantasy</option>
+        <option value="times-new-roman">Times New Roman</option>
+      </select>
+
+      <!-- genrate more rows and columns -->
+
+      <!-- formula => sum and avg -->
+      <!--  -->
+    </div>
+
+    <div id="container"></div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
