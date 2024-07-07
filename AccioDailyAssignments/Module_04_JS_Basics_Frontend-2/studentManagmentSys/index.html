@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Management System</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Inter"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="heading">
+        <h3>Student Portal</h3>
+      </div>
+      <div class="bottom-div">
+        <div class="search-div">
+          <div id="section-1">
+            <input
+              type="search"
+              id="myInput"
+              name="search"
+              placeholder="Search"
+            />
+            <button id="search-btn" class="submit-btn">Search</button>
+          </div>
+          <div class="menu-container">
+            <div class="button-container" id="section-2">
+              <a id="sortAZ" type="button" class="button">Sort A->Z</a>
+              <a id="sortZA" type="button" class="button">Sort Z->A</a>
+              <a id="sortByMarks" type="button" class="button">Sort By Marks</a>
+              <a id="sortByPassing" type="button" class="button"
+                >Sort By Passing</a
+              >
+              <a id="sortByClass" type="button" class="button">Sort By Class</a>
+              <a id="sortByGender" type="button" class="button"
+                >Sort By Gender</a
+              >
+            </div>
+          </div>
+        </div>
+        <div class="table-div">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Gender</th>
+                <th>Class</th>
+                <th>Marks</th>
+                <th>Passing</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+  </body>
+</html>
