@@ -12,36 +12,53 @@ function countUniqueCharacters(s) {
     }
   }
   return Object.keys(seenElemets).length;
-  // do not console.log here
+
+  // ! second approach using set
+    // Initialize a set to store unique characters
+
+    // let uniqueChars = new Set();
+
+    // Iterate through each character in the string
+    
+    // for (let char of s) {
+        // uniqueChars.add(char);
+    // }
+
+    // Return the size of the set, which represents the number of unique characters
+    
+    // return uniqueChars.size;
 }
 
-/*Do not change the code below */
+console.log(countUniqueCharacters("abcdeaa"));
 
-var readline = require("readline").createInterface(process.stdin);
+// Driver code
+// /*Do not change the code below */
 
-let inputArr = [];
-var lineNumber = -1;
-var query = 100000;
-var K;
-readline.on("line", readInputs);
+// var readline = require("readline").createInterface(process.stdin);
 
-function readInputs(line) {
-  inputArr.push(line);
-  lineNumber++;
-  if (lineNumber == 0) {
-    size = parseInt(inputArr[0]);
-  }
-  //Exit Condition
-  if (lineNumber == 0) {
-    logic("s");
-    readline.close();
-  }
-}
+// let inputArr = [];
+// var lineNumber = -1;
+// var query = 100000;
+// var K;
+// readline.on("line", readInputs);
 
-function logic(input) {
-  //let s = parseInt(inputArr[0].trim());
-  //let str1 = inputArr[1].trim();
-  let Arr = inputArr[0].trim();
+// function readInputs(line) {
+//   inputArr.push(line);
+//   lineNumber++;
+//   if (lineNumber == 0) {
+//     size = parseInt(inputArr[0]);
+//   }
+//   //Exit Condition
+//   if (lineNumber == 0) {
+//     logic("s");
+//     readline.close();
+//   }
+// }
 
-  console.log(countUniqueCharacters(Arr));
-}
+// function logic(input) {
+//   //let s = parseInt(inputArr[0].trim());
+//   //let str1 = inputArr[1].trim();
+//   let Arr = inputArr[0].trim();
+
+//   console.log(countUniqueCharacters(Arr));
+// }
