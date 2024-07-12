@@ -1,5 +1,7 @@
 // 11 July 24
 
+
+
 // !! Q3. Pollyfill of map
 Array.prototype.myMap = function(callback){
     let temp=[];
@@ -28,8 +30,6 @@ console.log(multiply);
 // const getData = function(place1, place2){ // function(...place) all the rest of the list is print
 //   console.log(`My name is ${this.firstName} ${this.lastName} ${place1} & ${place2}, and age is ${this.age}`)
 //   // console.log(`${place}`)
-
-  
 // }
 
 // // Pollyfill of bind method 
