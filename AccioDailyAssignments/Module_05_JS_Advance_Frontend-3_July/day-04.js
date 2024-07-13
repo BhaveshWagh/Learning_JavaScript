@@ -51,13 +51,13 @@ console.log(sum);
 
 // console.log(average) // 37
 
-// ! its not working bcz =>  Arrow Function Issue:
+// ! its not working bcz => Arrow Function does't access of this:
 
-// Arrow functions do not have their own this context. Instead, they inherit this from the lexical scope in which they are defined.
-// When you use an arrow function to define myMap, this inside myMap does not refer to the array instance arr, but to the global context or the enclosing lexical context where myMap is defined. As a result, this.length is undefined, and the loop does not execute.
+// ! Arrow functions do not have their own this context. Instead, they inherit this from the lexical scope in which they are defined.
+// ! When you use an arrow function to define myMap, this inside myMap does not refer to the array instance arr, but to the global context or the enclosing lexical context where myMap is defined. As a result, this.length is undefined, and the loop does not execute.
 // Solution:
 
-// Use a regular function (not an arrow function) to define myMap. Regular functions have their own this context, which correctly refers to the array instance on which the method is called.
+// ! Use a regular function (not an arrow function) to define myMap. Regular functions have their own this context, which correctly refers to the array instance on which the method is called.
 
 // Array.prototype.myMap = (fn) =>  {
 //   let array = []
