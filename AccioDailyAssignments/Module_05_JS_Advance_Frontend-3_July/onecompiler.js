@@ -2,7 +2,30 @@
 // OOPs started : 
 
 // 13 && 14 Weekend --> 15 July 24
+// bind map reduce filter polyfills
 
+// bind ---> function(applies). (Function.prototype)
+
+// map, reduce, filter applies on ----> Array (Applies)
+
+
+// bind -----> return a new function that can be invoked later.
+
+// map ------> return a new Array (Array.prototype)
+
+// reduce ---> return single value (Array.prototype)
+
+// filter ---> returns A new array (Array.prototype)
+
+// deep clone shallow clone
+// deep Object 
+// slice
+
+// .call(this(reference), parameters)
+// .apply(this(reference), parameters list of Array)
+// .bind(this(reference), parameters)
+
+// applies on a function
 // Polyfill of filter 
 
 // Array.prototype.myFilter = function(callback){
