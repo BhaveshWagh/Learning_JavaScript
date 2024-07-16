@@ -1,5 +1,5 @@
 # Learning_JavaScript
-
+![alt text](image-2.png)
 ### Season 02 Namaste Javascript Ep 03
 
 1. Promise can be created using a new Promise() constructor function.
@@ -103,7 +103,9 @@ function validateCart(cart) {
 
 
 
+
 ### Season 02 Namaste Javascript Ep 02
+
 
 # Promise
 
