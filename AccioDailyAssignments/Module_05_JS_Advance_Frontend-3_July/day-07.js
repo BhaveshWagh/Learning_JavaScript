@@ -2,6 +2,18 @@
 // Basic intro about inheritance 
 // explain extends keyword and super is used to called parent constructor
 
+// !The static keyword defines static methods for classes.
+// !Static methods are called directly on the class (Car from the example above) - without creating an instance/object (mycar) of the class
+class Name {
+  static firstName = "Bhavesh";
+  static lastName = "Wagh";
+
+  static getFullName = () => {
+    return this.firstName + " " + this.lastName;
+  };
+}
+
+console.log(Name.getFullName());
 
 // static variable and method 
 // Question Design a a Blueprint name classRoom

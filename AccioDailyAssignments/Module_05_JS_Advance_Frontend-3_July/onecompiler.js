@@ -67,7 +67,7 @@ arrOfObj.forEach((item)=>{
 // student5.printStudentDetails();
 
 
-// !static properties/variable belongs to class not to object 
+// !static properties(methods/functions)/variables belongs to class not to object 
 
 // class Car {
 //   static air = "bags"
