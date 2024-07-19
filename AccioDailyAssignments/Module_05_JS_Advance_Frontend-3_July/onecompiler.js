@@ -1,5 +1,115 @@
 // 19 July 24
+// 
+// class Vehicle {
+//   constructor(tyresType, noofairBags, noofSeats, engineHorsePower, lights) {
+//     this.tyresType = tyresType;
+//     this.noofairBags = noofairBags;
+//     this.noofSeats = noofSeats;
+//     this.engineHorsePower = engineHorsePower;
+//     this.lights = lights;
+//   }
+//   printVehicleDetails = () => {
+//     console.log(
+//       `${this.tyresType},${this.noofairBags},${this.noofSeats},${this.engineHorsePower},${this.lights}`
+//     );
+//   };
+// }
+// class Car extends Vehicle {
+//   constructor(
+//     tyresType,
+//     noofairBags,
+//     noofSeats,
+//     EngineHorsePower,
+//     lights,
+//     brand,
+//     typeofCar,
+//     diselOrPetrol,
+//     automatic,
+//     sunroof,
+//     color
+//   ) {
+//     super(tyresType, noofairBags, noofSeats, EngineHorsePower, lights);
+//     this.brand = brand;
+//     this.typeofCar = typeofCar;
+//     this.diselOrPetrol = diselOrPetrol;
+//     this.automatic = automatic;
+//     this.sunroof = sunroof;
+//     this.color = color;
+//   }
+
+//   printCarDetails = () => {
+//     // Mistakes : you written only
+//     // printVehicleDetails(); this is needed for reference
+//     this.printVehicleDetails();
+//     // Mistaked :in console log you miss the back ticks => ` ` for both consoles
+//     console.log(
+//       `${this.brand},${this.typeofCar},${this.diselOrPetrol},${this.automatic},${this.sunroof},${this.color}`
+//     );
+//   };
+// }
+// // Mistakes : Here while you instantiate a class you have to try instantiate a Vehical class not a car class
+// const hondacity = new Car(
+//   "Tubeless",
+//   6,
+//   5,
+//   123,
+//   "LED",
+//   "15km",
+//   "HondaCity",
+//   "Sedan",
+//   "Petrol",
+//   true,
+//   true,
+//   "white"
+// );
+// const bmw = new Car(
+//   "Tubeless",
+//   8,
+//   5,
+//   300,
+//   "LED",
+//   "12km",
+//   "BMW",
+//   "SUV",
+//   "diesel",
+//   true,
+//   true,
+//   "red"
+// );
+// const Scorpio = new Car(
+//   "Tubeless",
+//   4,
+//   7,
+//   140,
+//   "Halogen",
+//   "10km",
+//   "Mahindra",
+//   "SUV",
+//   "diesel",
+//   true,
+//   true,
+//   "black"
+// );
+// const tata = new Car(
+//   "Tubeless",
+//   4,
+//   7,
+//   140,
+//   "LED",
+//   "10km",
+//   "TATA",
+//   "hatchback",
+//   "diesel",
+//   true,
+//   true,
+//   "black"
+// );
+
+// hondacity.printCarDetails();
+
+
 // self practice 
+
 // Make a class of vehical add the following properties
 /**
  * - noOfAirbag - 6
