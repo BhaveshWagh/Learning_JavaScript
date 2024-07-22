@@ -1,0 +1,118 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #1e1d23;
+  color: #ffffff;
+}
+h1,h2{
+  text-align: center;
+}
+.sub-heading{
+  margin: 15px auto;
+  background-color: #3a393e;
+  padding: 10px 40px;
+  width: fit-content;
+  border-radius: 50px;
+}
+/*  bg : #34354a bd : #1e1d23*/
+.timer-app {
+  display: grid;
+  gap: 20px;
+}
+
+
+.timer-input-section{
+  border-radius: 5px;
+  padding: 20px;
+  background-color:#34354a ;
+
+}
+input[type="number"] {
+  width: 70px;
+}
+
+input{
+  background-color:#34354a;
+  color: #fff;
+  text-decoration: underline;
+  font-size: 25px;
+  
+}
+input::placeholder{
+  color: white;
+}
+
+.styled-input {
+  background-color: transparent;
+  width: 50px;
+  height: 30px;
+  font-size: 16px;
+  padding: 10px;
+  
+  text-align: center;
+  color: #ffffff;
+}
+
+/* Hide the increment and decrement buttons */
+ .styled-input::-webkit-inner-spin-button,
+.styled-input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.styled-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+
+
+.no-timers{
+  text-align: center;
+}
+
+#timers-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.timer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  padding: 20px;
+  background-color:#34354a ;
+  border-radius: 5px;
+
+}
+
+.ended {
+  background-color: #f1f757;
+  color: #000000;
+  
+}
+.ended>button{
+  background-color: #34354a;
+  color: #ffffff;
+ 
+  padding: 10px 25px;
+  border-radius: 30px;
+  cursor: pointer;
+
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  background-color: #f1f757;
+  color: #000000;
+  border-radius: 25px;
+  cursor: pointer;
+}
+
