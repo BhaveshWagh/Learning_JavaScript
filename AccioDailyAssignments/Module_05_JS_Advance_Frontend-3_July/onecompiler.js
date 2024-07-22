@@ -1,3 +1,51 @@
+
+
+// self Practice 22 July 24
+
+// make an fn with  key values
+// make method chaining functions
+// instaniate the object
+// call the method chaining
+// Method chaining
+// make a Method chaining of  5 functions. in each functions 
+// ur printing something .call  them in a sequntial manner.
+
+// function getRestaurant() {
+//   this.restroName = "";
+//   this.isOpen = "" // true / false;
+//   this.openTiming = ""; 
+// }
+
+// // ! Don't use Fat Arrow functions bcz arrow function doesn't support "this";
+// getRestaurant.prototype.getName = function (name) {
+//   this.restroName = name;
+//   return this;
+// }
+
+// getRestaurant.prototype.isOpened = function (openClose) {
+//   this.isOpen = openClose;
+//   return this;
+// }
+
+// getRestaurant.prototype.time = function (timing){
+//   this.openTiming = timing;
+//   return this;
+// }
+
+
+// getRestaurant.prototype.getRestaurantDetails = function () {
+// console.log(`
+//   ${this.restroName}
+//   isOpen : ${this.isOpen}
+//   ${this.openTiming}`)
+//   return this;
+// }
+
+// const details = new getRestaurant()
+
+
+// details.getName("Kormangla Restraunt").isOpened("YES").time("8 AM to 9 PM").isOpened("Not Now").time("Today is Holiday").getRestaurantDetails()
+
 // An extra class 20 July 24
 // !! imp: Question on method chainging Asked in following companies for FrontEnd interviews
 
@@ -5,6 +53,7 @@
 // - skype 
 // - dropbox
 // ! general questioner :  where we use method chaining
+
 // Ans : When we have to call multiple functions together to make changes simultaneously
 
 // Method chaining
@@ -693,50 +742,50 @@
 
 // Make a custom function to print all the details of the vehical and car class
 
-class Vehical {
-  // Make a constructor to initialize an object
-  constructor(carsType, noOfAirbags, noOfSeats, isAutomatic) {
-    this.carsType = carsType;
-    this.noOfAirbags = noOfAirbags;
-    this.noOfSeats = noOfSeats;
-    this.isAutomatic = isAutomatic;
-  }
+// class Vehical {
+//   // Make a constructor to initialize an object
+//   constructor(carsType, noOfAirbags, noOfSeats, isAutomatic) {
+//     this.carsType = carsType;
+//     this.noOfAirbags = noOfAirbags;
+//     this.noOfSeats = noOfSeats;
+//     this.isAutomatic = isAutomatic;
+//   }
 
-  // make a custome function to print all the details of vehical clss
-  printVehicalDetails = () => {
-    console.log(
-      `${this.carsType},${this.noOfAirbags},${this.noOfSeats},${this.isAutomatic}`
-    );
-  };
-}
+//   // make a custome function to print all the details of vehical clss
+//   printVehicalDetails = () => {
+//     console.log(
+//       `${this.carsType},${this.noOfAirbags},${this.noOfSeats},${this.isAutomatic}`
+//     );
+//   };
+// }
 
-// child class
-class Car extends Vehical {
-  constructor(
-    carsType,
-    noOfAirbags,
-    noOfSeats,
-    isAutomatic,
-    brand,
-    fuelType,
-    milage,
-    price
-  ) {
-    super(carsType, noOfAirbags, noOfSeats, isAutomatic);
-    this.brand = brand;
-    this.fuelType = fuelType;
-    this.milage = milage;
-    this.price = price;
-  }
-  printCarDetails = () => {
-    this.printVehicalDetails();
-    console.log(
-      `${this.brand}, ${this.fuelType}, ${this.milage} Km/l, ${this.price} Million`
-    );
-  };
-}
-const bmw = new Car("Sedan", 6, 5, true, "BMW", "Petrol", 8, 6);
-bmw.printCarDetails()
+// // child class
+// class Car extends Vehical {
+//   constructor(
+//     carsType,
+//     noOfAirbags,
+//     noOfSeats,
+//     isAutomatic,
+//     brand,
+//     fuelType,
+//     milage,
+//     price
+//   ) {
+//     super(carsType, noOfAirbags, noOfSeats, isAutomatic);
+//     this.brand = brand;
+//     this.fuelType = fuelType;
+//     this.milage = milage;
+//     this.price = price;
+//   }
+//   printCarDetails = () => {
+//     this.printVehicalDetails();
+//     console.log(
+//       `${this.brand}, ${this.fuelType}, ${this.milage} Km/l, ${this.price} Million`
+//     );
+//   };
+// }
+// const bmw = new Car("Sedan", 6, 5, true, "BMW", "Petrol", 8, 6);
+// bmw.printCarDetails()
 
 // const vehical = new  Vehical('Sedan', 6, 5, true)
 
@@ -919,53 +968,53 @@ bmw.printCarDetails()
 // Out of this classRoom make 5 students out of it.
 // add a custome fn to print all the common properties.
 
-class ClassRoom {
-  // static varibles that are common for all students.
-  static schoolName = "Don Bosco School Pune";
-  static noOfSubjects = 6;
-  static uniformColor = "White&Black";
-  static sectionName = "A";
-  static noOfStudentsInClass = 88;
+// class ClassRoom {
+//   // static varibles that are common for all students.
+//   static schoolName = "Don Bosco School Pune";
+//   static noOfSubjects = 6;
+//   static uniformColor = "White&Black";
+//   static sectionName = "A";
+//   static noOfStudentsInClass = 88;
   
-  constructor(studentName,studentAge,CGPA,Gender){
-    this.studentName = studentName;
-    this.studentAge = studentAge;
-    this.CGPA = CGPA;
-    this.Gender = Gender;
-  }
-  // printing the Common Information 
-  static printCommonDetails(){
-    console.log(`Common Information: 
-    School Name : ${ClassRoom.schoolName},
-    No of Subjects : ${ClassRoom.noOfSubjects},
-    Uniform Color : ${ClassRoom.uniformColor},
-    Section Name : ${ClassRoom.sectionName},
-    No od Students: ${ClassRoom.noOfStudentsInClass}`)
-    console.log('-------------------------')
-  }
+//   constructor(studentName,studentAge,CGPA,Gender){
+//     this.studentName = studentName;
+//     this.studentAge = studentAge;
+//     this.CGPA = CGPA;
+//     this.Gender = Gender;
+//   }
+//   // printing the Common Information 
+//   static printCommonDetails(){
+//     console.log(`Common Information: 
+//     School Name : ${ClassRoom.schoolName},
+//     No of Subjects : ${ClassRoom.noOfSubjects},
+//     Uniform Color : ${ClassRoom.uniformColor},
+//     Section Name : ${ClassRoom.sectionName},
+//     No od Students: ${ClassRoom.noOfStudentsInClass}`)
+//     console.log('-------------------------')
+//   }
   
-  printDetails() {
-        console.log(`Student Name: ${this.studentName},
-        Student Age: ${this.studentAge},
-        CGPA: ${this.CGPA},
-        Gender: ${this.Gender}`);
-        console.log('-------------------------')
-  }
-}
+//   printDetails() {
+//         console.log(`Student Name: ${this.studentName},
+//         Student Age: ${this.studentAge},
+//         CGPA: ${this.CGPA},
+//         Gender: ${this.Gender}`);
+//         console.log('-------------------------')
+//   }
+// }
 
-const student1 = new ClassRoom("Gimmy",   14, 3.8, "Female");
-const student2 = new ClassRoom("Mohit",   15, 3.6, "Male");
-const student3 = new ClassRoom("Hitesh",  14, 3.9, "Male");
-const student4 = new ClassRoom("Sonu",    13, 4.0, "Female");
-const student5 = new ClassRoom("Daniyal",  15, 3.7, "Male");
+// const student1 = new ClassRoom("Gimmy",   14, 3.8, "Female");
+// const student2 = new ClassRoom("Mohit",   15, 3.6, "Male");
+// const student3 = new ClassRoom("Hitesh",  14, 3.9, "Male");
+// const student4 = new ClassRoom("Sonu",    13, 4.0, "Female");
+// const student5 = new ClassRoom("Daniyal",  15, 3.7, "Male");
 
-ClassRoom.printCommonDetails()
+// ClassRoom.printCommonDetails()
 
-const arrOfObj = [student1,student2,student3,student4,student5]
+// const arrOfObj = [student1,student2,student3,student4,student5]
 
-arrOfObj.forEach((item)=>{
-  item.printDetails()
-})
+// arrOfObj.forEach((item)=>{
+//   item.printDetails()
+// })
 
 // or you can do this
 // student1.printStudentDetails();
@@ -1052,71 +1101,71 @@ arrOfObj.forEach((item)=>{
 // Task : Make a Blueprint Name "SuperHero"
 
 
-class SuperHero {
+// class SuperHero {
   
-// created a constructor for all the properties name, strength....
+// // created a constructor for all the properties name, strength....
 
-  constructor(name, strength, health, canFly, canTeleport, stardom, speed, intelligence, agility){
-    this._name = name
-    this._strength = strength
-    this._health = health
-    this._canFly = canFly
-    this._canTeleport = canTeleport
-    this._stardom = stardom
-    this._speed = speed
-    this._intelligence = intelligence
-    this._agility = agility 
-  }
+//   constructor(name, strength, health, canFly, canTeleport, stardom, speed, intelligence, agility){
+//     this._name = name
+//     this._strength = strength
+//     this._health = health
+//     this._canFly = canFly
+//     this._canTeleport = canTeleport
+//     this._stardom = stardom
+//     this._speed = speed
+//     this._intelligence = intelligence
+//     this._agility = agility 
+//   }
   
-  // custome function to print all details
-  printAllDetails() {
-    console.log(`Name: ${this._name}`);
-    console.log(`Strength: ${this._strength}`);
-    console.log(`Health: ${this._health}`);
-    console.log(`Can Fly: ${this._canFly}`);
-    console.log(`Can Teleport: ${this._canTeleport}`);
-    console.log(`Stardom: ${this._stardom}`);
-    console.log(`Speed: ${this._speed}`);
-    console.log(`Intelligence: ${this._intelligence}`);
-    console.log(`Agility: ${this._agility}`);
+//   // custome function to print all details
+//   printAllDetails() {
+//     console.log(`Name: ${this._name}`);
+//     console.log(`Strength: ${this._strength}`);
+//     console.log(`Health: ${this._health}`);
+//     console.log(`Can Fly: ${this._canFly}`);
+//     console.log(`Can Teleport: ${this._canTeleport}`);
+//     console.log(`Stardom: ${this._stardom}`);
+//     console.log(`Speed: ${this._speed}`);
+//     console.log(`Intelligence: ${this._intelligence}`);
+//     console.log(`Agility: ${this._agility}`);
    
-  }
+//   }
   
   
-  // print sum of all integers 
-  getSumOfIntegers() {
-    let sum = this._strength + this._health + this._stardom +  this._speed + this._intelligence + this._agility
-    console.log(`Sum of All integer properties for ${this._name} : ${sum}`)
-    console.log('--------*****--------')
-  }
+//   // print sum of all integers 
+//   getSumOfIntegers() {
+//     let sum = this._strength + this._health + this._stardom +  this._speed + this._intelligence + this._agility
+//     console.log(`Sum of All integer properties for ${this._name} : ${sum}`)
+//     console.log('--------*****--------')
+//   }
   
-}
+// }
 
-// 5 superhero's
+// // 5 superhero's
 
-const hero1 = new SuperHero("Captain Marvel", 500, 100, true, false, 90, 85, 95, 80);
-const hero2 = new SuperHero("Spider-Man", 300, 90, false, false, 80, 75, 90, 95);
-const hero3 = new SuperHero("Iron Man", 400, 85, true, false, 95, 80, 100, 70);
-const hero4 = new SuperHero("Thor", 500, 100, true, true, 95, 70, 85, 90);
-const hero5 = new SuperHero("Black Panther", 350, 95, false, false, 85, 90, 85, 100);
+// const hero1 = new SuperHero("Captain Marvel", 500, 100, true, false, 90, 85, 95, 80);
+// const hero2 = new SuperHero("Spider-Man", 300, 90, false, false, 80, 75, 90, 95);
+// const hero3 = new SuperHero("Iron Man", 400, 85, true, false, 95, 80, 100, 70);
+// const hero4 = new SuperHero("Thor", 500, 100, true, true, 95, 70, 85, 90);
+// const hero5 = new SuperHero("Black Panther", 350, 95, false, false, 85, 90, 85, 100);
 
-// Printing details of each superhero
+// // Printing details of each superhero
 
-hero1.printAllDetails();
-hero1.getSumOfIntegers();
+// hero1.printAllDetails();
+// hero1.getSumOfIntegers();
 
-hero2.printAllDetails();
-hero2.getSumOfIntegers();
+// hero2.printAllDetails();
+// hero2.getSumOfIntegers();
 
 
-hero3.printAllDetails();
-hero3.getSumOfIntegers();
+// hero3.printAllDetails();
+// hero3.getSumOfIntegers();
 
-hero4.printAllDetails();
-hero4.getSumOfIntegers();
+// hero4.printAllDetails();
+// hero4.getSumOfIntegers();
 
-hero5.printAllDetails();
-hero5.getSumOfIntegers();
+// hero5.printAllDetails();
+// hero5.getSumOfIntegers();
 
 
 
@@ -1162,20 +1211,20 @@ hero5.getSumOfIntegers();
 // }
 // 
 
-Array.prototype.myFilter = function(callback){
-  let arr = []
-  for(let i = 0; i< this.length; i++){
-    if(callback.call(this,this[i])){
-      arr.push(this[i])
-    }
-  }
-  return arr
-}
+// Array.prototype.myFilter = function(callback){
+//   let arr = []
+//   for(let i = 0; i< this.length; i++){
+//     if(callback.call(this,this[i])){
+//       arr.push(this[i])
+//     }
+//   }
+//   return arr
+// }
 
-const arr = [77,66,89,93,32,33,13,61,15,3,1323]
-const resultantArr = arr.myFilter(num => num % 10 === 3) //[ 93, 33, 13, 3, 1323 ]
+// const arr = [77,66,89,93,32,33,13,61,15,3,1323]
+// const resultantArr = arr.myFilter(num => num % 10 === 3) //[ 93, 33, 13, 3, 1323 ]
 
-console.log(resultantArr)
+// console.log(resultantArr)
 
 // 3. Question task find even length strings
 
