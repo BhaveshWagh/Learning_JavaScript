@@ -53,6 +53,37 @@ const promise = new Promise((resolve,reject) => {
   // const arr = [1,2,3,4,5]
   // processArray(arr, (result) => {console.log(result)})
   
+  //Callback Hell
+  // Callbacks are nested within other callbacks several levels deep, making the code difficult to read and maintain. This can lead to issues in understanding the flow and debugging the code.
+// This is called Callback hell
+
+// Your array of words
+let words = ['hesop', 'dska', 'jdka', 'kdalm'];
+
+// Function to simulate the animation
+const animateAll = (animate) => {
+    setTimeout(() => {
+        animate(words[0]);
+        setTimeout(() => {
+            animate(words[1]);
+            setTimeout(() => {
+                animate(words[2]);
+                setTimeout(() => {
+                    animate(words[3]);
+                }, 1000);
+            }, 1000);
+        }, 1000);
+    }, 1000);
+}
+
+// Function to animate a single word
+// const animate = (word) => {
+//     console.log(`Animating: ${word}`); // Simulate animation by logging to the console
+// }
+
+// // Start the animation process
+// animateAll(animate)
+
   
   
   // 1.Question
