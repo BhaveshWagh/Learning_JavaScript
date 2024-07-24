@@ -1,5 +1,12 @@
 // 23 July 24
 // Promises
+// Promises:-
+// JavaScript Promises used to simplify managing multiple asynchronous operations, preventing callback hell and unmanageable code. 
+// syntax
+// let promise = new Promise(function(resolve, reject){
+    //do something
+// });
+
 
 // make a promise. resolve it and print the result after 3 seconds
 const promise = new Promise((resolve,reject) => {
