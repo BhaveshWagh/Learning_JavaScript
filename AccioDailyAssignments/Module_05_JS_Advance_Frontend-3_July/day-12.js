@@ -1,3 +1,24 @@
+// 24 july 24
+// self understanding
+
+let myPromise = new Promise((resolve, reject) => {
+  if (43 > 10) {
+    resolve("Promise fullfield");
+  } else {
+    reject("Promise not fullfield");
+  }
+});
+
+myPromise.then(
+  (fullfield) => {
+    console.log(fullfield);
+  },
+  (error) => {
+    console.log(error);
+  }
+);
+
+
 // 23 July 24
 // Promises
 // Promises:-
