@@ -2,39 +2,36 @@
 
 // ! Polyfill of .reduce for initialValue
 
+// const arr = [1, 2, 3, 4, 5, 6, 7];
+
+// Array.prototype.myReduce = function (callback, initialValue) {
+//   let accumulator = initialValue;
+//   for (let i = 0; i < this.length; i++) {
+//     accumulator = callback.call(this, accumulator, this[i]);
+//   }
+//   return accumulator;
+// };
+
+// const sum = arr.myReduce((acc, curr) => acc + curr, 2);
+// console.log(sum);
+
+// Polyfill of .reduce() method
 const arr = [1, 2, 3, 4, 5, 6, 7];
 
 Array.prototype.myReduce = function (callback, initialValue) {
   let accumulator = initialValue;
   for (let i = 0; i < this.length; i++) {
-    accumulator = callback.call(this, accumulator, this[i]);
+    if (accumulator) {
+      accumulator = callback.call(this, accumulator, this[i]);
+    } else {
+      accumulator = this[i];
+    }
   }
   return accumulator;
 };
 
-const sum = arr.myReduce((acc, curr) => acc + curr, 2);
-console.log(sum);
-
-// Polyfill of .reduce() method
-// const arr = [1, 2, 3, 4, 5, 6, 7];
-
-// Array.prototype.myReduce = function (callback, initialValue) {
-//         let accumulator = initialValue;
-//         for (let i = 0; i < this.length; i++) {
-
-//             if (accumulator) {
-//                 accumulator = callback.call(this,
-//                     accumulator, this[i]);
-//             }
-//             else {
-//                 accumulator = this[i];
-//             }
-//         }
-//         return accumulator;
-//     }
-
-// const average = arr.myReduce((acc, curr) => acc + curr ) / arr.length
-// console.log(average);
+const average = arr.myReduce((acc, curr) => acc + curr) / arr.length;
+console.log(average);
 
 // refactor the below code
 // const average = arr.map((val, idx) => (val * 2 + 32) - idx).reduce((acc, curr) => acc + curr, 0) / arr.length;
