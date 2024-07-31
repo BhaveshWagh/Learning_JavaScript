@@ -312,233 +312,7 @@ const handleThrottling = throttle(getData, 1000)
 
 
 
-// 29 July 2024
-// Debouncing and Throttling
-
-// ! Debouncing in one liner -> To limit an api calls,
-//  so reduce the api calls so the server can't crash
-
-
-// Import and Export 
-// ! why we use import and export
-// 1. Reduces Memory.
-// 2. Reduce redundancy of code.
-// import => receive
-// export => send
-
-
-// const obj = {
-//   map: [
-//     { you: "bat" },
-//     { we: "sam" },
-//     { help: "samee" },
-//     { hey: [1, 2, 3, 4, { toy: { u: 7 } }] },
-//   ],
-// };
-
-// console.log(obj.map[3].hey[4].toy.u);
-
-// const getData = async () => {
-//   const response = await fetch(obj);
-//   const data = await response.json();
-//   console.log(data.map[3].hey[4].toy.u);
-//   return data;
-// };
-
-// getData();
-
-// self Practice
-// make a collective promise and handle rejection also
-// make at least 3 promises. Resolve 2 promises and reject 1.
-// make conditional promises each depends on each other
-// use Arithmatic operations to resolve and reject the promises
-
-// Syntax
-// .Promise.all([]).then().catch
-
-// const promise1 = new Promise((resolve, reject) => {
-//     const a = 0, b = 3;
-//     const result = a + b;
-//     if (result >= 0) {
-//         resolve(`Promise 1 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 1 rejected due to negative result');
-//     }
-// });
-
-// const promise2 = new Promise((resolve, reject) => {
-//     const previousResult = 8;
-//     const result = previousResult * 2;
-//     if (result <= 20) {
-//         resolve(`Promise 2 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 2 rejected due to result exceeding 20');
-//     }
-// });
-
-// const promise3 = new Promise((resolve, reject) => {
-//     const previousResult = 16;
-//     const result = previousResult - 5;
-//     if (result !== 0) {
-//         resolve(`Promise 3 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 3 rejected due to result being zero');
-//     }
-// });
-
-// Promise.all([promise1, promise2, promise3])
-//     .then(results => {
-//         results.forEach(result => console.log(result));
-//     })
-//     .catch(error => {
-//         console.error('At least one promise rejected:', error);
-//     });
-
-// const promise1 = (a, b) => new Promise((resolve, reject) => {
-//     const result = a + b;
-//     if (result >= 0) {
-//         resolve(`Promise 1 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 1 rejected due to negative result');
-//     }
-// });
-
-// const promise2 = (resultFromPromise1) => new Promise((resolve, reject) => {
-//     const result = resultFromPromise1 * 2;
-//     if (result <= 20) {
-//         resolve(`Promise 2 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 2 rejected due to result exceeding 20');
-//     }
-// });
-
-// const promise3 = (resultFromPromise2) => new Promise((resolve, reject) => {
-//     const result = resultFromPromise2 - 5;
-//     if (result !== 0) {
-//         resolve(`Promise 3 resolved with result: ${result}`);
-//     } else {
-//         reject('Promise 3 rejected due to result being zero');
-//     }
-// });
-
-// promise1(5, 3)
-//     .then(result1 => {
-//         console.log(result1);
-//         return promise2(8);
-//     })
-//     .then(result2 => {
-//         console.log(result2);
-//         return promise3(16);
-//     })
-//     .then(result3 => {
-//         console.log(result3);
-//     })
-//     .catch(error => {
-//         console.error(error);
-//     });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// 27 July 24
-
-// ! given an array [] multiply each element by 3 using map then filter all the elements 
-// which are divisible by 2 then sum all the elements using reduce
-// use only polyfills. Don't use inbuilt functions
-
-const arr = [32, 43, 55, 66, 7];
-
-// map polyfill
-Array.prototype.myMap = function (callback) {
-   const resultantArr = [];
- 
-  for (let i = 0; i < this.length; i++) {
-    resultantArr.push(callback(this[i], i))
-  }
-  return resultantArr;
-};
-
-// filter polyfill
-Array.prototype.myFilter = function (callback){
-  const resultantArr = [];
-  
-  for(let i = 0; i < this.length; i++){
-    if(callback(this[i],i)){
-      resultantArr.push(this[i])
-    }
-  }
-  return resultantArr;
-}
-
-// reduce polyfill
-Array.prototype.myReduce = function (callback, initialValue) {
-  let accumulator = initialValue;
-  
-  for (let i = 0; i < this.length; i++) {
-    
-    if (accumulator) {
-      accumulator = callback.call(this, accumulator, this[i]);
-    } 
-    
-    else {
-      accumulator = this[i];
-    }
-  }
-  return accumulator;
-};
-
-
-
-const resultArr = arr.myMap((ele) => ele * 3);
-console.log(resultArr);
-
-const filterArr = resultArr.myFilter((ele) => ele % 2 === 0)
-console.log(filterArr);
-
-const reducedSum = filterArr.myReduce((acc, curr) => acc + curr)
-console.log(reducedSum);
-
-
-
-
-// Postman -  API 
-// JSON :
-// URL --> we have JSON object. You have to access a property in that JSON Object. 
-// How would you do that?
-
-// const data = {
-//   menu: "high",
-//   price: "low",
-//   foods: [1,2,3,{
-//     people:[72,27]
-//   }]
-// }
- 
-//console.log(data.foods[3].people[1])
- 
- 
- 
-// const fetchData = async () => {
-//   const response = await fetch("")
-//   const data = await response.json()
-//   console.log(data.foods[3].people[1])
-// } 
-// fetchData()
-
-
-
-
-
+// 27 July Promise.all
 // ! flipkart - SDE - 1
 // Question make at least 4 promises. Resolve every promise except the third one , 
 // Throw an error in the third promise after a delay of 1 sec. 
@@ -719,44 +493,38 @@ console.log(reducedSum);
 
 
 
-// 25 July 2024
-// revision 
-const asyncAwait = async (n1,n2) => {
-  console.log("Execution start")
-
-  const sum = n1 + n2;
-  console.log(sum)
-  
-  const difference = await n1 - n2;
-  console.log(difference)
-
-  
-  const multiple = await n1 * n2;
-  console.log(multiple)
-
-  
-  const divide = await n1 / n2;
-  console.log(divide)
-
-  
-  const modulo = await n1 % n2;
-  console.log(modulo)
-
-  console.log("Execution ends")
-}
-
-asyncAwait(10,2)
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// 25 July 24 - async await
 // !reduce Pollyfill asked in salesforce FE interivew
 
-// await
+
+// await 
 // demonstrate async and await in a simple fn print the things and prove await functionality
 // Function that returns a resolved promise with a calculation
 
 // const calculate = async (num) => {
 //     return num * 2;
 // }
+
 
 // const demonstrateAsyncAwait = async () => {
 //     console.log("Starting async function");
@@ -781,35 +549,48 @@ asyncAwait(10,2)
 
 // demonstrateAsyncAwait();
 
+
 // Function that returns a resolved promise with a calculation
 
-const addTwoNumbers = async (a, b) => {
-console.log("Javascript waits for none!");
-return a + b;
-};
+// const addTwoNumbers = async (a, b) => {
+//   console.log("Javascript waits for none!")
+//     return a + b;
+// }
 
-const demonstrateAsyncAwait = async () => {
-console.log("Starting async function...");
 
-const num1 = 3;
-const num2 = 7;
+// const demonstrateAsyncAwait = async () => {
+//     console.log("Starting async function...");
 
-console.log(`Initial numbers: ${num1}, ${num2}`);
+//     const num1 = 3;
+//     const num2 = 7;
 
-const sum = await addTwoNumbers(num1, num2);
-console.log(`Sum of ${num1} and ${num2}: ${sum}`);
+//     console.log(`Initial numbers: ${num1}, ${num2}`);
 
-const doubleSum = await addTwoNumbers(sum, sum);
-console.log(`Double of the sum: ${doubleSum}`);
+//     const sum = await addTwoNumbers(num1, num2);
+//     console.log(`Sum of ${num1} and ${num2}: ${sum}`);
+    
+//     const doubleSum = await addTwoNumbers(sum, sum);
+//     console.log(`Double of the sum: ${doubleSum}`);
 
-console.log("Async function completed.");
-};
 
-demonstrateAsyncAwait();
+//     console.log("Async function completed.");
+// }
+
+
+// demonstrateAsyncAwait();
+
+
+
+
+
+
+
+
+
 
 // Simulate an asynchronous operation with a delay
 // const getNumber = async () => {
-//     return 42;
+//     return 42; 
 // }
 
 // // Async function demonstrating the use of await
@@ -823,19 +604,23 @@ demonstrateAsyncAwait();
 // // Calling the async function
 // demonstrateAsyncAwait();
 
+ 
+
+
+
 // await keyword is used to wait for a promise to resolve. It can be used within
 // only asynchronous function/ block.
 // Execution Pause : Await makes code wait until the promise return result
 
-// !make a asynchronous function returning a number. collerct it in 5 .then add in each
-// .then increment it by 3 .print them too in 3rd .then
+// !make a asynchronous function returning a number. collerct it in 5 .then add in each 
+// .then increment it by 3 .print them too in 3rd .then 
 // throw error collect it in catch
 
-// use async
+// use async 
 
 // const getData = async (num) => {
 //   return num
-// }
+// } 
 
 // getData(10)
 // .then((res) => {
@@ -865,6 +650,10 @@ demonstrateAsyncAwait();
 // })
 // .catch((err) => console.log(err))
 
+
+
+
+
 // async await
 // * async - asynchronous
 //    - executing multiple files/codes at the same time
@@ -878,11 +667,14 @@ demonstrateAsyncAwait();
 
 // async getData = async (num) => {
 //   return num
-// }
+// } 
 
 // getData(10)
 // .then((res) => console.log(res))
 // )
+
+
+
 
 // Question 2: make a promise chaining by making a function passing a number to it and make at least 6 .then
 // then throw an error at 4th .then and catch the error in the catch block
@@ -896,6 +688,7 @@ demonstrateAsyncAwait();
 //         }
 //     });
 // }
+
 
 // incrementWithThrowError(10)
 // .then((num)=>{
@@ -935,8 +728,21 @@ demonstrateAsyncAwait();
 //   console.log("Error: " + error)
 // })
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Revision Question
-// main a similar promise chain in which you are passing a number in a fn. and it that fn you are making promise and its chaining. do increment that number by 2 in every make at least 5 .thens in the chain
+// main a similar promise chain in which you are passing a number in a fn. and it that fn you are making promise and its chaining. do increment that number by 2 in every make at least 5 .thens in the chain 
 // follow this Syntax:
 // fn(num){
 // promise - resolve
@@ -946,6 +752,8 @@ demonstrateAsyncAwait();
 // .catch(error) =>{}
 // }
 
+
+
 // function incrementNumber(num) {
 //     return new Promise((resolve, reject) => {
 //         if (num < 0) {
@@ -954,7 +762,7 @@ demonstrateAsyncAwait();
 //         resolve(num);
 //     })
 //     .then(result => {
-//         result += 2;
+//         result += 2;  
 //         console.log(result);
 //         return result;
 //     })
@@ -983,7 +791,21 @@ demonstrateAsyncAwait();
 //     });
 // }
 
+
 // incrementNumber(10)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // 24 July 24
@@ -998,47 +820,47 @@ demonstrateAsyncAwait();
 // fn(num){}
 
 
-function incrementNumber(num) {
-  return new Promise((resolve, reject) => {
-      if (num < 0) {
-          return reject('Please enter a positive number');
-      }
-      resolve(num);
-  })
-  .then(result => {
-      result += 2;
-      console.log(result);
-      return result;
-  })
-  .then(result => {
-      result += 3;
-      console.log(result);
-      return result;
-  })
-  .then(result => {
-      result += 4;
-      console.log(result);
-      return result;
-  })
-  .then(result => {
-      result += 5;
-      console.log(result);
-      return result;
-  })
-  .then(result => {
-      result += 6;
-      console.log(result);
-      return result;
-  })
-  .catch(error => {
-      console.error(`Error: ${error}`);
-  });
-}
+// function incrementNumber(num) {
+//     return new Promise((resolve, reject) => {
+//         if (num < 0) {
+//             return reject('Please enter a positive number');
+//         }
+//         resolve(num);
+//     })
+//     .then(result => {
+//         result += 2;
+//         console.log(result);
+//         return result;
+//     })
+//     .then(result => {
+//         result += 3;
+//         console.log(result);
+//         return result;
+//     })
+//     .then(result => {
+//         result += 4;
+//         console.log(result);
+//         return result;
+//     })
+//     .then(result => {
+//         result += 5;
+//         console.log(result);
+//         return result;
+//     })
+//     .then(result => {
+//         result += 6;
+//         console.log(result);
+//         return result;
+//     })
+//     .catch(error => {
+//         console.error(`Error: ${error}`);
+//     });
+// }
 
 
-incrementNumber(10)
- 
-  
+// incrementNumber(10)
+   
+    
 
 
 
@@ -1056,15 +878,15 @@ incrementNumber(10)
 // please focus on code quality .with good variable names
 
 // const createRandomePromise = new Promise((resolve, reject) => {
-  
+    
 //     const isResolve = Math.random() > 0.5; 
 //     console.log(isResolve)
-  
+    
 //     if (isResolve) {
 //       setTimeout(() => resolve("Resolved"), 3000); 
 //     } else {
 //       setTimeout(() => reject("Reject"), 4000); 
-
+  
 //     }
 // });
 
@@ -1087,7 +909,7 @@ incrementNumber(10)
 
 // let myPromise = new Promise((resolve,reject) => {
 //   let x = 0;
-
+  
 //   if(x == 0){
 //     resolve("OK")
 //   }else{
@@ -1098,7 +920,7 @@ incrementNumber(10)
 // myPromise
 //   .then((value) => myDisplayer(value))
 //   .catch( (error) => myDisplayer(error))
-
+  
 // convert the above same code with normal function arrow fn and .catch method
 
 
@@ -1173,7 +995,7 @@ incrementNumber(10)
 // use fat arrow functions
 
 // const rejectPromise = new Promise((resolve, reject)=>{
-
+  
 //   if(10 < 2){
 //     resolve("Promise resolevd")
 //   }
@@ -1195,7 +1017,7 @@ incrementNumber(10)
 // after resolving promise print "Promise resolevd"
 // use fat arrow functions
 // const myPromise = new Promise((resolve, reject)=>{
-
+  
 //   if(10 > 2){
 //     resolve("Promise resolevd")
 //   }
@@ -1219,19 +1041,18 @@ incrementNumber(10)
 
 
 
-
 // 23 July 24
 // Promises
 
 // make a promise. resolve it and print the result after 3 seconds
-const promise = new Promise((resolve,reject) => {
-  setTimeout(()=>{
-    reject("Promise reject after 3 seconds")
-  }, 3000)
-})
+// const promise = new Promise((resolve,reject) => {
+//   setTimeout(()=>{
+//     reject("Promise reject after 3 seconds")
+//   }, 3000)
+// })
 
-promise
-.then((result) => console.log(result), (error) => console.log(error))
+// promise
+// .then((result) => console.log(result), (error) => console.log(error))
 
 
 // syntax
@@ -1244,28 +1065,6 @@ promise
 // console.log(success)
 // })
 
-const animateAll = (animate) => {
-  setTimeout(() => {
-      animate(words[0]);
-      setTimeout(() => {
-          animate(words[1]);
-          setTimeout(() => {
-              animate(words[2]);
-              setTimeout(() => {
-                  animate(words[3]);
-              }, 1000);
-          }, 1000);
-      }, 1000);
-  }, 1000);
-}
-let words = ['hesop', 'dska', 'jdka', 'kdalm'];
-// Function to animate a single word
-const animate = (word) => {
-  console.log(`Animating: ${word}`); // Simulate animation by logging to the console
-}
-
-// Start the animation process
-// animateAll(animate)
 
 
 
@@ -1296,12 +1095,12 @@ const animate = (word) => {
 // ! write a function named fetchData that simulates that using setTImeout and calls a callback function with printing data received after 2 seconds . 
 // fn(){print data recived after 2 seconds}fetchData(fn) fn -> callback fn.
 
-const fetchData = (callback) => {
-  setTimeout(() => {
-    const data  = "Data received after 3 seconds";
-    callback(data)
-  }, 3000);
-}
+// const fetchData = (callback) => {
+//   setTimeout(() => {
+//     const data  = "Data received after 3 seconds";
+//     callback(data)
+//   }, 3000);
+// }
 
 // fetchData((data) => {
 //   console.log(data)
@@ -1323,8 +1122,12 @@ const fetchData = (callback) => {
 
 
 
-// 22 July 24
+
+
+
+//  22 July 24
 // callback
+// ! Asked interviewer for how to solve this Question using callback ***** or just normal callback
 // make a fn. make a callback fn. In main fn pass 2 numbers in it with a callback fn
 // in that callback fn add the numbers and pass result to another callback fn
 //  in that callback fn double the result and pass result to another callback fn
@@ -1356,12 +1159,8 @@ const fetchData = (callback) => {
 //   callback(n1 + n2, function(result) {
 //     callback(result * 2, function(result) {
 //       callback(result / 3, function(result) {
-//         callback(Math.sqrt(result), function(res) {
-//           console.log(`add: ${n1 + n2},
-//   doubled: ${result},
-//   divide by 3: ${result},
-//   sqrt: ${res}
-//   `);
+//         callback(Math.sqrt(result).toFixed(2), function(result) {
+//           console.log(`sqrt : ${result}`);
 //         });
 //       });
 //     });
@@ -1373,111 +1172,59 @@ const fetchData = (callback) => {
 // });
 
 
-// callback
-// make a fn. make a callback fn. In main fn pass 2 numbers in it with a callback fn
-// in that callback fn add the numbers and pass result to another callback fn
-//  in that callback fn double the result and pass result to another callback fn
-//  in that callback fn divide it by 3  and pass result to another callback fn
-//  in that callback fn take sqrt of that numbers and pass result to another callback fn
-
-// function main(num1, num2, callback) {
-//   callback(num1 + num2, (result) => {
-//     callback(result * 2, (result) => {
-//       callback(result / 3, (result) => {
-//         callback(parseInt(Math.sqrt(result)), (result) => {});
-//       });
-//     });
-//   });
-// }
-
-// main(5, 2, (result, callback) => {
-//   console.log(`${result}`);
-//   callback(result);
-// });
-
-
-
-// function displayRes(result) {
-//   console.log(result);
-// }
-
-// function addNumbers(num1, num2, callback) {
-//   const sum = num1 + num2;
-//   console.log(sum);
-//   callback(sum);
-// }
-
-// function doubleResult(result, callback) {
-//   const doubled = result * 2;
-//   console.log("double." + doubled);
-//   callback(doubled);
-// }
-
-// function divideByThree(result, callback) {
-//   const divided = result / 3;
-//   callback(divided);
-// }
-
-// function sqrtResult(result, callback) {
-//   const guess = Math.sqrt(result);
-//   callback(guess);
-// }
-
-// function mainFunction(num1, num2) {
-//   addNumbers(num1, num2, function (sum) {
-//     doubleResult(sum, function (doubled) {
-//       divideByThree(doubled, function (divided) {
-//         sqrtResult(divided, function (sqrt) {
-//           // console.log(sqrt)
-//           displayRes(sqrt);
+// sj code
+// function main(num1, num2, callback){
+//       callback(num1 + num2, (result) =>{
+//       callback(result * 2, (result)=>{
+//       callback(result / 3, (result)=>{
+//       callback(Math.sqrt(result), (result)=>{
+//       console.log("hello"+result);?
+//                 });
+//             });
 //         });
-//       });
 //     });
-//   });
 // }
+// main(5,2, (result, callback) =>{console.log(`Addition: ${result}, Double: ${result}, Division: ${result},SquarRoot: ${result}`);});
 
-// mainFunction(5, 2);
+function displayRes(result) {
+  console.log(result);
+}
 
-// function displayRes(result) {
-//   console.log(result);
-// }
+function addNumbers(num1, num2, callback) {
+  const sum = num1 + num2;
+  callback(sum);
+}
 
-// function addNumbers(num1, num2, callback) {
-//   const sum = num1 + num2;
-  
-//   callback(sum);
-// }
-
-// function doubleResult(result, callback) {
-//   const doubled = result * 2;
-//   callback(doubled);
-// }
+function doubleResult(result, callback) {
+  const doubled = result * 2;
+  callback(doubled);
+}
 
 
-// function divideByThree(result, callback) {
-//   const divided = result / 3;
-//   callback(divided);
-// }
+function divideByThree(result, callback) {
+  const divided = result / 3;
+  callback(divided);
+}
 
 
-// function sqrtResult(result, callback) {
-//   const guess = Math.sqrt(result)
-//   callback(guess);
-// }
+function sqrtResult(result, callback) {
+  const guess = Math.sqrt(result)
+  callback(guess);
+}
 
 
-// function mainFunction(num1, num2) {
-//   addNumbers(num1, num2, function(sum) {
-//     doubleResult(sum, function(doubled) {
-//       divideByThree(doubled, function(divided) {
-//         sqrtResult(divided, function(sqrt) {
-//           // console.log(sqrt)
-//           displayRes(sqrt)
-//         });
-//       });
-//     });
-//   });
-// }
+function mainFunction(num1, num2) {
+  addNumbers(num1, num2, function(sum) {
+    doubleResult(sum, function(doubled) {
+      divideByThree(doubled, function(divided) {
+        sqrtResult(divided, function(sqrt) {
+          // console.log(sqrt)
+          displayRes(sqrt)
+        });
+      });
+    });
+  });
+}
 
 // mainFunction(5,2);
 
@@ -1588,108 +1335,25 @@ const fetchData = (callback) => {
 // printSomething.one().two().three().four().five()
 
 
-// self Practice 22 July 24
-
-// make an fn with  key values
-// make method chaining functions
-// instaniate the object
-// call the method chaining
-// Method chaining
-// make a Method chaining of  5 functions. in each functions 
-// ur printing something .call  them in a sequntial manner.
-
-// function getRestaurant() {
-//   this.restroName = "";
-//   this.isOpen = "" // true / false;
-//   this.openTiming = ""; 
-// }
-
-// // ! Don't use Fat Arrow functions bcz arrow function doesn't support "this";
-// getRestaurant.prototype.getName = function (name) {
-//   this.restroName = name;
-//   return this;
-// }
-
-// getRestaurant.prototype.isOpened = function (openClose) {
-//   this.isOpen = openClose;
-//   return this;
-// }
-
-// getRestaurant.prototype.time = function (timing){
-//   this.openTiming = timing;
-//   return this;
-// }
 
 
-// getRestaurant.prototype.getRestaurantDetails = function () {
-// console.log(`
-//   ${this.restroName}
-//   isOpen : ${this.isOpen}
-//   ${this.openTiming}`)
-//   return this;
-// }
-
-// const details = new getRestaurant()
 
 
-// details.getName("Kormangla Restraunt").isOpened("YES").time("8 AM to 9 PM").isOpened("Not Now").time("Today is Holiday").getRestaurantDetails()
 
+
+
+
+
+
+
+
+
+
+
+
+// 21 July is Off Sunday 
 // An extra class 20 July 24
-// !! imp: Question on method chainging Asked in following companies for FrontEnd interviews
 
-// - Ola 
-// - skype 
-// - dropbox
-// ! general questioner :  where we use method chaining
-
-// Ans : When we have to call multiple functions together to make changes simultaneously
-
-// Method chaining
-// make a Method chaining of  5 functions. in each functions 
-// ur printing something .call  them in a sequntial manner.
-
-// function getDetails() {
-
-//     this.firstName = '';
-//     this.lastName = 'Kumar';
-//     this.age = 14;
-//     this.city = '';
-// }
-
-// getDetails.prototype.getFirstName = function (name){
-//     this.firstName = name;
-//     return this;
-// }
-
-// getDetails.prototype.getLastName = function (){
-//     this.lastName;
-//     return this;
-// }
-
-// getDetails.prototype.getAge = function (age){
-//     this.age = age;
-//     return this;
-// }
-
-// getDetails.prototype.getCity = function (){
-//     this.city = "Mumbai";
-//     return this;
-// }
-
-// getDetails.prototype.getAllDetails = function (){
-//     console.log(`${this.firstName} ${this.lastName} ${this.age} ${this.city}`)
-//     return this;
-// }
-
-// let details = new getDetails()
-
-// details.getFirstName("Akshay").getLastName().getAge(13).getCity().getAllDetails()
-
-
-
-// Question make an object you have to use Getters to log the Array.
-// and initalize a key value pairs. values as Array.
-// array should consist of  7 elements, push them using setters fn, and log the last 3 elements (SubArr) of array
 
 // demonstrate same thing inside a class based  
 
@@ -1725,7 +1389,7 @@ const fetchData = (callback) => {
 // console.log(obj.printArr);
 
 // class Array {
-//   constructor() {
+  // constructor() {
 //     this.arr = [];
 //   }
 
@@ -1790,6 +1454,19 @@ const fetchData = (callback) => {
 // }
 
 // console.log(obj.getSubArray)
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -2093,295 +1770,10 @@ const fetchData = (callback) => {
 
 // movie1.printMovieDetails()
 
-// 20 July 2024
 
 
-
-// ! Method chaining
-// make a Method chaining of  5 functions. in each functions 
-// ur printing something .call  them in a sequntial manner.
-
-// function getDetails() {
-
-//     this.firstName = '';
-//     this.lastName = 'Kumar';
-//     this.age = 14;
-//     this.city = '';
-// }
-
-// getDetails.prototype.getFirstName = function (name){
-//     this.firstName = name;
-//     return this;
-// }
-
-// getDetails.prototype.getLastName = function (){
-//     this.lastName;
-//     return this;
-// }
-
-// getDetails.prototype.getAge = function (age){
-//     this.age = age;
-//     return this;
-// }
-
-// getDetails.prototype.getCity = function (){
-//     this.city = "Mumbai";
-//     return this;
-// }
-
-// getDetails.prototype.getAllDetails = function (){
-//     console.log(`${this.firstName} ${this.lastName} ${this.age} ${this.city}`)
-//     return this;
-// }
-
-// let details = new getDetails()
-
-// details.getFirstName("Akshay").getLastName().getAge(13).getCity().getAllDetails()
-
-
-
-
-// const obj = {
-//   arr: [],
-
-//   get printArr() {
-//     // this.arr.slice(4);
-//     return this.arr.slice(this.arr.length - 3);
-//   },
-//   set setData(data) {
-//     this.arr.push(data);
-//   },
-// };
-
-// function pushData (n) {
-//     for(let i = 0; i < n; i++){
-//         obj.setData = i
-//     }
-// }
-// pushData(7)
-
-// // obj.setData = 1;
-// // obj.setData = 2;
-// // obj.setData = 3;
-// // obj.setData = 4;
-// // obj.setData = 5;
-// // obj.setData = 6;
-// // obj.setData = 7;
-
-// console.log(obj.printArr);
-
-// const obj = {
-//     arr : [1,2,3,4,5,6,7],
-//     get getSubArray(){
-//         return this.arr.slice(4)
-//     }
-// }
-
-// console.log(obj.getSubArray)
-
-// demonstrate the same thing in a class while making an object.
-// Make that setter fn inside class. and access it through object.
-
-// class Array {
-//     constructor(){
-//         this.arr = [1,2,3,4,5,6,7]
-//     }
-//     get getSubArray(){
-//         return this.arr.slice(4)
-//     }
-// }
-
-// const resultantArr = new Array()
-
-// console.log(resultantArr.getSubArray)
-
-
-
-
-
-// 19 July 24
-// 
-// class Vehicle {
-//   constructor(tyresType, noofairBags, noofSeats, engineHorsePower, lights) {
-//     this.tyresType = tyresType;
-//     this.noofairBags = noofairBags;
-//     this.noofSeats = noofSeats;
-//     this.engineHorsePower = engineHorsePower;
-//     this.lights = lights;
-//   }
-//   printVehicleDetails = () => {
-//     console.log(
-//       `${this.tyresType},${this.noofairBags},${this.noofSeats},${this.engineHorsePower},${this.lights}`
-//     );
-//   };
-// }
-// class Car extends Vehicle {
-//   constructor(
-//     tyresType,
-//     noofairBags,
-//     noofSeats,
-//     EngineHorsePower,
-//     lights,
-//     brand,
-//     typeofCar,
-//     diselOrPetrol,
-//     automatic,
-//     sunroof,
-//     color
-//   ) {
-//     super(tyresType, noofairBags, noofSeats, EngineHorsePower, lights);
-//     this.brand = brand;
-//     this.typeofCar = typeofCar;
-//     this.diselOrPetrol = diselOrPetrol;
-//     this.automatic = automatic;
-//     this.sunroof = sunroof;
-//     this.color = color;
-//   }
-
-//   printCarDetails = () => {
-//     // Mistakes : you written only
-//     // printVehicleDetails(); this is needed for reference
-//     this.printVehicleDetails();
-//     // Mistaked :in console log you miss the back ticks => ` ` for both consoles
-//     console.log(
-//       `${this.brand},${this.typeofCar},${this.diselOrPetrol},${this.automatic},${this.sunroof},${this.color}`
-//     );
-//   };
-// }
-// // Mistakes : Here while you instantiate a class you have to try instantiate a Vehical class not a car class
-// const hondacity = new Car(
-//   "Tubeless",
-//   6,
-//   5,
-//   123,
-//   "LED",
-//   "15km",
-//   "HondaCity",
-//   "Sedan",
-//   "Petrol",
-//   true,
-//   true,
-//   "white"
-// );
-// const bmw = new Car(
-//   "Tubeless",
-//   8,
-//   5,
-//   300,
-//   "LED",
-//   "12km",
-//   "BMW",
-//   "SUV",
-//   "diesel",
-//   true,
-//   true,
-//   "red"
-// );
-// const Scorpio = new Car(
-//   "Tubeless",
-//   4,
-//   7,
-//   140,
-//   "Halogen",
-//   "10km",
-//   "Mahindra",
-//   "SUV",
-//   "diesel",
-//   true,
-//   true,
-//   "black"
-// );
-// const tata = new Car(
-//   "Tubeless",
-//   4,
-//   7,
-//   140,
-//   "LED",
-//   "10km",
-//   "TATA",
-//   "hatchback",
-//   "diesel",
-//   true,
-//   true,
-//   "black"
-// );
-
-// hondacity.printCarDetails();
-
-
-// self practice 
-
-// Make a class of vehical add the following properties
-/**
- * - noOfAirbag - 6
- * - noOfSeats - 4
- * - isAutomatic - True/False
- * - carsType - Sedan
- */
-
-// Make a blueprint child car add the following properties
-/**
- * - brand
- * - fuelType
- * - milage
- * - price
- *
- */
-
-// Make a custom function to print all the details of the vehical and car class
-
-// class Vehical {
-//   // Make a constructor to initialize an object
-//   constructor(carsType, noOfAirbags, noOfSeats, isAutomatic) {
-//     this.carsType = carsType;
-//     this.noOfAirbags = noOfAirbags;
-//     this.noOfSeats = noOfSeats;
-//     this.isAutomatic = isAutomatic;
-//   }
-
-//   // make a custome function to print all the details of vehical clss
-//   printVehicalDetails = () => {
-//     console.log(
-//       `${this.carsType},${this.noOfAirbags},${this.noOfSeats},${this.isAutomatic}`
-//     );
-//   };
-// }
-
-// // child class
-// class Car extends Vehical {
-//   constructor(
-//     carsType,
-//     noOfAirbags,
-//     noOfSeats,
-//     isAutomatic,
-//     brand,
-//     fuelType,
-//     milage,
-//     price
-//   ) {
-//     super(carsType, noOfAirbags, noOfSeats, isAutomatic);
-//     this.brand = brand;
-//     this.fuelType = fuelType;
-//     this.milage = milage;
-//     this.price = price;
-//   }
-//   printCarDetails = () => {
-//     this.printVehicalDetails();
-//     console.log(
-//       `${this.brand}, ${this.fuelType}, ${this.milage} Km/l, ${this.price} Million`
-//     );
-//   };
-// }
-// const bmw = new Car("Sedan", 6, 5, true, "BMW", "Petrol", 8, 6);
-// bmw.printCarDetails()
-
-// const vehical = new  Vehical('Sedan', 6, 5, true)
-
-// vehical.printVehicalDetails()
 
 // 18 July 24
-
-
 // Inheritance 
 // Practice Question: There is a parent called Vehicle having properties:
 // - tyresType(Tubles / not)
@@ -2531,21 +1923,9 @@ const fetchData = (callback) => {
 // admitPatient4.admitPatientDetails()
 
 
-
-
-
-
-
-
-
-
-
-
-
-
 // 17 July 24
-//! Basic intro about inheritance 
-// !explain extends keyword and super is used to called parent constructor
+// Basic intro about inheritance 
+// explain extends keyword and super is used to called parent constructor
 
 
 // static variable and method 
@@ -2612,7 +1992,9 @@ const fetchData = (callback) => {
 // student5.printStudentDetails();
 
 
-// !static properties(methods/functions)/variables belongs to class not to object 
+
+
+// !static properties/variable belongs to class not to object 
 
 // class Car {
 //   static air = "bags"
@@ -2680,19 +2062,26 @@ const fetchData = (callback) => {
 // Iphone15.printDetails()
 
 
+
+
+
+
+
+
+
 // 16 July 24
 // OOPs started : 
-//  Class is a Blueprint to make an object.
+// ! Class is a Blueprint to make an object.
 // ! constructor is a function which is used to initalize the object. 
 // ! new is operator lets developers create an instance of a user-defined object type.
 
 // Task : Make a Blueprint Name "SuperHero"
-
+//
 
 // class SuperHero {
-  
+  //a constructor is a function which is used to initialize an object
 // // created a constructor for all the properties name, strength....
-
+// !! The constructor method will take a number of parameters and assign those parameters as properties to the created object.
 //   constructor(name, strength, health, canFly, canTeleport, stardom, speed, intelligence, agility){
 //     this._name = name
 //     this._strength = strength
@@ -2731,6 +2120,7 @@ const fetchData = (callback) => {
 
 // // 5 superhero's
 
+// ! The new operator lets developers create an instance of a user-defined object type or of one of the built-in object types that has a constructor function
 // const hero1 = new SuperHero("Captain Marvel", 500, 100, true, false, 90, 85, 95, 80);
 // const hero2 = new SuperHero("Spider-Man", 300, 90, false, false, 80, 75, 90, 95);
 // const hero3 = new SuperHero("Iron Man", 400, 85, true, false, 95, 80, 100, 70);
@@ -2762,6 +2152,8 @@ const fetchData = (callback) => {
 
 
 // 13 && 14 Weekend --> 15 July 24
+
+// What we learned till now 
 // bind map reduce filter polyfills
 
 // bind ---> function(applies). (Function.prototype)
@@ -2769,23 +2161,10 @@ const fetchData = (callback) => {
 // map, reduce, filter applies on ----> Array (Applies)
 
 
-// bind -----> return a new function that can be invoked later.
+// bind ---> return a new function that can be invoked later.
 
-// map ------> return a new Array (Array.prototype)
+// map ---> return a new Array (Array.prototype)
 
-// reduce ---> return single value (Array.prototype)
-
-// filter ---> returns A new array (Array.prototype)
-
-// deep clone shallow clone
-// deep Object 
-// slice
-
-// .call(this(reference), parameters)
-// .apply(this(reference), parameters list of Array)
-// .bind(this(reference), parameters)
-
-// applies on a function
 // Polyfill of filter 
 
 // Array.prototype.myFilter = function(callback){
