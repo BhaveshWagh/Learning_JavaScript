@@ -1,0 +1,76 @@
+.top {
+  display: flex;
+  justify-content: center;
+}
+
+.top>button{
+  background-color: black;
+  color: white;
+  padding: 10px;
+  border-radius: 4px;
+  border: none;
+}
+
+.top>button:hover{
+  cursor: pointer;
+}
+
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.table td,
+.table th {
+  border: 1px solid gray;
+  padding: 0 10px;
+  text-align: center;
+}
+
+
+.table td {
+  font-size: 0.8rem;
+}
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(232, 233, 220, 0.811);
+  padding: 10px;
+  /*display: flex; as inline style is more prior not necessary here*/
+  justify-content: center;
+  align-items: center;
+}
+
+.popup > .popup-body {
+  padding: 40px 20px;
+  border-radius: 10px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 300px;
+  position: relative;
+}
+.popup .close {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+
+td:last-child {
+  display: flex;
+  justify-content: space-evenly;
+}
+td:last-child button {
+  border: 1px solid gray;
+  background-color: transparent;
+  border-radius: 4px;
+  margin: 4px 0;
+  cursor: pointer;
+}
