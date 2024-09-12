@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Theme Toggler</title>
+    <style>
+      body {
+        text-align: center;
+        background-color: white;
+        color: black;
+        transition: background-color 0.3s, color 0.3s;
+      }
+
+      .dark-mode {
+        background-color: black;
+        color: white;
+      }
+
+      button {
+        margin-top: 20px;
+        padding: 10px 20px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Theme Toggler</h1>
+    <button id="toggle-theme">Switch to Dark Mode</button>
+    <script>
+      const toggleButton = document.getElementById("toggle-theme");
+      const body = document.body;
+
+      // Check if user preference is stored in localStorage
+      const theme = localStorage.getItem("theme");
+      if (theme === "dark") {
+        body.classList.add("dark-mode");
+        toggleButton.textContent = "Switch to Light Mode";
+      }
+
+      toggleButton.addEventListener("click", () => {
+        body.classList.toggle("dark-mode");
+
+        if (body.classList.contains("dark-mode")) {
+          toggleButton.textContent = "Switch to Light Mode";
+          localStorage.setItem("theme", "dark");
+        } else {
+          toggleButton.textContent = "Switch to Dark Mode";
+          localStorage.setItem("theme", "light");
+        }
+      });
+    </script>
+  </body>
+</html>
