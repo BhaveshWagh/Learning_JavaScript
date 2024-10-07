@@ -1,20 +1,26 @@
-function selectionSort(arr) {
-    
-  for (let i = 1; i < arr.length; i++) {
-    let j = i - 1;
-    const curr = arr[i]
-    while(j >= 0 && curr < arr[j]){
-        arr[j + 1] = arr[j]
-        j--;
+// Paindrome strings in the array
+// https://course.acciojob.com/idle?question=d58c6dde-e25e-4709-beb0-473d98b831cf
+function isPalindrome(str) {
+  const len = str.length;
+  for (let i = 0; i < len / 2; i++) {
+    if (str[i] !== str[len - 1 - i]) {
+      return false;
     }
-    arr[j + 1] = curr
   }
-
-  return arr;
+  return true;
 }
 
-const inpArr = [1, 2, 6, 4, 5, 3];
-console.log(selectionSort(inpArr));
+function findPalindromes(arr) {
+  const palindromes = [];
+  for (let i = 0; i < arr.length; i++) {
+    if (isPalindrome(arr[i])) {
+      palindromes.push(arr[i]);
+    }
+  }
+  return palindromes;
+}
+const arr = ["racecar", "hello", "level", "radar", "civic"]
+console.log(findPalindromes(arr))
 
 // console.log(parseInt(num, 16));
 // console.log(num === Object(num)) // true
@@ -22,7 +28,7 @@ console.log(selectionSort(inpArr));
 let obj = {};
 // console.log(obj === Object(obj)) // false
 
-const arr = [1, 2, 3]; // typeof object
+// const arr = [1, 2, 3]; // typeof object
 // console.log(typeof arr);
 
 const fun = () => {};

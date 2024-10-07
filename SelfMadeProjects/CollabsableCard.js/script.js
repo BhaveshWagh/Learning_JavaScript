@@ -1,18 +1,17 @@
-const openModalBtn = document.getElementById('openModalBtn');
-const closeModalBtn = document.getElementById('closeModalBtn');
-const modal = document.getElementById('myModal');
+const openModalBtn = document.getElementById("openModalBtn");
+const closeModalBtn = document.getElementById("closeModalBtn");
+const modal = document.getElementById("myModal");
 
-openModalBtn.addEventListener('click', () => {
-    modal.style.display = 'flex';
+openModalBtn.addEventListener("click", () => {
+  modal.style.display = "flex";
 });
 
-
-closeModalBtn.addEventListener('click', () => {
-    modal.style.display = 'none';
+closeModalBtn.addEventListener("click", () => {
+  modal.style.display = "none";
 });
 
-window.addEventListener('click', (event) => {
-    if (event.target === modal) {
-        modal.style.display = 'none';
-    }
+window.addEventListener("click", (event) => {
+  if (event.target === modal) {
+    modal.style.display = "none";
+  }
 });
