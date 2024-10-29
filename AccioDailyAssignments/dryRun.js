@@ -1,3 +1,16 @@
+function multiplesOf3Or5(number) {
+  let sum = 0;
+  for (let i = 1; i < number; i++) {
+    if (i % 3 === 0) {
+      sum += i;
+    } else if (i % 5 === 0) {
+      sum += i;
+    }
+  }
+  return sum;
+}
+
+console.log(multiplesOf3Or5(1000));
 // Paindrome strings in the array
 // https://course.acciojob.com/idle?question=d58c6dde-e25e-4709-beb0-473d98b831cf
 function isPalindrome(str) {
@@ -19,8 +32,8 @@ function findPalindromes(arr) {
   }
   return palindromes;
 }
-const arr = ["racecar", "hello", "level", "radar", "civic"]
-console.log(findPalindromes(arr))
+const arr = ["racecar", "hello", "level", "radar", "civic"];
+// console.log(findPalindromes(arr))
 
 // console.log(parseInt(num, 16));
 // console.log(num === Object(num)) // true
