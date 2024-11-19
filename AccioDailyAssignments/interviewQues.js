@@ -117,15 +117,83 @@ function doSomething() {
 
 // Example:
 
-var x = 0;
-var y = 23;
+// var x = 0;
+// var y = 23;
 
-if (x) {
-  console.log(x);
-} // The code inside this block will not run since the value of x is 0(Falsy)
+// if (x) {
+//   console.log(x);
+// } // The code inside this block will not run since the value of x is 0(Falsy)
 
-if (y) {
-  console.log(y);
-} // The code inside this block will run since the value of y is 23 (Truthy)
+// if (y) {
+//   console.log(y);
+// } // The code inside this block will run since the value of y is 23 (Truthy)
 
 // 6.2.1 Logical Operators :
+
+// Logical operators in javascript, unlike operators in other programming languages, do not return true or false. They always return one of the operands.
+
+// OR ( | | ) operator - If the first value is truthy, then the first value is returned. Otherwise, always the second value gets returned.
+
+// AND ( && ) operator - If both the values are truthy, always the second value is returned && If both the values are falsy always the first value is returned. If the first value is falsy then the first value is returned or if the second value is falsy then the second value is returned.
+
+// var x = 10;
+// var y = "Namaskar";
+// var z = undefined;
+
+// console.log(x || y) // 10
+// console.log(x || z) // 10
+// console.log(z || y) // Namaskar
+
+// console.log(x && y) // Namaskar
+// console.log(false && true) // false
+// console.log(true && false) // false
+// console.log("dsd" && x) // 10
+
+// todo *** : Falsy Values : false, 0, 0n, -0, "", null, undefined, and NaN
+// console.log(false && 10); // false
+// console.log(0 && 1); // 0
+// console.log(1 && 0n); // 0n
+// console.log(-0 && 1); // -0
+// console.log("" && 1); // Returns empty string ''
+// console.log(null && 1); // null
+// console.log(undefined && 1); // undefined
+// console.log(NaN && 1); // NaN
+// console.log("" && undefined); // undefined
+
+//6.2.2 Equality Coercion :
+
+// Equality coercion takes place when using ‘ == ‘ operator. As we have stated before
+
+// The ‘ == ‘ operator compares values and not types.
+
+// While the above statement is a simple way to explain == operator, it’s not completely true
+
+// The reality is that while using the ‘==’ operator, coercion takes place.
+
+// The ‘==’ operator, converts both the operands to the same type and then compares them.
+
+// Ex :
+var a = 22;
+var b = "22";
+// console.log(typeof a, typeof b) // number string
+// console.log(a == b) // Returns true because both 'a' and 'b' are converted to the same type and then compared. Hence the operands are equal.
+
+// ! Note : Coercion does not take place when using the ‘===’ operator. Both operands are not converted to the same type in the case of ‘===’ operator.
+
+// console.log(a === b) //  Returns false because coercion does not take place and the  operands are of different types. Hence they are not equal.
+
+// 7. What is NaN property in JavaScript?
+// NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
+
+// typeof of NaN will return a Number.
+
+// To check if a value is NaN, we use the isNaN() function,
+
+// ! Note - isNaN() function converts the given value to a Number type, and then equates to NaN.
+
+console.log(isNaN("Hello")); // Returns true
+console.log(isNaN(345)); // Returns false
+console.log(isNaN("1")); // Returns false, since '1' is converted to Number type which results in 0 ( a number)
+console.log(isNaN(true)); // Returns false, since true converted to Number type results in 1 ( a number)
+console.log(isNaN(false)); // Returns false
+console.log(isNaN(undefined)); // Returns true
