@@ -14,8 +14,13 @@ This repository covers key JavaScript concepts with examples to understand their
    - [Boolean Coercion](#42-boolean-coercion)
    - [Equality Coercion](#43-equality-coercion)
 5. [NaN Property in JavaScript](#5-nan-property-in-javascript)
-
----
+6. [Passed by value and passed by reference](#6-explain-passed-by-value-and-passed-by-reference)
+7. [Strict Mode](#7-what-do-you-mean-by-strict-mode-in-javascript-and-characteristics-of-javascript-strict-mode)
+8. [IIFE : Immediately Invoked Function Expression ](#8-what-is-an-immediately-invoked-function-in-javascript)
+9. [HOF : Higher Order Functions (Map, Filter, Reduce)](#9-explain-higher-order-functions-in-javascript)
+    - [Map](#how-to-use-map-in-javascript)
+    - [Filter](#how-to-use-filter-in-javascript)
+    - [Reduce](#how-to-use-reduce-in-javascript)
 
 ## 1. Asynchronous JavaScript
 
@@ -122,11 +127,11 @@ console.log(x == y); // True
 console.log(x === y); // False
 ```
 
-### 6. Explain Implicit Type Coercion in javascript.
+### 4. Explain Implicit Type Coercion in javascript.
 
 Ans : Implicit type coercion in javascript is the automatic conversion of value from one data type to another. It takes place when the operands of an expression are of different data types.
 
-### 6.1 String coercion
+### 4.1 String coercion
 
 Ans : String coercion takes place while using the ‘ + ‘ operator. When a number is added to a string, the number type is always converted to the string type.
 
@@ -163,7 +168,7 @@ var b = "3";
 console.log(a - b) // Returns 0 since the variable y (string type) is converted to a number type
 ```
 
-### 6.2 Boolean Coercion:
+### 4.2 Boolean Coercion:
 
 Ans : Boolean coercion takes place when using logical operators, ternary operators, if statements, and loop checks. To understand boolean coercion in if statements and operators, we need to understand truthy and falsy values.
 
@@ -189,7 +194,7 @@ if (y) {
 } // The code inside this block will run since the value of y is 23 (Truthy)
 ```
 
-### 6.2.1 Logical Operators :
+### 4.2.1 Logical Operators :
 
 Ans : Logical operators in javascript, unlike operators in other programming languages, do not return true or false. They always return one of the operands.
 
@@ -226,7 +231,7 @@ console.log(NaN && 1); // NaN
 console.log("" && undefined); // undefined
 ```
 
-### 6.2.2 Equality Coercion :
+### 4.2.2 Equality Coercion :
 
     Equality coercion takes place when using ‘ == ‘ operator. As we have stated before
 
@@ -251,7 +256,7 @@ console.log(a == b) // Returns true because both 'a' and 'b' are converted to th
 console.log(a === b) //  Returns false because coercion does not take place and the  operands are of different types. Hence they are not equal.
 ```
 
-### 7. What is NaN property in JavaScript?
+### 5. What is NaN property in JavaScript?
 
 Ans : NaN property represents the “Not-a-Number” value. It indicates a value that is not a legal number.
 
@@ -270,7 +275,7 @@ console.log(isNaN(false)); // Returns false
 console.log(isNaN(undefined)); // Returns true
 ```
 
-### 8. Explain passed by value and passed by reference.
+### 6. Explain passed by value and passed by reference.
 
 Ans: In JavaScript, primitive data types are passed by value and non-primitive data types are passed by reference.
 
@@ -352,18 +357,18 @@ console.log(obj1);
 
     Therefore, non-primitive data types are always passed by reference
 
-### 9. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
+### 7. What do you mean by strict mode in javascript and characteristics of javascript strict-mode?
 
-In ECMAScript 5, a new feature called JavaScript Strict Mode allows you to write a code or a function in a "strict" operational environment. In most cases, this language is 'not particularly severe' when it comes to throwing errors. In 'Strict mode,' however, all forms of errors, including silent errors, will be thrown. As a result, debugging becomes a lot simpler. Thus programmer's chances of making an error are lowered.
+    In ECMAScript 5, a new feature called JavaScript Strict Mode allows you to write a code or a function in a "strict" operational environment. In most cases, this language is 'not particularly severe' when it comes to throwing errors. In 'Strict mode,' however, all forms of errors, including silent errors, will be thrown. As a result, debugging becomes a lot simpler. Thus programmer's chances of making an error are lowered.
 
 Characteristics of strict mode in javascript
 
-1. Duplicate arguments are not allowed by developers.
-2. In strict mode, you won't be able to use the JavaScript keyword as a parameter or function name.
-3. The 'use strict' keyword is used to define strict mode at the start of the script. Strict mode is supported by all browsers.
-4. Engineers will not be allowed to create global variables in 'Strict Mode.
+    1. Duplicate arguments are not allowed by developers.
+    2. In strict mode, you won't be able to use the JavaScript keyword as a parameter or function name.
+    3. The 'use strict' keyword is used to define strict mode at the start of the script. Strict mode is supported by all browsers.
+    4. Engineers will not be allowed to create global variables in 'Strict Mode.
 
-### 10. What is an Immediately Invoked Function in JavaScript?
+### 8. What is an Immediately Invoked Function in JavaScript?
 
 `ANS:An Immediately Invoked Function ( known as IIFE and pronounced as IIFY) is a function that runs as soon as it is defined.`
 
@@ -397,7 +402,7 @@ Characteristics of strict mode in javascript
 
     From the definition of an IIFE, we know that our code should run as soon as it is defined. A function runs only when it is invoked. If we do not invoke the function, the function declaration is returned:
 
-### 11 Explain Higher Order Functions in Javascript
+### 9. Explain Higher Order Functions in Javascript
 
     Ans: A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.A higher order function is a function that takes one or more functions as arguments, or returns a function as its result.
 
@@ -744,6 +749,6 @@ By using higher order functions, web developers can work smarter by organizing t
 
 Now, whenever you try to use map(), filter() and reduce() methods and get confused, just remember the following:
 
-- Use map when you want to transform an array
-- Use filter to select a subset of data from an array, and
-- Use reduce when you want to return a single value as a result.
+    - Use map when you want to transform an array
+    - Use filter to select a subset of data from an array, and
+    - Use reduce when you want to return a single value as a result.
