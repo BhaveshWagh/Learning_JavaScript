@@ -17,10 +17,8 @@ This repository covers key JavaScript concepts with examples to understand their
 6. [Passed by value and passed by reference](#6-explain-passed-by-value-and-passed-by-reference)
 7. [Strict Mode](#7-what-do-you-mean-by-strict-mode-in-javascript-and-characteristics-of-javascript-strict-mode)
 8. [IIFE : Immediately Invoked Function Expression ](#8-what-is-an-immediately-invoked-function-in-javascript)
-9. [HOF : Higher Order Functions (Map, Filter, Reduce)](#9-explain-higher-order-functions-in-javascript)
-    - [Map](#how-to-use-map-in-javascript)
-    - [Filter](#how-to-use-filter-in-javascript)
-    - [Reduce](#how-to-use-reduce-in-javascript)
+9. [HOF : Higher Order Functions (Map, Filter, Reduce)](#9-explain-higher-order-functions-in-javascript) - [Map](#how-to-use-map-in-javascript) - [Filter](#how-to-use-filter-in-javascript) - [Reduce](#how-to-use-reduce-in-javascript)
+10. [Closure In Javascript](#10-explain-closure-in-javascript-)
 
 ## 1. Asynchronous JavaScript
 
@@ -59,6 +57,8 @@ success
 
 **Definition:**  
 Hoisting is a phenomenon in JavaScript by which you can access variables and functions even before they are initialized.
+
+Incase of <strong>let and const</strong> : `This is because var declarations are hoisted and initialized with undefined as a value, while const and let are hoisted but not initialized.`
 
 ### Example 1: Variable Hoisting
 
@@ -752,3 +752,70 @@ Now, whenever you try to use map(), filter() and reduce() methods and get confus
     - Use map when you want to transform an array
     - Use filter to select a subset of data from an array, and
     - Use reduce when you want to return a single value as a result.
+
+## 10. Explain Closure in Javascript ?
+
+    When a function is nested inside another function, closure enables the nested function to access the variables defined in the outer function.
+
+```Javascript
+//  Example:
+
+const displayUserInfo = () => {
+  const user = {
+    firstName: "Akshay",
+    lastName: "Saini",
+  };
+  const displayName = () => {
+    console.log(`Namaste, ${user.firstName} ${user.lastName} sir...`);
+  };
+  displayName();
+};
+displayUserInfo();
+```
+
+## Let's Understand it how closure works :
+
+`When the function displayUserInfo() runs, it seems that the returning function is using the variable user inside it:`
+
+`Therefore displayUserInfo(), instead of destroying the value of user after execution, saves the value in the memory for further reference. This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed`
+
+## Challenge - Closure:
+
+    Def : Define the function authenticate to display "Login Successful" if the arguments email and password of the login function are equal to the email and password properties of user. Otherwise, return "Invalid Credentials".
+    //or
+    Def : Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.
+
+#### For example:
+
+```Javascript
+Input:
+user = {
+  email: "sam@example.com",
+  password: "123456",
+}
+email = "sam@example.com"
+password= "1234567"
+
+Output:
+"Invalid Credentials"
+```
+
+### Complete the below authenticate function.
+
+```javascript
+const login = (email, password) => {
+  const user = {
+    email: "adam@example.com",
+    password: "123456",
+  };
+
+  const authenticate = () => {
+    // Write your logic here 😊 👨‍💻
+  };
+
+  return authenticate();
+};
+
+const message = login("adam@example.com", "password");
+console.log(message);
+```

@@ -294,7 +294,7 @@ function higherOrderFunction(func) {
   func();
 }
 
-higherOrderFunction(callbackFunction); // I am higher order function
+// higherOrderFunction(callbackFunction); // I am higher order function
 // I am callback function
 
 // In the above code higherOrderFunction() is an HOF because we are passing a callback function as a parameter to it.
@@ -324,8 +324,8 @@ const diameterOfCircle = function (radius) {
   return result;
 };
 
-console.log(areaOfCircle(radius)); // [ 3.141592653589793, 12.566370614359172, 28.274333882308138 ]
-console.log(diameterOfCircle(radius)); // [ 2, 4, 6 ]
+// console.log(areaOfCircle(radius)); // [ 3.141592653589793, 12.566370614359172, 28.274333882308138 ]
+// console.log(diameterOfCircle(radius)); // [ 2, 4, 6 ]
 
 // But have you noticed the problem with the above code? Aren't we writing almost the same function again and again with slightly different logic? Also, the functions we have written aren't reusable, are they?
 
@@ -350,8 +350,8 @@ const calculate = function (radius, logic) {
   return output;
 };
 
-console.log(calculate(radius, area)); // [ 3.141592653589793, 12.566370614359172, 28.274333882308138 ]
-console.log(calculate(radius, diameter)); // [ 2, 4, 6 ]
+// console.log(calculate(radius, area)); // [ 3.141592653589793, 12.566370614359172, 28.274333882308138 ]
+// console.log(calculate(radius, diameter)); // [ 2, 4, 6 ]
 
 // Now, as you can see in the above code, we have only written a single function calculate() to calculate the area and diameter of the circle. We only need to write the logic and pass it to calculate() and the function will do the job.
 
@@ -362,7 +362,7 @@ console.log(calculate(radius, diameter)); // [ 2, 4, 6 ]
 const circumeference = function (radius) {
   return 2 * Math.PI * radius;
 };
-console.log(calculate(radius, circumeference));
+// console.log(calculate(radius, circumeference));
 
 // How to Use Higher Order Functions
 // You can use higher order functions in a variety of ways.
@@ -375,3 +375,20 @@ console.log(calculate(radius, circumeference));
 
 // If you want to know how to Use Some Important Higher Order Function like -> map(), reduce(), & filter()
 // ref: This Readme file : https://github.com/BhaveshWagh/Learning_JavaScript/blob/main/AccioDailyAssignments/Interview-Questions.md
+
+// 10. Explain Closure in Javascript ?
+// When a function is nested inside another function, closure enables the nested function to access the variables defined in the outer function.
+
+// Example:
+
+const displayUserInfo = () => {
+  const user = {
+    firstName: "Akshay",
+    lastName: "Saini",
+  };
+  const displayName = () => {
+    console.log(`Namaste, ${user.firstName} ${user.lastName} sir...`);
+  };
+  displayName();
+};
+displayUserInfo();
