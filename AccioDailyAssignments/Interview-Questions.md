@@ -755,7 +755,10 @@ Now, whenever you try to use map(), filter() and reduce() methods and get confus
 
 ## 10. Explain Closure in Javascript ?
 
-    When a function is nested inside another function, closure enables the nested function to access the variables defined in the outer function.
+`Def : Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.`
+
+When a function is nested inside another function, closure enables the nested function to access the variables defined in the outer function.
+or
 
 ```Javascript
 //  Example:
@@ -775,15 +778,13 @@ displayUserInfo();
 
 ## Let's Understand it how closure works :
 
-`When the function displayUserInfo() runs, it seems that the returning function is using the variable user inside it:`
+When the function displayUserInfo() runs, it seems that the returning function is using the variable user inside it:
 
-`Therefore displayUserInfo(), instead of destroying the value of user after execution, saves the value in the memory for further reference. This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed`
+> Therefore displayUserInfo(), **_instead of destroying the value of user after execution, saves the value in the memory for further reference_**. This is the reason why the returning function is able to use the variable declared in the outer scope even after the function is already executed
 
 ## Challenge - Closure:
 
     Def : Define the function authenticate to display "Login Successful" if the arguments email and password of the login function are equal to the email and password properties of user. Otherwise, return "Invalid Credentials".
-    //or
-    Def : Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.
 
 #### For example:
 
