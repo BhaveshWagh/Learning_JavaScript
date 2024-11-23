@@ -381,14 +381,69 @@ const circumeference = function (radius) {
 
 // Example:
 
-const displayUserInfo = () => {
-  const user = {
-    firstName: "Akshay",
-    lastName: "Saini",
-  };
-  const displayName = () => {
-    console.log(`Namaste, ${user.firstName} ${user.lastName} sir...`);
-  };
-  displayName();
-};
-displayUserInfo();
+// const displayUserInfo = () => {
+//   const user = {
+//     firstName: "Akshay",
+//     lastName: "Saini",
+//   };
+//   const displayName = () => {
+//     console.log(`Namaste, ${user.firstName} ${user.lastName} sir...`);
+//   };
+//   displayName();
+// };
+// displayUserInfo();
+
+// 11. Explain Scope in Javascript (Global, Local & Block Scope)
+
+// 11.1 What is Scope?:
+
+// At its core, scope in JavaScript refers to the context or environment in which variables are declared and can be accessed.
+// It dictates the visibility and lifetime of a variable, determining where in your code a particular variable is valid and accessible.
+
+// 11.2 Global Scope
+// Variables or functions declared in the global namespace have global scope, which means all the variables and functions having global scope can be accessed from anywhere inside the code.
+// Global scope in JavaScript is like the town square where everyone can access and modify variables.
+var globalVariable = "I'm in global scope";
+
+function myFunction() {
+  // This function can access globalVariable
+  console.log(globalVariable); // Accessing the global variable
+}
+
+// myFunction();
+
+// 11.3 Local Scope
+// Any variables or functions declared inside a function have local/function scope, which means that all the variables and functions declared inside a function, can be accessed from within the function and not outside of it.
+
+// Local scope in JavaScript is like a private room within a building – it's an enclosed space where variables are only accessible from within that specific room.
+
+// When you declare a variable in local scope, it is limited in visibility to the block of code, function, or conditional statement in which it is defined.
+
+// Variables in local scope are typically declared within functions, conditional statements, loops, or other code blocks.
+
+// These variables are, in essence, "local" to that block of code, and they cannot be directly accessed from outside it.
+
+function localFun() {
+  var localVariable = "I'm in local scope";
+  console.log(localVariable);
+}
+
+// localFun();
+// console.log(localVariable) // ReferenceError: localVariable is not defined
+// Accessing localVariable here would result in an error
+
+// 11.4 Block Scope
+// Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope. Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
+
+// Example :
+// {
+//   let x = 45;
+// }
+
+// console.log(x); // Gives reference error since x cannot be accessed outside of the block
+
+// for (let i = 0; i < 2; i++) {
+//   // do something
+// }
+
+// console.log(i); // Gives reference error since i cannot be accessed outside of the for loop block
