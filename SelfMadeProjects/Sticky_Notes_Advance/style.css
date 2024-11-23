@@ -1,0 +1,246 @@
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    outline: none; /*To remove blue outline in chrome*/
+}
+
+/*To remove dotted outline in firefox*/
+button::-moz-focus-inner {
+    border: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+body {
+    background-color: lightgray;
+    padding-left: 1vw;
+    margin: 0px;
+}
+
+.spacer {
+    height: 115px;
+    margin-bottom: 1vw;
+}
+
+.header {
+    display: table;
+    position: fixed;
+    z-index: 2;
+    top: 0px;
+    left: 0px;
+    width: 100%;
+    background-color: rgba(128, 128, 128, 0.85);
+    color: white;
+    text-align: center;
+    height: 115px;
+}
+
+.header h1 {
+    display: table-cell;
+    vertical-align: middle;
+}
+
+ .add-button{
+     position: fixed;
+     bottom: 7.5vw;
+     left: 7.5vw;
+     border: none;
+     height: 125px;
+     width: 125px;
+     border-radius: 100px;
+     background-color: orange;
+     font-size: 80px;
+     color: white;
+     z-index: 2;
+     cursor: pointer;
+ }
+
+ .add-button:active {
+    transform: translate(0, -20px);
+ }
+
+ @keyframes fade-in {
+    from { 
+        opacity: 0.0;
+   }
+    to {
+        opacity: 1.0;
+   }
+}
+
+ .note {
+     position: relative;
+     width: 17.8%;
+     display: inline-block;
+     background-color:lightgoldenrodyellow;
+     border-radius: 15px;
+     text-align: center;
+     vertical-align: top;
+     margin: 1vw;
+     padding-bottom: 5px;
+     animation-name: fade-in;
+     animation-duration: 0.6s;
+}
+
+ .note-title {
+     width: 85%;
+     height: 1.3em;
+     background-color: transparent;
+     display: inline-block;
+     text-align: center;
+     font-size: 24px;
+     font-weight: 600;
+     border: none;
+     resize: none;
+     overflow: hidden;
+     margin: 0;
+ }
+
+ .note-content {
+     width: 90%;
+     height: 100px;
+     background-color: transparent;
+     display: inline-block;
+     resize: none;
+     overflow: hidden;
+     border: none;
+     font-size: 16px;
+     margin: 0;
+ }
+
+ .option-button {
+     float: right;
+     position: relative;
+     bottom: 20px;
+     margin-right: 10px;
+     height: 30px;
+     border: none;
+     background-color: rgba(0,0,0,0);
+     font-size: 42px;
+     color: gray;
+     cursor: pointer;
+ }
+
+  .option-button:active {
+    bottom: 30px;
+ }
+
+ .note-menu {
+     position: absolute;
+     bottom: 45px;
+     right: 15px;
+     z-index: 3;
+     background-color: lightgray;
+     display: inline-block;
+     border-radius: 15px;
+     width: 160px;
+     padding: 5px 5px 0px 5px;
+     -moz-box-shadow: 2px 2px 6px 2px #777777; 
+	 -webkit-box-shadow: 2px 2px 6px 2px #777777; 
+     box-shadow: 2px 2px 6px 2px #777777;
+     text-align: center;
+     animation-name: fade-in;
+     animation-duration: 0.4s;
+ }
+
+ .color-option {
+     display: 'inline-block';
+     height: 40px;
+     width: 40px;
+     border-radius: 20px;
+     border: 1px solid gray;
+     margin: 5px;
+     cursor: pointer;
+ }
+
+ .color-option:active {
+     position: relative;
+     bottom: 5px;
+ }
+
+ 
+ .delete-note {
+     display: inline-block;
+     margin-bottom: 10px;
+     cursor: pointer;
+ }
+ .delete-note:active {
+     position: relative;
+     bottom: 5px;
+ }
+
+ .delete-text {
+     margin: 0px;
+     color: #993333;
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ .delete-icon {
+     margin: 0px;
+     height: 24px;
+     display: inline-block;
+     vertical-align: middle;
+ }
+
+ @media screen and (max-width: 1450px) {
+     .note {
+         width: 22.75%;
+     }
+ }
+
+ @media screen and (max-width: 1050px) {
+     .note {
+         width: 31%;
+     }
+ }
+
+ @media screen and (max-width: 650px) {
+    .note {
+        width: 47.5%;
+    }
+
+    .note-menu {
+        width: 140px;
+        padding: 3px;
+    }
+
+    .color-option {
+        margin: 3px;
+    }
+
+    .header {
+        height: 100px;
+    }
+
+    .spacer {
+        height: 100px;
+    }
+
+    .note-title {
+        font-size: 18px;
+        font-weight: 600;
+        width: 80%;
+    }
+
+    .add-button {
+        height: 90px;
+        width: 90px;
+        font-size: 64px;
+    }
+
+    .delete-note {
+        margin: 0;
+    }
+
+    .add-button:active {
+        transform: translate(0, -10px);
+    }
+
+    .option-button {
+        font-size: 40px;
+        margin-right: 10px;
+    }
+}
