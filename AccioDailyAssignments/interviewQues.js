@@ -436,14 +436,18 @@ function localFun() {
 // Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope. Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
 
 // Example :
-// {
-//   let x = 45;
-// }
+{
+  let x = 45;
+}
 
 // console.log(x); // Gives reference error since x cannot be accessed outside of the block
 
-// for (let i = 0; i < 2; i++) {
-//   // do something
-// }
+for (let i = 0; i < 2; i++) {
+  // do something
+  // console.log("Hellowww!")
+}
 
 // console.log(i); // Gives reference error since i cannot be accessed outside of the for loop block
+const numbers = [1, 2, 3, 50, 12];
+const maxNum = Math.max(...numbers);
+console.log(maxNum);
