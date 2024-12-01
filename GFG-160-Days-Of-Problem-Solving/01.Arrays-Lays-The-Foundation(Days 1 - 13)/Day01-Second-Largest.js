@@ -20,8 +20,14 @@ Explanation: The largest element of the array is 10 and the second largest eleme
 Constraints:
         2 ≤ arr.size() ≤ 105
     1 ≤ arr[i] ≤ 105
- 
+    */
+/**
+ * [Naive Approach] Using Sorting – O(n*logn) Time and O(1) Space
+The idea is to sort the array in non-decreasing order. Now, we know that the largest element will be at index n – 1. So, starting from index (n – 2), traverse the remaining array in reverse order. As soon as we encounter an element which is not equal to the largest element, return it as the second largest element in the array. If all the elements are equal to the largest element, return -1.
  */
+
+// Time Complexity: O(n*logn), as sorting the array takes O(n*logn) time and traversing the array can take O(n) time in the worst case, so total time complexity = (n*logn + n) = O(n*logn).
+// Auxiliary space: O(1), as no extra space is required.
 
 function getSecondLargest(arr) {
   // Code Here
