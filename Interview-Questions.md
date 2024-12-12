@@ -19,6 +19,7 @@ This repository covers key JavaScript concepts with examples to understand their
 8. [IIFE : Immediately Invoked Function Expression ](#8-what-is-an-immediately-invoked-function-in-javascript)
 9. [HOF : Higher Order Functions (Map, Filter, Reduce)](#9-explain-higher-order-functions-in-javascript) - [Map](#how-to-use-map-in-javascript) - [Filter](#how-to-use-filter-in-javascript) - [Reduce](#how-to-use-reduce-in-javascript)
 10. [Closure In Javascript](#10-explain-closure-in-javascript-)
+11. [Scope : Global, Local, Block](#11-explain-scope-in-javascript-global-local--block-scope)
 
 ## 1. Asynchronous JavaScript
 
@@ -757,6 +758,9 @@ Now, whenever you try to use map(), filter() and reduce() methods and get confus
 
 `Def : Closures are an ability of a function to remember the variables and functions that are declared in its outer scope.`
 
+    mdn ref:
+      A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope. In JavaScript, closures are created every time a function is created, at function creation time.
+
 When a function is nested inside another function, closure enables the nested function to access the variables defined in the outer function.
 or
 
@@ -828,7 +832,17 @@ console.log(message);
 At its core, scope in JavaScript refers to the context or environment in which variables are declared and can be accessed.
 It dictates the visibility and lifetime of a variable, determining where in your code a particular variable is valid and accessible.
 
+> Global Scope: Variables defined outside any function or block, accessible anywhere in the program.
+
+> Local Scope: Variables defined inside a function or block, accessible only within that specific function or block.
+
+> Nested Scope: Inner functions have access to variables in their parent functions.
+
+> Block Scope: Variables defined with let and const are limited to the block they are declared in, like loops or conditionals.
+
 ### 11.2 Global Scope
+
+> When a variable is defined outside of any functions or blocks, it has a global scope. This means that it can be accessed from anywhere within the program, including within functions.
 
 > Variables or functions declared in the global namespace have global scope, which means all the variables and functions having global scope can be accessed from anywhere inside the code.
 
@@ -848,6 +862,8 @@ console.log(globalVariable); // Accessing the global variable
 ```
 
 ## 11.3 Local Scope
+
+> When a variable is defined within a function or block, it has a local scope. This means that it can only be accessed within that function or block.
 
 > Any variables or functions declared inside a function have local/function scope, which means that all the variables and functions declared inside a function, can be accessed from within the function and not outside of it.
 
@@ -874,6 +890,8 @@ console.log(localVariable);
 
 ## 11.4 Block Scope
 
+> ES6 introduced the let and const keywords, which allow variables to have block scope. This means that variables defined within a block of code (such as within an if statement or a for loop) can only be accessed within that block.
+
 > Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope. Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
 
 ```javascript
@@ -889,3 +907,112 @@ for (let i = 0; i < 2; i++) {
 
 console.log(i); // Gives reference error since i cannot be accessed outside of the for loop block
 ```
+
+## 12. Lexical Scope in JS ?
+
+For understanding lexical scope you have to understand first closures or if you already knew then it good.
+
+`A closure is the combination of a function bundled together (enclosed) with references to its surrounding state (the lexical environment). In other words, a closure gives a function access to its outer scope. In JavaScript, closures are created every time a function is created, at function creation time.
+`
+
+### Lexical scoping :
+
+```js
+function init() {
+  var name = "Samay"; // name is a local variable created by init
+  function displayName() {
+    //displayName() is the inner function, that forms a closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName();
+}
+init();
+```
+
+#### Lets understand
+
+init() creates a local variable called name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer scopes, displayName() can access the variable name declared in the parent function, init().
+
+Run the code in your local machine either use online compiler like programiz... and notice that the console.log() statement within the displayName() function successfully displays the value of the name variable, which is declared in its parent function. This is an example of lexical scoping, which describes how a parser resolves variable names when functions are nested. The word lexical refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
+
+#### Conclusion
+
+In JavaScript, understanding lexical scope is essential for writing clean, maintainable code. By properly scoping variables and functions, you can prevent naming conflicts, improve code readability, and avoid unintended side effects. Mastering lexical scope leads to better-organized, more efficient programs.
+
+### Lexical Scope in JavaScript-FAQs
+
+Q. How does lexical scope differ from dynamic scope?
+
+`Lexical scope is determined by the code structure at compile time, while dynamic scope is determined by the call stack at runtime.
+`
+
+Q. What is the difference between global scope and local scope?
+
+`Ans : Global scope refers to variables accessible anywhere in the program, while local scope restricts access to within a specific function or block.
+`
+
+Q. Can functions access variables outside their scope?
+
+`Ans : Functions can access variables from outer scopes (parent or global scope), but not variables from inner or sibling scopes.
+`
+
+Q. How does lexical scope affect closures?
+
+`Ans : Closures in JavaScript leverage lexical scope by allowing inner functions to remember and access variables from their outer (lexical) environments.
+`
+
+Q. How are variables resolved in lexical scope?
+
+`Ans : JavaScript resolves variables by searching within the local scope first, then progressively moving outward through parent scopes until it reaches the global scope.
+`
+
+Q. What is the relationship between lexical scope
+and the execution context?
+
+`Ans : Lexical scope is determined at code declaration, while the execution context is created when code runs, determining how variables and functions are accessed during execution.
+`
+
+read more : https://codesweetly.com/javascript-lexical-scope/
+
+## 13. What is the ‘this’ keyword in JavaScript?
+
+Functions in JavaScript are essential objects. Like objects, it can be assign to variables, pass to other functions, and return from functions. And much like objects, they have their own properties. ‘this’ stores the current execution context of the JavaScript program. Thus, when it use inside a function, the value of ‘this’ will change depending on how the function is defined, how it is invoked, and the default execution context.
+
+<strong style="color:yellow"> The `this` keyword in JavaScript refers to the execution context of a function.</strong> Its value is determined by how the function is called, not necessarily how it's defined. Here's a breakdown with practical examples:
+
+1. Global Context :
+   In the global context (outside any function), this refers to the global object. In a browser, that's the window object.
+
+```javascript
+console.log(this); // In a browser, this will log the 'window' object.
+```
+
+2. Inside an Object Method : 
+When this is used inside an object method, it refers to the object that owns the method.
+
+```javascript
+const person = {
+  name: "John",
+  greet() {
+    console.log(`Hello, my name is ${this.name}`);
+  },
+};
+
+person.greet(); // Output: Hello, my name is John
+```
+
+# Upcoming topics
+
+1. Interval Functions : setTimeout(), clearInterval(), clearTimeout()
+2. Event Bubbling, propogation, & Delegation
+3. Event Listeners
+4. Event loop
+5. Spread and Rest Operators
+6. Callback hell, Promises: promise chaining && error handling, async && await
+7. DOM Manipulation
+8. Local storage and session storage
+9. Objects in js
+10. currying
+11. call, apply, bind also polyfill
+12. pollyfill of map, filter, reduce
+13. Memoization

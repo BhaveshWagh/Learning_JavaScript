@@ -448,6 +448,27 @@ for (let i = 0; i < 2; i++) {
 }
 
 // console.log(i); // Gives reference error since i cannot be accessed outside of the for loop block
-const numbers = [1, 2, 3, 50, 12];
-const maxNum = Math.max(...numbers);
-console.log(maxNum);
+// const numbers = [1, 2, 3, 50, 12];
+// const maxNum = Math.max(...numbers);
+// console.log(maxNum);
+
+
+// 12. Lexical scope
+
+function init() {
+  var name = "Samay"; // name is a local variable created by init
+  function displayName() {
+    //displayName() is the inner function, that forms a closure
+    console.log(name); // use variable declared in the parent function
+  }
+  displayName(); // "Samay"
+}
+init();
+
+
+/**
+ init() creates a local variable called name and a function called displayName(). The displayName() function is an inner function that is defined inside init() and is available only within the body of the init() function. Note that the displayName() function has no local variables of its own. However, since inner functions have access to the variables of outer scopes, displayName() can access the variable name declared in the parent function, init().
+
+Run the code using this JSFiddle link and notice that the console.log() statement within the displayName() function successfully displays the value of the name variable, which is declared in its parent function. This is an example of lexical scoping, which describes how a parser resolves variable names when functions are nested. The word lexical refers to the fact that lexical scoping uses the location where a variable is declared within the source code to determine where that variable is available. Nested functions have access to variables declared in their outer scope.
+ */
+
