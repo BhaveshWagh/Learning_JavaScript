@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Light/Dark Mode</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      .dark-mode {
+        background-color: #121212;
+        color: #ffffff;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Light/Dark Mode Toggle</h1>
+    <button id="toggleMode">Toggle Mode</button>
+
+    <script>
+      const toggleButton = document.getElementById("toggleMode");
+
+      toggleButton.addEventListener("click", () => {
+        document.body.classList.toggle("dark-mode");
+      });
+    </script>
+  </body>
+</html>

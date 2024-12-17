@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <body style="padding-top: 50px">
+    <h3 id="event_demo">0</h3>
+    <input type="button" onclick="myFunction()" value="Click Me" />
+    <input type="reset" onclick="reset()" value="Reset" />
+  </body>
+
+  <script>
+    function myFunction() {
+      var value = document.getElementById("event_demo").innerHTML;
+      value = parseInt(value) + 1;
+      document.getElementById("event_demo").innerHTML = value;
+    }
+    function reset() {
+      document.getElementById("event_demo").innerHTML = 0;
+    }
+  </script>
+</html>
