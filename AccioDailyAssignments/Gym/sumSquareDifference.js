@@ -26,12 +26,12 @@ console.log(sumSquareDifference(10));
 
 // Another approach
 //  // Sum of the squares of the first n natural numbers
-//  let sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
+ let sumOfSquares = (n * (n + 1) * (2 * n + 1)) / 6;
     
-//  // Square of the sum of the first n natural numbers
-//  let squareOfSum = Math.pow((n * (n + 1)) / 2, 2);
+ // Square of the sum of the first n natural numbers
+ let squareOfSum = Math.pow((n * (n + 1)) / 2, 2);
  
-//  // Calculate the difference
-//  let difference = squareOfSum - sumOfSquares;
+ // Calculate the difference
+ let difference = squareOfSum - sumOfSquares;
  
-//  return difference;
+ return difference;
